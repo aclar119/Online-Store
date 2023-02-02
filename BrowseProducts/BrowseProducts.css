@@ -47,12 +47,13 @@ html, body {
 h1 {
   margin: 12px;
   font-size: 36px;
+  line-height: 36px;
   text-align: left;
     
 }
 
 /* Managing flexboxes */
-.flex-container {
+.flex-main {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -138,4 +139,55 @@ div.products {
   margin: 40px;
   margin-left: 0;
 }
-          
+
+.flex-products {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height:calc(100% - 60px); /* Section title is 60px tall */
+  overflow-y: scroll;
+  scrollbar-width: 0;
+  gap: 40px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.flex-products::-webkit-scrollbar { 
+  display: none;
+}
+
+.flex-product-item {
+  height: 320px;
+  min-width: 360px;
+  width: 100%;
+  flex: 1 1 0px;
+  background-color: #EFEFEF;
+}
+
+.img-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 120px);
+  align-items: center;
+  padding: 20px;
+}
+
+.flex-product-item img {
+  height: 100%;
+}
+
+.flex-product-item p {
+  font-size: 20px;
+  padding: 5px;
+  padding-left: 30px;
+  margin: 0;
+  justify-content: center;
+}
+
+.placeholder {
+  height: 320px;
+  min-width: 360px;
+  width: 100%;
+  flex: 1 1 0px;
+  background-color: rgba(255, 255, 255, 0);
+}
