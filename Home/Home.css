@@ -49,38 +49,4 @@ h1 {
   margin: 12px;
   font-size: 36px;
   text-align: left;
-    
-}
-
-/* Managing flexboxes */
-.flex-container {
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  height: calc(100% - 60px);
-}
-
-.flex-container>div {
-  background-color: rgba(161, 110, 205, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-}
-
-div.sort-and-filter {
-  background-color: gray;
-  margin: 40px;
-  flex: 0 0 400px;
-  font-size: 20px;
-  
-}
-
-.sort-and-filter p {
-  margin: 0px;
-  padding: 30px;
-}
-
-div.products {
-  flex-grow: 1;
-  margin: 40px;
-  margin-left: 0;
 }

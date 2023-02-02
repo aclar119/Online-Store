@@ -1,49 +1,86 @@
 
         /* Full page styling */
 
-        html {
-            font-family: Verdana, Geneva, Tahoma, sans-serif;
-        }
-        
-        body {
-            margin: 0;
-            padding: 0;
-        }
-        
-        
-                /* Navbar styling */
-        
-        ul {
-            margin: 0;
-            padding: 0;
-            background-color: gray;
-            list-style-type: none;
-            overflow: hidden;
-          }
+html, body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+  
+          /* Navbar styling */
+  
+  ul {
+      margin: 0;
+      padding: 0;
+      background-color: gray;
+      list-style-type: none;
+      overflow: hidden;
+    }
+    
+    li {
+      display: inline;
+      float: left;
+    }
+    
+    /* Link text */
+    li a {
+      /* Total fixed height of 60px */
+    height: 28px;
+    line-height: 28px;
+    padding: 16px;
+    color: black;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    }
+    
+    /* Change the color of the button text on hover */
+    li a:hover {
+      color: white;
+    }
+  
+  
+  
+          /* Page body styling */
+
+h1 {
+  margin: 12px;
+  font-size: 36px;
+  text-align: left;
+    
+}
+
+/* Managing flexboxes */
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: calc(100% - 60px);
+}
+
+.flex-container>div {
+  background-color: rgba(161, 110, 205, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 20px;
+}
+
+div.sort-and-filter {
+  background-color: gray;
+  margin: 40px;
+  flex: 0 0 400px;
+  font-size: 20px;
+  
+}
+
+.sort-and-filter p {
+  margin: 0px;
+  padding: 30px;
+}
+
+div.products {
+  flex-grow: 1;
+  margin: 40px;
+  margin-left: 0;
+}
           
-          li {
-            display: inline;
-            float: left;
-          }
-          
-          /* Link text */
-          li a {
-            padding: 16px;
-            color: black;
-            display: block;
-            text-align: center;
-            text-decoration: none;
-          }
-          
-          /* Change the color of the button text on hover */
-          li a:hover {
-            color: white;
-          }
-        
-        
-        
-                /* Page body styling */
-        
-        h1 {
-            margin: 12px;
-        }
