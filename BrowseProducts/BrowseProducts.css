@@ -59,25 +59,80 @@ h1 {
   height: calc(100% - 60px);
 }
 
-.flex-container>div {
-  background-color: rgba(161, 110, 205, 0.8);
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
-}
-
 div.sort-and-filter {
-  background-color: gray;
+  background-color: #EFEFEF;
   margin: 40px;
   flex: 0 0 400px;
   font-size: 20px;
-  
+  overflow-y: auto;
 }
 
+
+/* Sort and Filter box */
 .sort-and-filter p {
+  margin: 0px;
+  padding: 10px;
+  padding-left: 60px;
+  user-select: none;
+}
+
+
+.sort-and-filter p.sort-type:hover {
+  color:royalblue;
+  cursor: pointer;
+}
+
+.sort-and-filter p.section-title {
   margin: 0px;
   padding: 30px;
 }
 
+.sort-and-filter p.section-subtitle {
+  margin: 0px;
+  padding: 10px;
+  padding-left: 45px;
+}
+
+hr {
+  margin: 0;
+  border-top: 1px solid black;
+  border-bottom: 0;
+  margin-bottom: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+
+/* Checkboxes for filtering */
+.container-checkbox {
+  display: block;
+  position: relative;
+  padding: 10px;
+  padding-left: 60px;
+  cursor: pointer;
+  user-select: none;  
+}
+
+.container-checkbox:hover {
+ color: royalblue;
+}
+
+.container-checkbox p {
+  display: inline;
+  padding-left: 10px;
+  vertical-align: top;
+}
+
+.container-checkbox input {
+  height: 20px;
+  width: 20px;
+}
+
+
+
+
+
+/* Products Section */
 div.products {
   flex-grow: 1;
   margin: 40px;
