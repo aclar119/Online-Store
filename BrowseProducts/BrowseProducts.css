@@ -144,12 +144,14 @@ div.products {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  height:calc(100% - 60px); /* Section title is 60px tall */
+  height:calc(100% - 80px); /* Section title is 60px tall */
+  margin-top: 20px;
   overflow-y: scroll;
   scrollbar-width: 0;
   gap: 40px;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  align-content: flex-start;
 }
 
 .flex-products::-webkit-scrollbar { 
@@ -162,6 +164,11 @@ div.products {
   width: 100%;
   flex: 1 1 0px;
   background-color: #EFEFEF;
+}
+
+.flex-product-item:hover {
+  cursor: pointer;
+  color: royalblue;
 }
 
 .img-wrapper {
