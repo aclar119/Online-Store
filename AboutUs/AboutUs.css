@@ -16,7 +16,7 @@ body {
 ul {
     margin: 0;
     padding: 0;
-    background-color: white;
+    background-color: #213536;
     list-style-type: none;
     overflow: hidden;
   }
@@ -29,7 +29,7 @@ ul {
   /* Link text */
   li a {
     padding: 16px;
-    color: black;
+    color: #F8F8F8;
     display: block;
     text-align: center;
     text-decoration: none;
@@ -50,10 +50,12 @@ ul {
     box-shadow: 0px 0px 1.5px 0px black;
     display: flex;
     align-items: center;
-    background-image: url(image\ 16.png);
+    background-image: url(landscape.jpg);
     background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 100%;
+    background-position-y: -100px;
+    background-size:cover;
+    
+    
   }
   
   .about-us {
@@ -62,7 +64,7 @@ ul {
     height: auto;
     text-align: center;
     margin: auto;
-    color: black;
+    color: #F8F8F8;
   }
   .origins-section{
     display: flex; 
