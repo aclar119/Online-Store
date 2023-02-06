@@ -71,10 +71,11 @@ ul {
     justify-content: center;
     align-items: center;
     height:400px;
+    margin-bottom: 50px;
   }
   .origins-image{
-    width: 30%;
-    height: 100%;
+    width: 50%;
+    height: auto;
     margin-right: 20px;
     float: left;
   }
@@ -91,22 +92,23 @@ ul {
     height:300px;
   }
   .nature-image{
-    width: 30%;
-    height: 100%;
+    width: 50%;
+    height: auto;
     margin-left:20px;
     margin-right: 20px;
     float: right;
   }
   .nature-text{
     width: 70%;
+    overflow: hidden;
     text-align: left;
     float: left;
   }
 
   .teamwork-section {
     display: flex; 
-    justify-content: center;
-    align-items: center;
+    justify-content: Center;
+    align-items: left;
     height:400px;
   }
 
@@ -122,5 +124,5 @@ ul {
   width: 30%;
   height: 100%;
   margin-right: 20px;
-  float: right;
+  float: left;
 }
