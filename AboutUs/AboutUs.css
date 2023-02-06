@@ -70,21 +70,25 @@ ul {
     display: flex; 
     justify-content: center;
     align-items: center;
-    height:400px;
+    height:500px;
     margin-bottom: 60px;
   }
   .origins-image{
-    width: 45%;
+    width: 35%;
     height: auto;
     margin-right: 20px;
     float: left;
   }
   .origins-text{
-    width: 70%;
+    width: 35%;
+    margin-top:-10px;
+    font-size:12.5px;
     text-align: left;
     float: right;
   }
-
+  .h2-origins{
+    font-size: 20px;
+  }
   .nature-section{
     display: flex; 
     justify-content: center;
@@ -96,11 +100,11 @@ ul {
     width: 50%;
     height: auto;
     margin-left:20px;
-    margin-right: 20px;
-    float: right;
+    float:right
   }
   .nature-text{
     width: 70%;
+    font-size:12.5px;
     overflow: hidden;
     text-align: left;
     float: left;
