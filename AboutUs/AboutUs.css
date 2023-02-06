@@ -71,10 +71,10 @@ ul {
     justify-content: center;
     align-items: center;
     height:400px;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
   }
   .origins-image{
-    width: 50%;
+    width: 45%;
     height: auto;
     margin-right: 20px;
     float: left;
@@ -90,6 +90,7 @@ ul {
     justify-content: center;
     align-items: center;
     height:300px;
+    margin-bottom:150px;
   }
   .nature-image{
     width: 50%;
@@ -107,22 +108,23 @@ ul {
 
   .teamwork-section {
     display: flex; 
-    justify-content: Center;
+    justify-content: center;
     align-items: left;
     height:400px;
   }
 
-
 .teamwork-image{
   width: 60%;
-  height: 50%;
-  margin-left: -500px;
-  float: left;
+  height: auto;
 }
 
 .teamwork-text{
-  width: 30%;
-  height: 100%;
-  margin-right: 20px;
+  width: 70%;
   float: left;
+  text-align: left;
+}
+
+.h2-teamwork{
+  clear: both; 
+  font-size: 36px;
 }
