@@ -2,10 +2,12 @@
         /* Full page styling */
 
 html, body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     height: 100%;
+    width: 100%;
+    background-color: #F8F8F8;
 }
 
         /* Navbar styling */
@@ -49,4 +51,254 @@ h1 {
   margin: 12px;
   font-size: 36px;
   text-align: left;
+}
+
+#top-main {
+  height: 100vh;
+  width: 100%;
+  background-image: url("Home\ Page\ Background.jpg");
+  background-size: cover;
+  background-position: 0% 10%;
+}
+
+#top-flex-container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  size: 100% 100%;
+}
+
+#title-outer {
+  color: #F8F8F8;
+  margin: 40px;
+  flex: 0 0 50%;
+}
+
+#title-outer h1{
+  margin-top: 15%;
+  font-size: 96px;
+  height:auto;
+  width: 600px;
+}
+
+#title-outer button{
+  margin: 20px;
+  margin-top: 30px;
+  height: 50px;
+  width: 220px;
+  background-color: #F8F8F8;
+  border: none;
+  border-radius: 32px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #213536;
+}
+
+#featured {
+  display: flex;
+  margin-top: 100px;
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  justify-content: center;
+  padding-bottom: 80px;
+}
+
+#featured>div {
+  max-width: 1200px;
+}
+
+/* Top featured Products */
+
+#featured-top {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5%;
+}
+
+#featured-top .product {
+  width: 20%;
+}
+
+.product img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.grid-container {
+  display: grid;
+}
+
+.product-name {
+  margin: 10px;
+  font-size: 20px;
+  line-height: 20px;
+  grid-column: 1;
+  color: #213536;
+}
+
+.product-price {
+  margin: 10px;
+  grid-column: 2;
+  text-align: end;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #2135367e;
+}
+
+/* Main Divider */
+
+#divider-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+}
+
+#divider-container div {
+  flex-grow: 1;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #213536;
+}
+
+#divider-container button {
+  flex-grow: 0;
+  margin-left: 2.5%;
+  height: 40px;
+  width: 280px;
+  background-color: #213536;
+  border: none;
+  border-radius: 32px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #F8F8F8;
+}
+
+
+
+
+
+
+/* Featured Shirts */
+
+h2.featured-shirts {
+  font-size: 20px;
+  font-weight: bold;
+  color: #213536;
+  margin-bottom: 2.5%;
+  margin-top: 5%;
+}
+
+div.featured-shirts {
+  width: 100%;
+  height: fit-content;
+  justify-content: space-between;
+}
+
+#featured-shirts-right {
+  flex: 0 0 62%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: space-between;
+  height: 100%;
+}
+
+/* Free Mockup T */
+
+
+/* Generic Colours Line Divider */
+
+#generic-colours-divider {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+}
+
+#generic-colours-divider h2 {
+  margin-right: 2.5%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #213536;
+}
+
+#generic-colours-divider div {
+  flex-grow: 1;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #2135367e;
+}
+
+#generic-colours-divider button {
+  flex-grow: 0;
+  margin-left: 2.5%;
+  height: 40px;
+  width: 160px;
+  background-color: #F8F8F8;
+  border: 1px solid #213536;
+  border-radius: 32px;
+  font-size: 20px;
+  font-weight: normal;
+  color: #213536;;
+}
+
+
+/* Generic Colours Line Items */
+
+#generic-colours-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#generic-colours-container .product {
+  width: 48%;
+  height: 100%;
+}
+
+#generic-black-t {
+  height: 100%;
+}
+
+#generic-black-t img {
+  height: calc(100% - 40px);
+  object-fit: cover;
+}
+
+table {
+  /* border: 1px solid black; */
+}
+
+tr {
+  height: 1px;
+}
+
+td {
+  /* border: 1px solid black; */
+  padding-left: 20px;
+  padding-right: 20px;
+  height: inherit;
+}
+
+td#free-mockup-t {
+  padding-right: 0;
+  width: 62%;
+}
+
+#free-mockup-t img {
+  padding-right: 0;
+  width: 100%;
 }
