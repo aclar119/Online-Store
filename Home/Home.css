@@ -199,7 +199,6 @@ h2.featured-shirts {
 div.featured-shirts {
   width: 100%;
   height: fit-content;
-  justify-content: space-between;
 }
 
 #featured-shirts-right {
@@ -274,7 +273,8 @@ div.featured-shirts {
 }
 
 #generic-black-t img {
-  height: calc(100% - 40px);
+  height: calc(93% - 10px);
+  margin-top: 2%;
   object-fit: cover;
 }
 
