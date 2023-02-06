@@ -12,40 +12,79 @@ html, body {
 
         /* Navbar styling */
 
-ul {
+/* ul {
+    position: sticky;
+    top: 0;
     margin: 0;
     padding: 0;
     background-color: gray;
     list-style-type: none;
-    overflow: hidden;
-}
+} */
   
-  li {
+  /* li {
     display: inline;
     float: left;
     vertical-align: middle;
-  }
+  } */
   
   /* Link text */
-  li a {
+  /* li a { */
     /* Total fixed height of 60px */
-    height: 28px;
+
+    /* height: 28px;
     line-height: 28px;
     padding: 16px;
     color: black;
     display: block;
     text-align: center;
-    text-decoration: none;
-  }
+    text-decoration: none; */
+  /* } */
   
   /* Change the color of the button text on hover */
-  li a:hover {
+  /* li a:hover {
     color: white;
+  } */
+
+  #navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  #navbar a {
+    z-index: 1;
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  #navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  .not-sticky {
+    visibility: hidden;
+  }
+
+  .sticky {
+    visibility: visible;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  .sticky + .content {
+    padding-top: 60px;
   }
 
 
 
-        /* Page body styling */
+  /* Page body styling */
 
 h1 {
   margin: 12px;
@@ -53,7 +92,15 @@ h1 {
   text-align: left;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
+
+/* Top section (Title + Picture) */
+
 #top-main {
+  top: -50vh;
   height: 100vh;
   width: 100%;
   background-image: url("Home\ Page\ Background.jpg");
@@ -108,6 +155,7 @@ h1 {
   max-width: 1200px;
 }
 
+
 /* Top featured Products */
 
 #featured-top {
@@ -125,6 +173,8 @@ h1 {
 }
 
 .product img {
+  z-index: 0;
+  position: relative;
   width: 100%;
   border-radius: 12px;
 }
@@ -132,6 +182,34 @@ h1 {
 .grid-container {
   display: grid;
 }
+
+
+.image-holder {
+  z-index: 0;
+  position: relative;
+}
+
+.hide-till-hover {
+    /*button position*/
+    position: absolute;
+    bottom: 10px;
+    right: 5%;
+
+    visibility: hidden;
+    height: 32px;
+    width: 90%;
+    border: 0px solid #213536;
+    background-color: white;
+    border-radius: 12px;
+    color: #213536;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.product:hover .hide-till-hover {
+  visibility: visible;
+}
+
 
 .product-name {
   margin: 10px;
@@ -150,6 +228,8 @@ h1 {
   font-weight: bold;
   color: #2135367e;
 }
+
+
 
 /* Main Divider */
 
@@ -182,10 +262,6 @@ h1 {
 }
 
 
-
-
-
-
 /* Featured Shirts */
 
 h2.featured-shirts {
@@ -198,19 +274,43 @@ h2.featured-shirts {
 
 div.featured-shirts {
   width: 100%;
-  height: fit-content;
 }
 
-#featured-shirts-right {
-  flex: 0 0 62%;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  align-content: space-between;
+tr {
+  height: 1px;
+}
+
+td {
+  padding-left: 20px;
+  padding-right: 20px;
+  height: inherit;
+}
+
+
+/* Genric Black T */
+
+#generic-black-t {
   height: 100%;
 }
 
+#generic-black-t img {
+  height: calc(93% - 10px);
+  margin-top: 2%;
+  object-fit: cover;
+}
+
+
 /* Free Mockup T */
+
+td#free-mockup-t {
+  padding-right: 0;
+  width: 62%;
+}
+
+#free-mockup-t img {
+  padding-right: 0;
+  width: 100%;
+}
 
 
 /* Generic Colours Line Divider */
@@ -268,37 +368,14 @@ div.featured-shirts {
   height: 100%;
 }
 
-#generic-black-t {
-  height: 100%;
-}
 
-#generic-black-t img {
-  height: calc(93% - 10px);
-  margin-top: 2%;
-  object-fit: cover;
-}
 
-table {
-  /* border: 1px solid black; */
-}
 
-tr {
-  height: 1px;
-}
 
-td {
-  /* border: 1px solid black; */
-  padding-left: 20px;
-  padding-right: 20px;
-  height: inherit;
-}
 
-td#free-mockup-t {
-  padding-right: 0;
-  width: 62%;
-}
 
-#free-mockup-t img {
-  padding-right: 0;
-  width: 100%;
-}
+
+
+
+
+

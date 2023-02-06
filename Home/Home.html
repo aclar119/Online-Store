@@ -6,28 +6,51 @@
     </head>
     <body>
 
-        <!-- <ul>
-            <li><a href="../Home/Home.html">Home</a></li>
-            <li><a href="../BrowseProducts/BrowseProducts.html">Store</a></li>
-            <li><a href="../Cart/Cart.html">Cart</a></li>
-            <li><a href="../AboutUs/AboutUs.html">About Us</a></li>
-        </ul> -->
-
         <div id="top-main">
             <div id="top-flex-container">
                 <div id="title-outer">
                     <h1>Generic Clothing Co.</h1>
-                    <button>Shop Now</button>
+                    <button onclick="window.location.href='../BrowseProducts/BrowseProducts.html';">Shop Now</button>
                 </div>
                 <div></div>
             </div>
         </div>
 
+        <div id="navbar" class="not-sticky">
+            <a href="../Home/Home.html">Home</a>
+            <a href="../BrowseProducts/BrowseProducts.html">Store</a>
+            <a href="../Cart/Cart.html">Cart</a>
+            <a href="../AboutUs/AboutUs.html">About Us</a>
+        </div>
+
+        <!-- JavaScript code to enact the stciky effect on the navbar -->
+        <script>
+            window.onscroll = function() {toggleSticky()};
+            
+            var navbar = document.getElementById("navbar");
+            var sticky = navbar.offsetTop;
+            
+            function toggleSticky() {
+              if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+                navbar.classList.remove("not-sticky")
+              } else {
+                navbar.classList.remove("sticky");
+                navbar.classList.add("not-sticky")
+              }
+            }
+        </script>
+
         <div id="featured">
             <div>
+
+                <!-- Top Featured Products Bar -->
                 <div id="featured-top">
                     <div class="product">
-                        <img src="../Product Images/Your Logo T.png">
+                        <div class="image-holder">
+                            <img src="../ProductImages/Your Logo T.png">
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                        </div>
                         <div class="grid-container">
                             <p class="product-name">Your Logo T</p>
                             <p class="product-price">$20</p>
@@ -35,7 +58,10 @@
                     </div>
     
                     <div class="product">
-                        <img src="../Product Images/White Pants.png">
+                        <div class="image-holder">
+                            <img src="../ProductImages/White Pants.png">
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                        </div>
                         <div class="grid-container">
                             <p class="product-name">White Pants</p>
                             <p class="product-price">$50</p>
@@ -43,7 +69,10 @@
                     </div>
     
                     <div class="product">
-                        <img src="../Product Images/Beige Jacket.png">
+                        <div class="image-holder">
+                            <img src="../ProductImages/Beige Jacket.png">
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                        </div>
                         <div class="grid-container">
                             <p class="product-name">Beige Jacket</p>
                             <p class="product-price">$50</p>
@@ -51,7 +80,10 @@
                     </div>
     
                     <div class="product">
-                        <img src="../Product Images/Leather Jacket.png">
+                        <div class="image-holder">
+                            <img src="../ProductImages/Leather Jacket.png">
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                        </div>
                         <div class="grid-container">
                             <p class="product-name">Leather Jacket</p>
                             <p class="product-price">$100</p>
@@ -61,10 +93,11 @@
     
                 <div id="divider-container">
                     <div></div>
-                    <button>Shop All Products</button>
+                    <button onclick="window.location.href='../BrowseProducts/BrowseProducts.html';">Shop All Products</button>
                 </div>
     
                 <h2 class="featured-shirts">Featured Shirts</h2>
+
 
                 <!-- Table needed to ensure columns are equal-height -->
                 <table>
@@ -73,7 +106,10 @@
                     <tr>
                         <td rowspan="4" style="padding-left: 0;">
                             <div class="product" id="generic-black-t">
-                                <img src="../Product Images/Generic Black T.png">
+                                <div class="image-holder">
+                                    <img src="../ProductImages/Generic Black T.png">
+                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                                </div>
                                 <div class="grid-container">
                                     <p class="product-name">Generic Black T</p>
                                     <p class="product-price">$15</p>
@@ -86,7 +122,10 @@
                     <tr>
                         <td id="free-mockup-t">
                             <div class="product">
-                                <img src="../Product Images/Free Mockup T.png">
+                                <div class="image-holder">
+                                    <img src="../ProductImages/Free Mockup T.png">
+                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                                </div>
                                 <div class="grid-container">
                                     <p class="product-name">Free Mockup T</p>
                                     <p class="product-price">$15</p>
@@ -96,55 +135,52 @@
                         </td>
                     </tr>
 
-
+                    <!-- Generic Colours Line Divider -->
                     <tr>
                         <td style="padding-right: 0;">
                             <div id="generic-colours-divider">
                                 <h2>Generic Colours Line</h2>
                                 <div></div>
-                                <button>View More</button>
+                                <button onclick="window.location.href='../BrowseProducts/BrowseProducts.html';">View More</button>
                             </div>
                         </td>
                     </tr>
 
                     <tr>
                         <td style="padding-right: 0;">
-                            <div class="featured-shirts">
-                    
-                                <div id="featured-shirts-right">
-            
-                                    <div id="generic-colours-container">
-            
-                                        <!-- Generic White T -->
-                                        <div class="product">
-                                            <img src="../Product Images/Generic White T.png">
-                                            <div class="grid-container">
-                                                <p class="product-name">Generic White T</p>
-                                                <p class="product-price">$15</p>
-                                            </div>
-                                        </div>
-            
-                                        <!-- Generic Blue T -->
-                                        <div class="product">
-                                            <img src="../Product Images/Generic Blue T.png">
-                                            <div class="grid-container">
-                                                <p class="product-name">Generic Blue T</p>
-                                                <p class="product-price">$15</p>
-                                            </div>
-                                        </div>
-            
+                            <div id="generic-colours-container">
+                                
+                                <!-- Generic White T -->
+                                <div class="product">
+                                    <div class="image-holder">
+                                        <img src="../ProductImages/Generic White T.png">
+                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                                    </div>
+                                    <div class="grid-container">
+                                        <p class="product-name">Generic White T</p>
+                                        <p class="product-price">$15</p>
                                     </div>
                                 </div>
+                                
+                                <!-- Generic Blue T -->
+                                <div class="product">
+                                    <div class="image-holder">
+                                        <img src="../ProductImages/Generic Blue T.png">
+                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                                    </div>
+                                    <div class="grid-container">
+                                        <p class="product-name">Generic Blue T</p>
+                                        <p class="product-price">$15</p>
+                                    </div>
+                                </div>
+
                             </div>
+                        </div>
                         </td>
                     </tr>
 
-                    
-                    
-
                 </table>
 
-                
             </div>
         </div>
     </body>
