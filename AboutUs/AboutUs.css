@@ -93,14 +93,14 @@ ul {
     display: flex; 
     justify-content: center;
     align-items: center;
-    height:200px;
+    height:300px;
     margin-bottom:150px;
   }
   .nature-image{
     width: 50%;
     height: auto;
     margin-left:20px;
-    float: right;
+    float:right
   }
   .nature-text{
     width: 70%;
