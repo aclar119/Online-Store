@@ -92,10 +92,32 @@ ul {
     width: 30%;
     height: 100%;
     margin-right: 20px;
-    float: left;
+    float: right;
   }
   .nature-text{
     width: 70%;
     text-align: left;
-    float: right;
+    float: left;
   }
+
+  .teamwork-section {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    height:400px;
+  }
+
+
+.teamwork-image{
+  width: 60%;
+  height: 50%;
+  margin-left: -500px;
+  float: left;
+}
+
+.teamwork-text{
+  width: 30%;
+  height: 100%;
+  margin-right: 20px;
+  float: right;
+}
