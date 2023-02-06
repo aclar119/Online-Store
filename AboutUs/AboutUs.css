@@ -88,11 +88,12 @@ ul {
     display: flex; 
     justify-content: center;
     align-items: center;
-    height:400px;
+    height:300px;
   }
   .nature-image{
     width: 30%;
     height: 100%;
+    margin-left:20px;
     margin-right: 20px;
     float: right;
   }
