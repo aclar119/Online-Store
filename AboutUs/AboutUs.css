@@ -44,6 +44,7 @@ html, body {
     height: auto;
     margin-right: 20px;
     float: left;
+
   }
   .origins-text{
     width: 35%;
@@ -67,6 +68,7 @@ html, body {
     height: auto;
     margin-left:20px;
     float:right
+    
   }
   .nature-text{
     width: 70%;
@@ -84,17 +86,58 @@ html, body {
   }
 
 .teamwork-image{
-  width: 60%;
-  height: auto;
+  width: 70%; 
+  height: 90%; 
+  margin-left: 40px;
+  border-radius: 10%;
 }
 
-.teamwork-text{
-  width: 70%;
-  float: left;
-  text-align: left;
+
+
+.h2-teamwork {
+  border-bottom: 5px solid #000;
+  padding-bottom: 5px;
+  margin-left: 60px;
+  width: 12%; /* adjust the width to desired length */
+  font-size: 40px; 
 }
 
-.h2-teamwork{
-  clear: both; 
-  font-size: 36px;
+
+
+
+.integrity-section {
+  display: flex; 
+  justify-content: center;
+  align-items: left;
+  height:400px;
+}
+
+.integrity-image{
+
+  width: 70%; 
+  height: 90%; 
+  margin-left: 35px;
+  border-radius: 10%;
+
+}
+
+.integrity-text{
+width: 70%;
+float: left;
+text-align: left;
+}
+.community-section {
+  display: flex; 
+  justify-content: center;
+  align-items: left;
+  height:400px;
+}
+
+.community-image{
+
+  width: 70%; 
+  height: 90%;
+  margin-left: 50px;
+  border-radius: 10%;
+
 }
