@@ -94,7 +94,12 @@ html, body {
 }
 
 
-
+.teamwork-text{
+  width: 70%;
+  float: left;
+  text-align: center;
+  padding-left: 30px;
+  }
 
 
 .h2-teamwork {
@@ -125,10 +130,10 @@ html, body {
 }
 
 .integrity-text{
-width: 70%;
-float: left;
-text-align: left;
-padding-left: 16px
+  width: 70%;
+  float: left;
+  text-align: center;
+  padding-left: 30px;
 }
 .community-section {
   display: flex; 
@@ -151,6 +156,6 @@ padding-left: 16px
 .community-text{
   width: 70%;
   float: left;
-  text-align: left;
-  padding-left: 40px
+  text-align: center;
+  padding-left: 30px;
   }
