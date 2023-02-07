@@ -47,27 +47,123 @@ html, body {
 
   #navbar {
     overflow: hidden;
-    background-color: #333;
+    display: grid;
+    background-color: #213536;
   }
   
+  #navbar-left {
+    display: flex;
+    grid-column: 1;
+  }
+
+  #navbar-right {
+    display: flex;
+    grid-column: 2;
+    justify-content: end;
+  }
+  
+  #logo {
+    display: flex;
+    height: 50px;
+    padding-left: 16px;
+    padding-right: 16px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  #logo:hover{
+    cursor: pointer;
+    opacity: 60%;
+  }
+
   #navbar a {
     z-index: 1;
-    float: left;
     display: block;
-    color: #f2f2f2;
+    color: #F8F8F8;
     text-align: center;
-    padding: 14px 16px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 16px;
+    padding-right: 16px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 18px;
   }
   
   #navbar a:hover {
-    background-color: #ddd;
-    color: black;
+    opacity: 60%;
+    border-bottom: 3px solid #F8F8F8;
+    padding-bottom: 11px;
   }
-  
+
+  #search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding-right: 16px;
+  }
+
+  #search-bar div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    height:fit-content;
+    border-bottom: 2px solid #F8F8F8;
+    padding-bottom: 0;
+    width: 80%;
+  }
+
+  #search-bar button {
+    height: auto;
+    border: none;
+    background-color: #00000000;
+  }
+
+  #search-bar img {
+    height: 20px;
+  }
+
+  #search-input {
+    opacity: 100%;
+    font-size: 18px;
+    border: none;
+    text-align: end;
+    color: #F8F8F8;
+    background-color: #00000000;
+    width: 100%;
+  }
+
+  #search-input:focus {
+    border: none;
+    background-color: #00000000;
+    outline: none;
+  }
+
+  #search-input::placeholder {
+    color: #F8F8F8;
+    opacity: 60%;
+  }
+
+  #cart {
+    display: flex;
+    height: calc(100% - 3px);
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 3px;
+    align-items: center;
+    justify-items: center;
+  }
+
+  #cart:hover {
+    cursor: pointer;
+    opacity: 60%;
+    border-bottom: 3px solid #F8F8F8;
+    padding-bottom: 0px;
+  }
+
   .not-sticky {
     visibility: hidden;
+    height: 0;
   }
 
   .sticky {
@@ -369,7 +465,27 @@ td#free-mockup-t {
 }
 
 
+/* Footer */
 
+#footer {
+  display: grid;
+}
+
+#footer-line {
+  margin: 0;
+}
+
+#footer-left {
+  padding: 20px;
+  grid-column: 1;
+  text-align: start;
+}
+
+#footer-right {
+  padding: 20px;
+  grid-column: 2;
+  text-align: end;
+}
 
 
 

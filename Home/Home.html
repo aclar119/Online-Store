@@ -6,6 +6,7 @@
     </head>
     <body>
 
+        <!-- Top section above (before) the navbar -->
         <div id="top-main">
             <div id="top-flex-container">
                 <div id="title-outer">
@@ -16,11 +17,23 @@
             </div>
         </div>
 
+        <!-- Navbar -->
         <div id="navbar" class="not-sticky">
-            <a href="../Home/Home.html">Home</a>
-            <a href="../BrowseProducts/BrowseProducts.html">Store</a>
-            <a href="../Cart/Cart.html">Cart</a>
-            <a href="../AboutUs/AboutUs.html">About Us</a>
+            <div id="navbar-left">
+                <div id="logo" onclick="window.location.href='../Home/Home.html';"><img src="../Icons/Logo.png" height="32" ></div>
+                <div><a href="../BrowseProducts/BrowseProducts.html">Store</a></div>
+                <div><a href="../AboutUs/AboutUs.html">About Us</a></div>
+            </div>
+
+            <div id="navbar-right">
+                <form id="search-bar">
+                    <div>
+                        <button><img src="../Icons/Search.png"></button>
+                        <input id="search-input" type="text" placeholder="Search" name="search" autocomplete="off">
+                    </div>
+                </form>
+                <div id="cart" onclick="window.location.href='../Cart/Cart.html';"><img src="../Icons/Cart.png" height="32" ></div>
+            </div>
         </div>
 
         <!-- JavaScript code to enact the stciky effect on the navbar -->
@@ -28,7 +41,7 @@
             window.onscroll = function() {toggleSticky()};
             
             var navbar = document.getElementById("navbar");
-            var sticky = navbar.offsetTop;
+            var sticky = navbar.offsetTop - navbar.offsetHeight;
             
             function toggleSticky() {
               if (window.pageYOffset >= sticky) {
@@ -41,6 +54,7 @@
             }
         </script>
 
+        <!-- Everything after the navbar starts here -->
         <div id="featured">
             <div>
 
@@ -181,6 +195,15 @@
 
                 </table>
 
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div>
+            <hr id="footer-line">
+            <div id="footer">
+                <div id="footer-left">@ 2023 ADM 4379 Group 8</div>
+                <div id="footer-right">Privacy Policy and Terms of Service not available</div>
             </div>
         </div>
     </body>
