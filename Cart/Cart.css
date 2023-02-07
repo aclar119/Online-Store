@@ -43,7 +43,7 @@ html, body {
   background-color: #213536; 
   display:flex;
   flex-direction: row;
-  wrap: nowrap;
+  flex-wrap: nowrap;
   padding:12px; 
   width:100%;
   height:120px;
@@ -64,14 +64,51 @@ html, body {
 
 .left-items-text{
   display: flex;
-  flex-grow: 2;
+  flex-grow: 0;
+  width: 30%;
   flex-direction: column;
   color: #F8F8F8;
   font-size:22px;
   margin-left:2.5%;
-  margin-top: 5px;
 
 }
 .left-text1{
-  margin-bottom: 35px;
+  margin-bottom: 15%;
 }
+
+.quantity-section{
+  display: flex;
+  flex-direction: column;
+  color:#F8F8F8;
+}
+
+.quantity-text{
+  font-size: 22px;
+  margin-bottom: 50%;
+}
+
+.quantity-number-container{
+  display:flex;
+  flex-direction: row;
+  background-color: #F8F8F8;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.quantity-minus{
+  width: 33%;
+}
+
+.quantity-number{
+  border: #213536;
+  color: #213536;
+  width:33%;
+  
+}
+
+.quantity-plus{
+  width: 33%;
+}
+
+
