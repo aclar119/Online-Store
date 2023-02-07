@@ -92,26 +92,53 @@ html, body {
 .quantity-number-container{
   display:flex;
   width: 30;
+  position: relative;
   flex-direction: row;
   background-color: #F8F8F8;
   justify-content: center;
   text-align: center;
+  height: 30px;
+  border-top-right-radius: 35%;
+  border-bottom-right-radius: 35%;
+  border-top-left-radius: 35%;
+  border-bottom-left-radius: 35%;
+
   
 }
 
 .quantity-minus{
   width: 33%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  border-top-right-radius: 0%;
+  border-bottom-right-radius: 0%;
+  border-top-left-radius: 35%;
+  border-bottom-left-radius: 35%;
 }
 
 .quantity-number{
   border: #213536;
   color: #213536;
   width:33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:6px #213536;
   
 }
 
 .quantity-plus{
   width: 33%;
+  position:absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  border-top-right-radius: 35%;
+  border-bottom-right-radius: 35%;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
 
 .price-section{
