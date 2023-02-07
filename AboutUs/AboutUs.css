@@ -81,8 +81,8 @@ ul {
   }
   .origins-text{
     width: 35%;
-    margin-top:-10px;
-    font-size:12.5px;
+    margin-top:-25px;
+    font-size:14px;
     text-align: left;
     float: right;
   }
@@ -104,7 +104,7 @@ ul {
   }
   .nature-text{
     width: 70%;
-    font-size:12.5px;
+    font-size:14px;
     overflow: hidden;
     text-align: left;
     float: left;
