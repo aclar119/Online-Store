@@ -70,6 +70,7 @@ html, body {
   color: #F8F8F8;
   font-size:22px;
   margin-left:2.5%;
+  margin-top: 6px;
 
 }
 .left-text1{
@@ -80,6 +81,7 @@ html, body {
   display: flex;
   flex-direction: column;
   color:#F8F8F8;
+  margin-top: 6px;
 }
 
 .quantity-text{
@@ -117,4 +119,10 @@ html, body {
   font-size: 20px;
   margin-left: auto;
   margin-right:5%;
+  margin-top: 6px;
+}
+
+.X-Remove{
+  margin-top: 65%;
+  font-size: 15px;
 }
