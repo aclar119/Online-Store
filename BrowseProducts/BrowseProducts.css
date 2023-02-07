@@ -1,48 +1,11 @@
-
-        /* Full page styling */
-
 html, body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #F8F8F8;
 }
-  
-          /* Navbar styling */
-  
-  ul {
-      margin: 0;
-      padding: 0;
-      background-color: gray;
-      list-style-type: none;
-      overflow: hidden;
-    }
-    
-    li {
-      display: inline;
-      float: left;
-    }
-    
-    /* Link text */
-    li a {
-      /* Total fixed height of 60px */
-    height: 28px;
-    line-height: 28px;
-    padding: 16px;
-    color: black;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-    }
-    
-    /* Change the color of the button text on hover */
-    li a:hover {
-      color: white;
-    }
-  
-  
-  
-          /* Page body styling */
 
 h1 {
   font-size: 36px;

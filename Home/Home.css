@@ -1,6 +1,4 @@
 
-        /* Full page styling */
-
 html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
@@ -11,39 +9,6 @@ html, body {
 }
 
         /* Navbar styling */
-
-/* ul {
-    position: sticky;
-    top: 0;
-    margin: 0;
-    padding: 0;
-    background-color: gray;
-    list-style-type: none;
-} */
-  
-  /* li {
-    display: inline;
-    float: left;
-    vertical-align: middle;
-  } */
-  
-  /* Link text */
-  /* li a { */
-    /* Total fixed height of 60px */
-
-    /* height: 28px;
-    line-height: 28px;
-    padding: 16px;
-    color: black;
-    display: block;
-    text-align: center;
-    text-decoration: none; */
-  /* } */
-  
-  /* Change the color of the button text on hover */
-  /* li a:hover {
-    color: white;
-  } */
 
   #navbar {
     overflow: hidden;
@@ -289,11 +254,11 @@ button:hover {
     /*button position*/
     position: absolute;
     bottom: 10px;
-    right: 5%;
+    right: 10px;
 
     visibility: hidden;
     height: 32px;
-    width: 90%;
+    width: calc(100% - 20px);
     border: 0px solid #213536;
     background-color: white;
     border-radius: 12px;

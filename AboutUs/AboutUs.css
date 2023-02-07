@@ -1,46 +1,11 @@
-
-/* Full page styling */
-
-html {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #F8F8F8;
 }
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-
-        /* Navbar styling */
-
-ul {
-    margin: 0;
-    padding: 0;
-    background-color: #213536;
-    list-style-type: none;
-    overflow: hidden;
-  }
-  
-  li {
-    display: inline;
-    float: left;
-  }
-  
-  /* Link text */
-  li a {
-    padding: 16px;
-    color: #F8F8F8;
-    display: block;
-    text-align: center;
-    text-decoration: none;
-  }
-  
-  /* Change the color of the button text on hover */
-  li a:hover {
-    color: white;
-  }
-
-
 
   /* Page body styling */
   .about-us-container {
