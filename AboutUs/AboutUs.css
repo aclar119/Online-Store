@@ -76,21 +76,24 @@ html, body {
     overflow: hidden;
     text-align: left;
     float: left;
+    padding-left: 20px;
   }
 
   .teamwork-section {
     display: flex; 
     justify-content: center;
-    align-items: left;
-    height:400px;
+    align-items: center;
+    height:80px;
   }
 
 .teamwork-image{
-  width: 70%; 
-  height: 90%; 
+  width: 80%; 
+  height: 80%; 
   margin-left: 40px;
   border-radius: 10%;
 }
+
+
 
 
 
@@ -108,14 +111,14 @@ html, body {
 .integrity-section {
   display: flex; 
   justify-content: center;
-  align-items: left;
-  height:400px;
+  align-items: center;
+  height:70px;
 }
 
 .integrity-image{
 
-  width: 70%; 
-  height: 90%; 
+  width: 80%; 
+  height: 80%; 
   margin-left: 35px;
   border-radius: 10%;
 
@@ -125,20 +128,29 @@ html, body {
 width: 70%;
 float: left;
 text-align: left;
+padding-left: 16px
 }
 .community-section {
   display: flex; 
   justify-content: center;
-  align-items: left;
-  height:400px;
+  align-items: center;
+  height:70px;
 }
 
 
 .community-image{
 
-  width: 70%; 
-  height: 90%;
-  margin-left: 50px;
+  width: 80%; 
+  height: 81%;
+  margin-left: 40px;
   border-radius: 10%;
 
 }
+
+
+.community-text{
+  width: 70%;
+  float: left;
+  text-align: left;
+  padding-left: 40px
+  }
