@@ -7,7 +7,6 @@ class Navbar extends HTMLElement {
         this.innerHTML = `
       <style>
         #navbar {
-            overflow: hidden;
             display: grid;
             background-color: #213536;
         }

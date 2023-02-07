@@ -6,148 +6,146 @@
         <script src="../Components/navbar.js" type="text/javascript" defer></script>
     </head>
     <body>
-        <navbar-component> </navbar-component>
+        <navbar-component id="navbar"> </navbar-component>
         
-        <div class="flex-main">
+        <div id="main-container">
+            <div class="flex-main">
 
-            <div class="sort-and-filter">
-                    <p class="section-title">Sort</p>
-                    <hr>
-                    <p class="sort-type">Price: Ascending</p>
-                    <p class="sort-type">Price: Descending</p>
+                <div id="sort-and-filter">
 
-                    <p class="section-title">Filter</p>
-                    <hr>
+                        <p class="section-title">Sort</p>
+                        <hr>
+                        <p class="sort-type">Price: Ascending</p>
+                        <p class="sort-type">Price: Descending</p>
 
-                    <p class="section-subtitle">By Type</p>
-                    
-                    <label class="container-checkbox">
-                        <input type="checkbox">
-                        <p>Shirts</p>
-                    </label>
+                        <p class="section-title">Filter</p>
+                        <hr>
 
-                    <label class="container-checkbox">
-                        <input type="checkbox">
-                        <p>Pants</p>
-                    </label>
-
-                    <label class="container-checkbox">
-                        <input type="checkbox">
-                        <p>Shoes</p>
-                    </label>
-                    
-                    <p class="section-subtitle">By Colour</p>
-
-                    <label class="container-checkbox">
-                        <input type="checkbox">
-                        <p>Blue</p>
-                    </label>
-
-                    <label class="container-checkbox">
-                        <input type="checkbox">
-                        <p>White</p>
-                    </label>
-
-                    <label class="container-checkbox">
-                        <input type="checkbox">
-                        <p>Black</p>
-                    </label>
-
-            </div>
-
-
-            <div class="products">
-                <h1>Products</h1>
-
-                <div class="flex-products">
-                    <div class="flex-product-item">
-                        <div class="img-wrapper">
-                            <img src="../Blue T-Shirt.jpg" alt="">
-                        </div>
+                        <p class="section-subtitle">By Type</p>
                         
-                        <p>Generic Blue T-Shirt</p>
-                        <p><b>$15</b></p>
-                    </div>
+                        <label class="container-checkbox">
+                            <input type="checkbox">
+                            <p>Shirts</p>
+                        </label>
 
-                    <div class="flex-product-item">
-                        <div class="img-wrapper">
-                            <img src="../Blue T-Shirt.jpg" alt="">
-                        </div>
-                        
-                        <p>Generic Blue T-Shirt</p>
-                        <p><b>$15</b></p>
-                    </div>
+                        <label class="container-checkbox">
+                            <input type="checkbox">
+                            <p>Pants</p>
+                        </label>
 
-                    <div class="flex-product-item">
-                        <div class="img-wrapper">
-                            <img src="../Blue T-Shirt.jpg" alt="">
-                        </div>
+                        <label class="container-checkbox">
+                            <input type="checkbox">
+                            <p>Shoes</p>
+                        </label>
                         
-                        <p>Generic Blue T-Shirt</p>
-                        <p><b>$15</b></p>
-                    </div>
+                        <p class="section-subtitle">By Colour</p>
 
-                    <div class="flex-product-item">
-                        <div class="img-wrapper">
-                            <img src="../Blue T-Shirt.jpg" alt="">
-                        </div>
-                        
-                        <p>Generic Blue T-Shirt</p>
-                        <p><b>$15</b></p>
-                    </div>
+                        <label class="container-checkbox">
+                            <input type="checkbox">
+                            <p>Blue</p>
+                        </label>
 
-                    <div class="flex-product-item">
-                        <div class="img-wrapper">
-                            <img src="../Blue T-Shirt.jpg" alt="">
-                        </div>
-                        
-                        <p>Generic Blue T-Shirt</p>
-                        <p><b>$15</b></p>
-                    </div>
-                    
-                    <div class="flex-product-item">
-                        <div class="img-wrapper">
-                            <img src="../Blue T-Shirt.jpg" alt="">
-                        </div>
-                        
-                        <p>Generic Blue T-Shirt</p>
-                        <p><b>$15</b></p>
-                    </div>
-                    
-                    <div class="flex-product-item">
-                        <div class="img-wrapper">
-                            <img src="../Blue T-Shirt.jpg" alt="">
-                        </div>
-                        
-                        <p>Generic Blue T-Shirt</p>
-                        <p><b>$15</b></p>
-                    </div>
+                        <label class="container-checkbox">
+                            <input type="checkbox">
+                            <p>White</p>
+                        </label>
 
-                    <div class="flex-product-item">
-                        <div class="img-wrapper">
-                            <img src="../Blue T-Shirt.jpg" alt="">
+                        <label class="container-checkbox">
+                            <input type="checkbox">
+                            <p>Black</p>
+                        </label>
+
+                </div>
+
+
+                <div class="products">
+                    <h1>Products</h1>
+
+                    <div class="flex-products">
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic White T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic White T</p>
+                                <p class="product-price">$15</p>
+                            </div>
                         </div>
-                        
-                        <p>Generic Blue T-Shirt</p>
-                        <p><b>$15</b></p>
-                    </div>
 
-                    <div class="flex-product-item">
-                        <div class="img-wrapper">
-                            <img src="../Blue T-Shirt.jpg" alt="">
+
+                        <!-- <div class="product">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic White T.png">
+                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic White T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div> -->
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic White T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic White T</p>
+                                <p class="product-price">$15</p>
+                            </div>
                         </div>
-                        
-                        <p>Generic Blue T-Shirt</p>
-                        <p><b>$15</b></p>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic White T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic White T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic Blue T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic Blue T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic Blue T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic Blue T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic Blue T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic Blue T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic Blue T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic Blue T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
                     </div>
-
-                    <div class="placeholder"></div>
-                    <div class="placeholder"></div>
-                    <div class="placeholder"></div>
-                    <div class="placeholder"></div>
-                    <div class="placeholder"></div>
-                    <div class="placeholder"></div>
-
                 </div>
             </div>
         </div>
