@@ -15,6 +15,7 @@ html, body {
     justify-content: center;
     width:100%;
     height:100%;
+    overflow: scroll;
   }
 
 
@@ -23,13 +24,14 @@ html, body {
     flex-direction: row;
     flex-wrap: nowrap;
     width:90%;
+    height:1400px;
     max-width: 1200px;
     margin-left: 5%;
     margin-right: 5%;
     margin-top: 20px;
     margin-bottom: 70vh;
     justify-content: space-between;
-    
+
     }
 
 .shopping-cart-section{
@@ -170,8 +172,9 @@ html, body {
   flex-wrap: nowrap;
   flex-direction: row;
   width:30%;
-  height:300px;
+  height:40%;
   position:sticky;
+  top:30px;
   background-color:#213536;
   margin-left: 5%;
   margin-top:30px;
@@ -193,6 +196,8 @@ html, body {
   justify-content: space-between;
   margin-bottom: 20px;
   line-height: 0px;
+  font-weight: 100;
+  
 }
 
 .subtotal-label{
@@ -201,4 +206,12 @@ html, body {
 
 .subtotal-price{
   text-align: right;
+}
+
+footer-component{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  bottom:0;
 }
