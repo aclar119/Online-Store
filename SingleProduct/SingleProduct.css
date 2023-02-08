@@ -190,6 +190,7 @@ html, body {
   .quantity-minus{
     width: 33%;
     position: absolute;
+    background-color: #213536;
     top: 0;
     bottom: 0;
     left: 0;
@@ -197,6 +198,7 @@ html, body {
     border-bottom-right-radius: 0%;
     border-top-left-radius: 35%;
     border-bottom-left-radius: 35%;
+    color: whitesmoke
   }
   
   .quantity-number{
@@ -212,6 +214,7 @@ html, body {
   
   .quantity-plus{
     width: 33%;
+    background-color: #213536;
     position:absolute;
     top: 0;
     bottom: 0;
@@ -220,6 +223,7 @@ html, body {
     border-bottom-right-radius: 35%;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    color: whitesmoke
   }
 
 
