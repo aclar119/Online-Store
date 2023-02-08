@@ -1,11 +1,11 @@
 html, body {
+  /* Set the font for the whole page and make sure we have all the space to work with */
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
   background-color: #F8F8F8;
-  /* overflow: hidden; */
 }
 
 h1 {
@@ -16,16 +16,22 @@ h1 {
   background-color: #F8F8F8;
 }
 
+button:hover {
+  cursor: pointer;
+}
+
 /* Managing flexboxes */
+
 #main-container {
+  /* This allows us to center our main grid on the screen (important when zooming out) */
   position: relative;
   display: flex;
   justify-content: center;
   width: 100%;
-  /* overflow-y: auto; */
 }
 
 .grid-main {
+  /* This grid contains the filters div on the left and the products on the right */
   margin-left: 5%;
   margin-right: 5%;
   display: grid;
@@ -33,14 +39,16 @@ h1 {
   align-items: start;
   width: 100%;
   height: 100%;
-  /* overflow-y: hidden; */
   max-width: 1200px;
 }
+
+
 
 
 /* Sort and Filter box */
 
 div.filters {
+  /* This is for the div that contains all collapsible sections */
   position:sticky;
   top: 92px;
   align-self: flex-start;
@@ -56,15 +64,8 @@ div.filters {
   overflow-y: auto;
 }
 
-.filters p {
-  margin: 0px;
-  padding: 10px;
-  padding-left: 20px;
-  user-select: none;
-}
-
-
 .collapsible {
+  /* This is for the button that you click on to toggle the collapsible section */
   display: grid;
   grid-template-columns: auto min-content;
   background-color: #f8f8f8;
@@ -81,6 +82,7 @@ div.filters {
 }
 
 .collapsible p {
+  /* For the text inside the collapsible buttons */
   margin: 0;
   padding: 0;
   text-align: left;
@@ -88,13 +90,14 @@ div.filters {
 }
 
 .collapsible div {
+  /* This div holds and vertically centers the chevron for each collapsible button */
   height: 100%;
   display: flex;
   align-items: center;
-  align-content: center;
 }
 
 .chevron {
+  /* The chevron is just a small square with borders on 2 sides that is rotated 45 degrees */
   border: solid #213536;
   border-width: 0 2px 2px 0;
   display: inline-block;
@@ -103,14 +106,17 @@ div.filters {
 }
 
 .up {
+  /* This class flips the chevron when it is applied by JavaScript */
   transform: rotate(-135deg);
 }
 
 .collapsible:first-child {
+  /* Add a top border to just the top collapsible button */
   border-top: 2px solid #213536;
 }
 
 .content {
+  /* Everything within the contents of the collapsible has a height of 0 until modified by JavaScript */
   padding: 0 18px;
   max-height: 0;
   overflow: hidden;
@@ -118,29 +124,21 @@ div.filters {
   background-color: #21353694;
 }
 
-
-
+.filters p.sort-type {
+  /* Padding for sort options that are in the first collapsible section */
+  padding-left: 20px;
+}
 
 .filters p.sort-type:hover {
+  /* This styling applies when hovering over the sort options that are in the first collapsible section */
   color:#213536;
   cursor: pointer;
 }
 
-hr {
-  margin: 0;
-  border-top: 1px solid #F8F8F8;
-  border-bottom: 0;
-  margin-bottom: 10px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-
-
-
-
 /* Checkboxes for filtering */
+
 .container-checkbox {
+  /* The checkboxes and associated text are inside the labels that have this class */
   display: block;
   position: relative;
   padding: 10px;
@@ -150,16 +148,19 @@ hr {
 }
 
 .container-checkbox:hover {
- color: #213536;
+  /* Change colour of text when hovering over checkbox */
+  color: #213536;
 }
 
 .container-checkbox p {
+  /* This applies to the text beside the checkboxes */
   display: inline;
   padding-left: 10px;
   vertical-align: top;
 }
 
 .container-checkbox input {
+  /* Overriding the size of the checkbox */
   height: 20px;
   width: 20px;
 }
@@ -167,15 +168,17 @@ hr {
 
 
 
-
 /* Products Section */
+
 div.products {
   grid-column: 2;
   padding: 0;
+  margin-bottom: 60px;
   width: 100%;
 }
 
 .products h1 {
+  z-index: 1;
   position: sticky;
   top: 52px;
   margin: 0;
@@ -189,6 +192,7 @@ div.products {
   flex-direction: row;
   height: auto;
   gap: 2.5%;
+  row-gap: 20px;
   align-content: flex-start;
   justify-content: space-between;
 }
@@ -198,38 +202,21 @@ div.products {
   min-width: 31%;
   max-width: 31%;
   flex: 1 1 0px;
-  background-color: #EFEFEF;
-}
-
-.flex-product-item:hover {
-  cursor: pointer;
-  color: royalblue;
+  background-color: #F8F8F8;
 }
 
 
-.img-holder {
+
+.image-holder {
   z-index: 0;
   position: relative;
-
-  /* display: flex;
-  flex-direction: column;
-  height: calc(100% - 120px);
-  align-items: center;
-  padding: 20px; */
 }
 
 .image-holder img {
   width: 100%;
   height: 100%;
+  border-radius: 12px;
   object-fit: cover;
-}
-
-.flex-product-item p {
-  font-size: 20px;
-  padding: 5px;
-  padding-left: 30px;
-  margin: 0;
-  justify-content: center;
 }
 
 .product img {
@@ -243,6 +230,26 @@ div.products {
   display: grid;
 }
 
+.product-name {
+  margin: 10px;
+  margin-left: 0;
+  font-size: 20px;
+  line-height: 20px;
+  grid-column: 1;
+  color: #213536;
+}
+
+.product-price {
+  margin: 10px;
+  margin-right: 0;
+  grid-column: 2;
+  text-align: end;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: bold;
+  color: #2135367e;
+}
+
 
 
 
@@ -251,7 +258,7 @@ div.products {
   position: relative;
 } */
 
-/* .hide-till-hover {
+.hide-till-hover {
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -265,11 +272,11 @@ div.products {
     color: #213536;
     font-size: 20px;
     font-weight: 500;
-} */
+}
 
-/* .product:hover .hide-till-hover {
+.flex-product-item:hover .hide-till-hover {
   visibility: visible;
-} */
+}
 
 
 
