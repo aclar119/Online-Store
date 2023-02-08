@@ -37,15 +37,22 @@
             </div>
         </div>
 
+
         <!-- JavaScript code to enact the stciky effect on the navbar -->
+        <!-- Scroll/Sticky functionality inspired by (but NOT directly copied from) https://www.w3schools.com/howto/howto_js_navbar_sticky.asp -->
+
         <script>
-            window.onscroll = function() {toggleSticky()};
+
+            // Run the toggleSticky() function when the user is scrolling
+            window.onscroll = () => {toggleSticky()};
             
-            var navbar = document.getElementById("navbar");
-            var sticky = navbar.offsetTop - navbar.offsetHeight;
+            // Calculate the Y position at which the navbar should become sticky
+            let navbar = document.getElementById("navbar");
+            let stickyThreshold = navbar.offsetTop - navbar.offsetHeight;
             
+            // Change the classes that are applied to the navbar when it passes the threshold defined above
             function toggleSticky() {
-              if (window.pageYOffset >= sticky) {
+              if (window.pageYOffset >= stickyThreshold) {
                 navbar.classList.add("sticky")
                 navbar.classList.remove("not-sticky")
               } else {
@@ -53,7 +60,9 @@
                 navbar.classList.add("not-sticky")
               }
             }
+            
         </script>
+        
 
         <!-- Everything after the navbar starts here -->
         <div id="featured">
