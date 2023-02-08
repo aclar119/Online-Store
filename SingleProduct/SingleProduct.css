@@ -218,4 +218,10 @@ html, body {
 
   }
 
+  .available {
+    grid-column: 2;
+    text-align: end;
+    margin-top: -17px;
+    margin-right: 10px;
+  }
   
