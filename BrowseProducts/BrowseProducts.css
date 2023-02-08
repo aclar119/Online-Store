@@ -98,6 +98,7 @@ div.filters {
 
 .chevron {
   /* The chevron is just a small square with borders on 2 sides that is rotated 45 degrees */
+  /* Inspired by (but NOT directly copied from) https://www.w3schools.com/howto/howto_css_arrows.asp */
   border: solid #213536;
   border-width: 0 2px 2px 0;
   display: inline-block;
@@ -117,7 +118,9 @@ div.filters {
 
 .content {
   /* Everything within the contents of the collapsible has a height of 0 until modified by JavaScript */
-  padding: 0 18px;
+  padding: 0;
+  padding-left: 18px;
+  padding-right: 18px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
