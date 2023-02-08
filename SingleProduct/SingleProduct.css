@@ -95,6 +95,7 @@ html, body {
     display:flex;
     flex-direction: column;
     align-items: left;
+    margin-top: 10px;
     
   }
 
@@ -132,6 +133,7 @@ html, body {
     height: 30px;
     font-size: 10px;
     border-radius: 10px;
+    margin-left:5%;
 
   }
 
