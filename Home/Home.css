@@ -274,6 +274,7 @@ button:hover {
 
 .product-name {
   margin: 10px;
+  margin-left: 0;
   font-size: 20px;
   line-height: 20px;
   grid-column: 1;
@@ -282,6 +283,7 @@ button:hover {
 
 .product-price {
   margin: 10px;
+  margin-right: 0;
   grid-column: 2;
   text-align: end;
   font-size: 20px;
