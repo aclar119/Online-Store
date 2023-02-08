@@ -6,23 +6,33 @@
         <script src="../Components/navbar.js" type="text/javascript" defer></script>
     </head>
     <body>
-        <navbar-component id="navbar"> </navbar-component>
+        <navbar-component id="navbar" style="position: sticky; top: 0; z-index: 1;"> </navbar-component>
         
         <div id="main-container">
-            <div class="flex-main">
+            <div class="grid-main">
+                
+                <div class="filters">
 
-                <div id="sort-and-filter">
-
-                        <p class="section-title">Sort</p>
-                        <hr>
+                    <!-- Sort (Collapsible section) -->
+                    <button class="collapsible">
+                        <p style="grid-column: 1;">Sort</p>
+                        <div>
+                            <i style="grid-column: 2;" class="chevron"></i>
+                        </div>
+                    </button>
+                    <div class="content">
                         <p class="sort-type">Price: Ascending</p>
                         <p class="sort-type">Price: Descending</p>
+                    </div>
 
-                        <p class="section-title">Filter</p>
-                        <hr>
-
-                        <p class="section-subtitle">By Type</p>
-                        
+                    <!-- Type (Collapsible section) -->
+                    <button class="collapsible">
+                        <p style="grid-column: 1;">Type</p>
+                        <div>
+                            <i style="grid-column: 2;" class="chevron"></i>
+                        </div>
+                    </button>
+                    <div class="content">
                         <label class="container-checkbox">
                             <input type="checkbox">
                             <p>Shirts</p>
@@ -37,9 +47,16 @@
                             <input type="checkbox">
                             <p>Shoes</p>
                         </label>
-                        
-                        <p class="section-subtitle">By Colour</p>
+                    </div>
 
+                    <!-- Colour (Collapsible section) -->
+                    <button class="collapsible">
+                        <p style="grid-column: 1;">Colour</p>
+                        <div>
+                            <i style="grid-column: 2;" class="chevron"></i>
+                        </div>
+                    </button>
+                    <div class="content">
                         <label class="container-checkbox">
                             <input type="checkbox">
                             <p>Blue</p>
@@ -54,8 +71,43 @@
                             <input type="checkbox">
                             <p>Black</p>
                         </label>
+                    </div>
 
-                </div>
+                    <!-- JavaScript used for managing the collaspible aspect of the filters bar -->
+                    <script>
+
+                        let collapsibleElements = document.getElementsByClassName("collapsible");
+                        let i;
+                        
+                        // Add an anonymous function to each collapsible element. This gets called everytime the element is clicked
+                        for (i = 0; i < collapsibleElements.length; i++) {
+                            collapsibleElements[i].addEventListener("click", function() {
+
+                                let chevronElement = this.lastElementChild.lastElementChild;
+
+                                // Flip the chevron in the button when pressed, by adding/removing the .up class
+                                if (chevronElement.classList.contains("up")) {
+                                    chevronElement.classList.remove("up");
+                                } else {
+                                    chevronElement.classList.add("up");
+                                }
+
+                                // Find the content (we know it's always right after the collapsible element)
+                                let contentElement = this.nextElementSibling;
+
+                                // Toggle the max height of the content pane between null and scrollHeight
+                                if (contentElement.style.maxHeight) {
+                                    contentElement.style.maxHeight = null;
+                                } else {
+                                    contentElement.style.maxHeight = contentElement.scrollHeight + "px";
+                                } 
+
+                          });
+                        }
+                        
+                    </script>
+             </div>
+                
 
 
                 <div class="products">
@@ -91,6 +143,56 @@
                             </div>
                             <div class="grid-container">
                                 <p class="product-name">Generic White T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic White T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic White T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic Blue T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic Blue T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic Blue T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic Blue T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic Blue T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic Blue T</p>
+                                <p class="product-price">$15</p>
+                            </div>
+                        </div>
+
+                        <div class="flex-product-item">
+                            <div class="image-holder">
+                                <img src="../ProductImages/Generic Blue T.png">
+                            </div>
+                            <div class="grid-container">
+                                <p class="product-name">Generic Blue T</p>
                                 <p class="product-price">$15</p>
                             </div>
                         </div>

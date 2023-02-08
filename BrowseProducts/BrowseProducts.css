@@ -5,7 +5,7 @@ html, body {
   height: 100%;
   width: 100%;
   background-color: #F8F8F8;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 h1 {
@@ -20,59 +20,110 @@ h1 {
 #main-container {
   position: relative;
   display: flex;
+  justify-content: center;
   width: 100%;
-  height: calc(100% - 52px);
-  overflow-y: auto;
+  /* overflow-y: auto; */
 }
 
-.flex-main {
-  margin-left: 5vw;
-  display: flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
+.grid-main {
+  margin-left: 5%;
+  margin-right: 5%;
+  display: grid;
+  grid-template-columns: min-content auto;
+  align-items: start;
   width: 100%;
-  justify-content: space-between;
   height: 100%;
-  overflow-y: hidden;
-}
-
-div#sort-and-filter {
-  position:sticky;
-  top: 0;
-  background-color: #213536;
-  color: #F8F8F8;
-  margin: 40px;
-  margin-left: 0;
-  flex: 1 0 33%;
-  max-width: 300px;
-  font-size: 20px;
-  overflow-y: auto;
+  /* overflow-y: hidden; */
+  max-width: 1200px;
 }
 
 
 /* Sort and Filter box */
-#sort-and-filter p {
+
+div.filters {
+  position:sticky;
+  top: 92px;
+  align-self: flex-start;
+  grid-column: 1;
+  background-color: #F8F8F8;
+  color: #F8F8F8;
+  min-width: 300px;
+  margin: 40px;
+  margin-right: 80px;
+  margin-left: 0;
+  max-height: calc(100vh - 140px);
+  font-size: 20px;
+  overflow-y: auto;
+}
+
+.filters p {
   margin: 0px;
   padding: 10px;
-  padding-left: 60px;
+  padding-left: 20px;
   user-select: none;
 }
 
 
-#sort-and-filter p.sort-type:hover {
-  color:royalblue;
+.collapsible {
+  display: grid;
+  grid-template-columns: auto min-content;
+  background-color: #f8f8f8;
+  color: #213536;
   cursor: pointer;
+  border: none;
+  outline: none;
+
+  margin: 0px;
+  padding: 20px;
+  width: 100%;
+  border-bottom: 1px solid #213536;
+  border-top: 1px solid #213536;
 }
 
-#sort-and-filter p.section-title {
-  margin: 0px;
-  padding: 30px;
+.collapsible p {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  font-size: 20px;
 }
 
-#sort-and-filter p.section-subtitle {
-  margin: 0px;
-  padding: 10px;
-  padding-left: 45px;
+.collapsible div {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+
+.chevron {
+  border: solid #213536;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+}
+
+.collapsible:first-child {
+  border-top: 2px solid #213536;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #21353694;
+}
+
+
+
+
+.filters p.sort-type:hover {
+  color:#213536;
+  cursor: pointer;
 }
 
 hr {
@@ -85,18 +136,21 @@ hr {
 }
 
 
+
+
+
 /* Checkboxes for filtering */
 .container-checkbox {
   display: block;
   position: relative;
   padding: 10px;
-  padding-left: 60px;
+  padding-left: 20px;
   cursor: pointer;
   user-select: none;  
 }
 
 .container-checkbox:hover {
- color: royalblue;
+ color: #213536;
 }
 
 .container-checkbox p {
@@ -116,34 +170,33 @@ hr {
 
 /* Products Section */
 div.products {
-  flex-grow: 3;
+  grid-column: 2;
   padding: 0;
-  padding-right: 5vw;
-  overflow-y: auto;
+  width: 100%;
 }
 
-.products h1{
+.products h1 {
   position: sticky;
-  top: 0;
+  top: 52px;
   margin: 0;
   width: 100%;
   padding-bottom: 32px;
 }
 
 .flex-products {
-  max-width: 900px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   height: auto;
   gap: 2.5%;
   align-content: flex-start;
+  justify-content: space-between;
 }
 
 .flex-product-item {
-  width: 30%;
-  min-width: 30%;
-  max-width: 30%;
+  width: 31%;
+  min-width: 31%;
+  max-width: 31%;
   flex: 1 1 0px;
   background-color: #EFEFEF;
 }
