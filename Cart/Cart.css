@@ -28,6 +28,7 @@ html, body {
     margin-right: 5%;
     margin-top: 20px;
     margin-bottom: 70vh;
+    justify-content: space-between;
     
     }
 
@@ -49,6 +50,7 @@ html, body {
   height:120px;
   margin-top: 10px;
   border-radius: 10px;
+  font-weight: 100;
 }
 
 .items-picture{
@@ -161,4 +163,42 @@ html, body {
   display:inline-block;
   border-radius: 10px;
   
+}
+
+.final-price-section{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width:30%;
+  height:300px;
+  position:sticky;
+  background-color:#213536;
+  margin-left: 5%;
+  margin-top:30px;
+  color:#F8F8F8;
+  font-weight: 300;
+  
+}
+
+.inner-price-section{
+  margin:7%;
+  margin-top: 40px;
+  width: 100%;
+  
+}
+
+.subtotal-section{
+  width: 100%;
+  font-size: 36px;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  line-height: 0px;
+}
+
+.subtotal-label{
+  text-align: left;
+}
+
+.subtotal-price{
+  text-align: right;
 }
