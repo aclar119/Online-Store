@@ -30,7 +30,6 @@ html, body {
 
 .left-main{
     width: 50%;
-    border: 1px solid black;
     height:fit-content;
 }
 
@@ -167,7 +166,6 @@ html, body {
 
 .right-main {
     width: 45%;
-    border: 1px solid black;
 }
 
 .quantity-number-container{
