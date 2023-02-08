@@ -89,16 +89,24 @@ html, body {
 }
 
 .quantity-header {
-  
-    border: 1px solid white;
-    padding: 10px;
     background-color: white;
-    height: 30px;
-    width: 200px;
-    margin:0;
+    height: 77px;
+    width: 500px;
+    display:flex;
+    flex-direction: column;
+    align-items: left;
+    margin-top: 10px;
     
   }
 
+.h3-quantity{
+    margin-top:0;
+}
+
+.quantity-container{
+    display: flex;
+    flex-direction: row;
+}
 
 .right-main p2 {
     color: black;
@@ -120,19 +128,20 @@ html, body {
     cursor:pointer
 }
 
-.addtocart-button {
+.cart-button {
     width: 75px;
     height: 30px;
     font-size: 10px;
     border-radius: 10px;
+    margin-left:5%;
 
   }
 
-  .addtocart-button:active {
+  .cart-button:active {
     background-color: gray;
   }
 
-  .addtocart-button:hover {
+  .cart-button:hover {
     cursor:pointer
 }
 
@@ -181,6 +190,7 @@ html, body {
   .quantity-minus{
     width: 33%;
     position: absolute;
+    background-color: #213536;
     top: 0;
     bottom: 0;
     left: 0;
@@ -188,6 +198,7 @@ html, body {
     border-bottom-right-radius: 0%;
     border-top-left-radius: 35%;
     border-bottom-left-radius: 35%;
+    color: whitesmoke
   }
   
   .quantity-number{
@@ -203,6 +214,7 @@ html, body {
   
   .quantity-plus{
     width: 33%;
+    background-color: #213536;
     position:absolute;
     top: 0;
     bottom: 0;
@@ -211,6 +223,7 @@ html, body {
     border-bottom-right-radius: 35%;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    color: whitesmoke
   }
 
 
@@ -222,4 +235,10 @@ html, body {
 
   }
 
+  .available {
+    grid-column: 2;
+    text-align: end;
+    margin-top: -17px;
+    margin-right: 10px;
+  }
   
