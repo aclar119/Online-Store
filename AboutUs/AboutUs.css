@@ -96,7 +96,7 @@ html, body {
 
   .values-section{
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -115,6 +115,7 @@ html, body {
   font-size:46px;
   width: 30%;
   font-weight: 600;
+  text-align: justify;
 }
 
 h4 {
