@@ -181,9 +181,9 @@ div.products {
 }
 
 .products h1 {
-  z-index: 1;
+  /* z-index: 1;
   position: sticky;
-  top: 52px;
+  top: 52px; */
   margin: 0;
   width: 100%;
   padding-bottom: 32px;
@@ -280,9 +280,6 @@ div.products {
 .flex-product-item:hover .hide-till-hover {
   visibility: visible;
 }
-
-
-
 
 
 .placeholder {
