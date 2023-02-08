@@ -89,13 +89,9 @@ html, body {
 }
 
 .quantity-header {
-  
-    border: 1px solid white;
-    padding: 10px;
     background-color: white;
-    height: 30px;
-    width: 200px;
-    margin:0;
+    height: 77px;
+    width: 500px;
     
   }
 
@@ -120,7 +116,7 @@ html, body {
     cursor:pointer
 }
 
-.addtocart-button {
+.cart-button {
     width: 75px;
     height: 30px;
     font-size: 10px;
@@ -128,11 +124,11 @@ html, body {
 
   }
 
-  .addtocart-button:active {
+  .cart-button:active {
     background-color: gray;
   }
 
-  .addtocart-button:hover {
+  .cart-button:hover {
     cursor:pointer
 }
 
