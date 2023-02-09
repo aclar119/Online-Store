@@ -8,15 +8,8 @@ html, body {
   background-color: #F8F8F8;
 }
 
-h1 {
-  font-size: 36px;
-  line-height: 36px;
-  text-align: left;
-  padding-top: 40px;
-  background-color: #F8F8F8;
-}
-
 button:hover {
+  /* All buttons should change cursor type when hovered */
   cursor: pointer;
 }
 
@@ -170,26 +163,71 @@ div.filters {
 
 
 
-
 /* Products Section */
 
 div.products {
+  /* Contains everything to the right of the filters */
   grid-column: 2;
   padding: 0;
   margin-bottom: 60px;
   width: 100%;
 }
 
+.products-header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
 .products h1 {
+  /* Used for the page title "Products" */
+
   /* z-index: 1;
   position: sticky;
   top: 52px; */
   margin: 0;
   width: 100%;
   padding-bottom: 32px;
+  font-size: 36px;
+  line-height: 36px;
+  text-align: left;
+  padding-top: 40px;
+  background-color: #F8F8F8;
+  color: #213536;
+  border-radius: 12px;
+}
+
+.select-wrapper {
+  width: 30%;
+  display:inline-block;
+  overflow:hidden;
+  background-color: #213536;
+  margin-top: 40px;
+  margin-bottom: 32px;
+}
+
+#sort { 
+  width: 100%;
+  min-width: 136px;
+  height: 100%;
+  border: none;
+  background-color: #213536;
+  color: #F8F8F8;
+  padding-left: 12px;
+  border-right: 12px solid transparent /* Padding for the arrow */
+}
+
+#sort:hover {
+  cursor: pointer;
+}
+
+#sort:focus {
+  outline: none;
 }
 
 .flex-products {
+  /* This div organizes the products on the page */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -200,7 +238,10 @@ div.products {
   justify-content: space-between;
 }
 
+/* Individual products */
+
 .flex-product-item {
+  /* Each div that has this class contains all the info associated with a single product */
   width: 31%;
   min-width: 31%;
   max-width: 31%;
@@ -208,32 +249,28 @@ div.products {
   background-color: #F8F8F8;
 }
 
-
-
 .image-holder {
+  /* Necessary for being able to put the pop-up "View Details" button over/inside the product img */
   z-index: 0;
   position: relative;
 }
 
 .image-holder img {
+  /* Styling for each product image */
   width: 100%;
   height: 100%;
   border-radius: 12px;
   object-fit: cover;
 }
 
-.product img {
-  z-index: 0;
-  position: relative;
-  width: 100%;
-  border-radius: 12px;
-}
-
+/* Text under each product */
 .grid-container {
+  /* Allows us to left-align the name and right-align the price */
   display: grid;
 }
 
 .product-name {
+  /* Product name */
   margin: 10px;
   margin-left: 0;
   font-size: 20px;
@@ -243,6 +280,7 @@ div.products {
 }
 
 .product-price {
+  /* Product price */
   margin: 10px;
   margin-right: 0;
   grid-column: 2;
@@ -254,38 +292,23 @@ div.products {
 }
 
 
-
-
-/* .image-holder {
-  z-index: 0;
-  position: relative;
-} */
-
 .hide-till-hover {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-
-    visibility: hidden;
-    height: 32px;
-    width: calc(100% - 20px);
-    border: 0px solid #213536;
-    background-color: white;
-    border-radius: 12px;
-    color: #213536;
-    font-size: 20px;
-    font-weight: 500;
+  /* This is for the "View Detials" that appears over each product upon hover */
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  visibility: hidden;
+  height: 32px;
+  width: calc(100% - 20px);
+  border: 0px solid #213536;
+  background-color: white;
+  border-radius: 12px;
+  color: #213536;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .flex-product-item:hover .hide-till-hover {
+  /* Make the "View Detials" button actually appear upon hover */
   visibility: visible;
-}
-
-
-.placeholder {
-  height: 320px;
-  min-width: 360px;
-  width: 100%;
-  flex: 1 1 0px;
-  background-color: rgba(255, 255, 255, 0);
 }

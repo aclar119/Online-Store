@@ -17,7 +17,7 @@
                     <!-- Collapsible functionality inspired by (but NOT directly copied from) https://www.w3schools.com/howto/howto_js_collapsible.asp -->
                     
                     <!-- Sort (Collapsible section) -->
-                    <button class="collapsible">
+                    <!-- <button class="collapsible">
                         <p style="grid-column: 1;">Sort</p>
                         <div>
                             <i style="grid-column: 2;" class="chevron"></i>
@@ -26,7 +26,7 @@
                     <div class="content">
                         <p class="sort-type">Price: Ascending</p>
                         <p class="sort-type">Price: Descending</p>
-                    </div>
+                    </div> -->
 
                     <!-- Type (Collapsible section) -->
                     <button class="collapsible">
@@ -114,7 +114,16 @@
                 
 
                 <div class="products">
-                    <h1>Products</h1>
+                    <div class="products-header">
+                        <h1>Products</h1>
+                        <div class="select-wrapper">
+                            <select name="sort" id="sort">
+                                <option value="featured">Featured</option>
+                                <option value="price-ascending">Price: Ascending</option>
+                                <option value="price-descending">Price: Descending</option>
+                            </select>
+                        </div>
+                    </div>
 
                     <div class="flex-products">
 
