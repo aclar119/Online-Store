@@ -21,7 +21,7 @@ html, body {
     box-shadow: 0px 0px 1.5px 0px black;
     display: flex;
     align-items: center;
-    background-image: url(landscape.jpg);
+    background-image: url(../../resources/About\ Us\ Background.jpg);
     background-repeat: no-repeat;
     background-position-y: -100px;
     background-size:cover;

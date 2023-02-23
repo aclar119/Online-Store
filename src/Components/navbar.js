@@ -125,19 +125,19 @@ class Navbar extends HTMLElement {
 
       <div id="navbar">
             <div id="navbar-left">
-                <div id="logo" onclick="window.location.href='../Home/Home.html';"><img src="../Icons/Logo.png" height="32" ></div>
-                <div><a href="../BrowseProducts/BrowseProducts.html">Store</a></div>
-                <div><a href="../AboutUs/AboutUs.html">About Us</a></div>
+                <div id="logo" onclick="window.location.href='../Home/Home.php';"><img src="../../resources/Icons/Logo.png" height="32" ></div>
+                <div><a href="../BrowseProducts/BrowseProducts.php">Store</a></div>
+                <div><a href="../AboutUs/AboutUs.php">About Us</a></div>
             </div>
 
             <div id="navbar-right">
-                <form id="search-bar" action="../BrowseProducts/BrowseProducts.html">
+                <form id="search-bar" action="../BrowseProducts/BrowseProducts.php">
                     <div>
-                        <button><img src="../Icons/Search.png"></button>
+                        <button><img src="../../resources/Icons/Search.png"></button>
                         <input id="search-input" type="text" placeholder="Search" name="search" autocomplete="off">
                     </div>
                 </form>
-                <div id="cart" onclick="window.location.href='../Cart/Cart.html';"><img src="../Icons/Cart.png" height="32" ></div>
+                <div id="cart" onclick="window.location.href='../Cart/Cart.php';"><img src="../../resources/Icons/Cart.png" height="32" ></div>
             </div>
         </div>
     `;

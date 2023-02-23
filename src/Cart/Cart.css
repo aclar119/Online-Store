@@ -59,7 +59,7 @@ html, body {
   display: flex;
   flex:0 0 95px;
   margin-left: 1%;
-  background-image: url(image\ 7.png);
+  background-image: url(../../resources/ProductImages/120x120/Generic\ White\ T.png);
   padding:10px;
   display:inline-block;
   border-radius: 10px;
@@ -161,7 +161,7 @@ html, body {
   display: flex;
   flex:0 0 95px;
   margin-left: 1%;
-  background-image: url(image\ 8.png);
+  background-image: url(../../resources/ProductImages/120x120/Generic\ Blue\ T.png);
   padding:10px;
   display:inline-block;
   border-radius: 10px;

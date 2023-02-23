@@ -7,12 +7,45 @@
     </head>
     <body>
 
+        <?php
+            // $DB_NAME = "onlinestore";
+
+            // $db_host = '127.0.0.1';
+            // $db_user = 'root';
+            // $db_password = ''; // (if not working, try 'root')
+            // // $db_db = 'information_schema'; // (database already exists)
+            // // $db_port = 3306; // (3306 for WAMP; 8889 for MAMP)
+
+            // $mysqli = new mysqli(
+            //     $db_host,
+            //     $db_user,
+            //     $db_password,
+            //     // $db_db,
+            //     // $db_port
+            // );
+
+            // if ($mysqli->connect_error) {
+            //     echo 'Errno: '.$mysqli->connect_errno;
+            //     echo '<br>';
+            //     echo 'Error: '.$mysqli->connect_error;
+            //     exit();
+            // }
+
+            // // Create the database if it doesn't already exist
+            // $create_query = "CREATE DATABASE " . $DB_NAME;
+            // $mysqli->query($create_query);
+
+
+            
+            // $mysqli->close(); 
+        ?>
+
         <!-- Top section above (before) the navbar -->
         <div id="top-main">
             <div id="top-flex-container">
                 <div id="title-outer">
                     <h1>Generic Clothing Co.</h1>
-                    <button onclick="window.location.href='../BrowseProducts/BrowseProducts.html';">Shop Now</button>
+                    <button onclick="window.location.href='../BrowseProducts/BrowseProducts.php';">Shop Now</button>
                 </div>
                 <div></div>
             </div>
@@ -21,19 +54,19 @@
         <!-- Navbar (Custom navbar behaviour prevents us from using the custom component) -->
         <div id="navbar" class="not-sticky">
             <div id="navbar-left">
-                <div id="logo" onclick="window.location.href='../Home/Home.html';"><img src="../Icons/Logo.png" height="32" ></div>
-                <div><a href="../BrowseProducts/BrowseProducts.html">Store</a></div>
-                <div><a href="../AboutUs/AboutUs.html">About Us</a></div>
+                <div id="logo" onclick="window.location.href='../Home/Home.php';"><img src="../../resources/Icons/Logo.png" height="32" ></div>
+                <div><a href="../BrowseProducts/BrowseProducts.php">Store</a></div>
+                <div><a href="../AboutUs/AboutUs.php">About Us</a></div>
             </div>
 
             <div id="navbar-right">
-                <form id="search-bar" action="../BrowseProducts/BrowseProducts.html">
+                <form id="search-bar" action="../BrowseProducts/BrowseProducts.php">
                     <div>
-                        <button><img src="../Icons/Search.png"></button>
+                        <button><img src="../../resources/Icons/Search.png"></button>
                         <input id="search-input" type="text" placeholder="Search" name="search" autocomplete="off">
                     </div>
                 </form>
-                <div id="cart" onclick="window.location.href='../Cart/Cart.html';"><img src="../Icons/Cart.png" height="32" ></div>
+                <div id="cart" onclick="window.location.href='../Cart/Cart.php';"><img src="../../resources/Icons/Cart.png" height="32" ></div>
             </div>
         </div>
 
@@ -72,8 +105,8 @@
                 <div id="featured-top">
                     <div class="product">
                         <div class="image-holder">
-                            <img src="../ProductImages/Your Logo T.png">
-                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                            <img src="../../resources/ProductImages/Your Logo T.png">
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                         </div>
                         <div class="grid-container">
                             <p class="product-name">Your Logo T</p>
@@ -83,8 +116,8 @@
     
                     <div class="product">
                         <div class="image-holder">
-                            <img src="../ProductImages/White Pants.png">
-                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                            <img src="../../resources/ProductImages/White Pants.png">
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                         </div>
                         <div class="grid-container">
                             <p class="product-name">White Pants</p>
@@ -94,8 +127,8 @@
     
                     <div class="product">
                         <div class="image-holder">
-                            <img src="../ProductImages/Beige Jacket.png">
-                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                            <img src="../../resources/ProductImages/Beige Jacket.png">
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                         </div>
                         <div class="grid-container">
                             <p class="product-name">Beige Jacket</p>
@@ -105,8 +138,8 @@
     
                     <div class="product">
                         <div class="image-holder">
-                            <img src="../ProductImages/Leather Jacket.png">
-                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                            <img src="../../resources/ProductImages/Leather Jacket.png">
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                         </div>
                         <div class="grid-container">
                             <p class="product-name">Leather Jacket</p>
@@ -114,10 +147,10 @@
                         </div>
                     </div>
                 </div>
-    
+
                 <div id="divider-container">
                     <div></div>
-                    <button onclick="window.location.href='../BrowseProducts/BrowseProducts.html';">Shop All Products</button>
+                    <button onclick="window.location.href='../BrowseProducts/BrowseProducts.php';">Shop All Products</button>
                 </div>
     
                 <h2 class="featured-shirts">Featured Shirts</h2>
@@ -131,8 +164,8 @@
                         <td rowspan="4" style="padding-left: 0;">
                             <div class="product" id="generic-black-t">
                                 <div class="image-holder">
-                                    <img src="../ProductImages/Generic Black T.png">
-                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                                    <img src="../../resources/ProductImages/Generic Black T.png">
+                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                                 </div>
                                 <div class="grid-container">
                                     <p class="product-name">Generic Black T</p>
@@ -147,8 +180,8 @@
                         <td id="free-mockup-t">
                             <div class="product">
                                 <div class="image-holder">
-                                    <img src="../ProductImages/Free Mockup T.png">
-                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                                    <img src="../../resources/ProductImages/Free Mockup T.png">
+                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                                 </div>
                                 <div class="grid-container">
                                     <p class="product-name">Free Mockup T</p>
@@ -165,7 +198,7 @@
                             <div id="generic-colours-divider">
                                 <h2>Generic Colours Line</h2>
                                 <div></div>
-                                <button onclick="window.location.href='../BrowseProducts/BrowseProducts.html';">View More</button>
+                                <button onclick="window.location.href='../BrowseProducts/BrowseProducts.php';">View More</button>
                             </div>
                         </td>
                     </tr>
@@ -177,8 +210,8 @@
                                 <!-- Generic White T -->
                                 <div class="product">
                                     <div class="image-holder">
-                                        <img src="../ProductImages/Generic White T.png">
-                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                                        <img src="../../resources/ProductImages/360x295/Generic White T.png">
+                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                                     </div>
                                     <div class="grid-container">
                                         <p class="product-name">Generic White T</p>
@@ -189,8 +222,8 @@
                                 <!-- Generic Blue T -->
                                 <div class="product">
                                     <div class="image-holder">
-                                        <img src="../ProductImages/Generic Blue T.png">
-                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.html';">View Details</button>
+                                        <img src="../../resources/ProductImages/360x295/Generic Blue T.png">
+                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                                     </div>
                                     <div class="grid-container">
                                         <p class="product-name">Generic Blue T</p>

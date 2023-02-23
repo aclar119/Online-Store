@@ -15,7 +15,7 @@
                 <div class="left-main">
                     <h1>Product Details</h1>
                     <div class="image-holder">
-                        <img src="../ProductImages/Generic White T Vertical.png">
+                        <img src="../../resources/ProductImages/Generic White T Vertical.png">
                     </div>
                 </div>
 
