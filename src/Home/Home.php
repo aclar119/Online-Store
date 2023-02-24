@@ -2,42 +2,16 @@
 <html>
     <head>
         <title>Online Store</title>
+        <link rel="icon" type="image/x-icon" href="../../resources/Icons/Logo Square.png">
         <link rel="stylesheet" href="Home.css">
         <script src="../Components/footer.js" type="text/javascript" defer></script>
     </head>
     <body>
 
+        <!-- Ensure the database exists. Create it if it doesn't exist -->
         <?php
-            // $DB_NAME = "onlinestore";
-
-            // $db_host = '127.0.0.1';
-            // $db_user = 'root';
-            // $db_password = ''; // (if not working, try 'root')
-            // // $db_db = 'information_schema'; // (database already exists)
-            // // $db_port = 3306; // (3306 for WAMP; 8889 for MAMP)
-
-            // $mysqli = new mysqli(
-            //     $db_host,
-            //     $db_user,
-            //     $db_password,
-            //     // $db_db,
-            //     // $db_port
-            // );
-
-            // if ($mysqli->connect_error) {
-            //     echo 'Errno: '.$mysqli->connect_errno;
-            //     echo '<br>';
-            //     echo 'Error: '.$mysqli->connect_error;
-            //     exit();
-            // }
-
-            // // Create the database if it doesn't already exist
-            // $create_query = "CREATE DATABASE " . $DB_NAME;
-            // $mysqli->query($create_query);
-
-
-            
-            // $mysqli->close(); 
+            require_once(__DIR__.'/../Backend/create_database.php');
+            createDatabase();
         ?>
 
         <!-- Top section above (before) the navbar -->
