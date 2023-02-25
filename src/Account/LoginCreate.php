@@ -44,7 +44,7 @@
 
              <div class="login-link-container">
                  <p><a href="login.php">Already a member ?</a></p>
-                 </div>
+             </div>
             </div>
 
        </div>
