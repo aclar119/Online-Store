@@ -38,6 +38,9 @@
                  </form>
                </div>
 
+              <div class="create-link-container">
+                 <p><a href="loginCreate.php">Not yet a member ?</a></p>
+             </div>
           </div>
 
        </div>
