@@ -121,6 +121,23 @@ class Navbar extends HTMLElement {
             padding-bottom: 0px;
         }
 
+        #account {
+            display: flex;
+            height: calc(100% - 3px);
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-bottom: 3px;
+            align-items: center;
+            justify-items: center;
+          }
+        
+          #account:hover {
+            cursor: pointer;
+            opacity: 60%;
+            border-bottom: 3px solid #F8F8F8;
+            padding-bottom: 0px;
+          }
+
       </style>
 
       <div id="navbar">
@@ -138,6 +155,7 @@ class Navbar extends HTMLElement {
                     </div>
                 </form>
                 <div id="cart" onclick="window.location.href='../Cart/Cart.php';"><img src="../../resources/Icons/Cart.png" height="32" ></div>
+                <div id="account" onclick="window.location.href='../Account/LoginCalculating.php';"><img src="../../resources/Icons/Account.png" height="32" ></div>
             </div>
         </div>
     `;

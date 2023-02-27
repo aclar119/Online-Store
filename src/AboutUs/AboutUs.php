@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php 
+    session_start();
+?>
+
+<!DOCTYPE html> 
 <html>
     <head>
         <title>Online Store</title>

@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php 
+    session_start();
+?>
+
+<!DOCTYPE html> 
 <html>
     <head>
         <title>Online Store</title>
@@ -41,6 +45,7 @@
                     </div>
                 </form>
                 <div id="cart" onclick="window.location.href='../Cart/Cart.php';"><img src="../../resources/Icons/Cart.png" height="32" ></div>
+                <div id="account" onclick="window.location.href='../Account/LoginCalculating.php';"><img src="../../resources/Icons/Account.png" height="32" ></div>
             </div>
         </div>
 

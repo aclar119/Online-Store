@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php 
+    session_start();
+?>
+
+<!DOCTYPE html> 
 <html>
     <head>
         <title>Online Store</title>
@@ -23,7 +27,7 @@
                 <div class="left-main">
                     <h1>Product Details</h1>
                     <div class="image-holder">
-                        <img src="../../resources/ProductImages/Generic White T Vertical.png">
+                        <img src="../../resources/ProductImages/Full Size/Generic White T Vertical.png">
                     </div>
                 </div>
 
