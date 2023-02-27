@@ -6,15 +6,11 @@
         $db_host = '127.0.0.1';
         $db_user = 'root';
         $db_password = ''; // (if not working, try 'root')
-        // $db_db = 'information_schema'; // (database already exists)
-        // $db_port = 3306; // (3306 for WAMP; 8889 for MAMP)
 
         $mysqli = new mysqli(
             $db_host,
             $db_user,
-            $db_password,
-            // $db_db,
-            // $db_port
+            $db_password
         );
                 
         if ($mysqli->connect_error) {

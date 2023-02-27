@@ -41,6 +41,9 @@ html, body {
 
 .left-main h1 {
     color: #213536;
+    font-size: 36px;
+    line-height: 36px;
+    margin: 16px 0;
 }
 
 /* Product Image */
@@ -61,6 +64,7 @@ html, body {
 
 .right-main {
     width: 45%;
+    margin-top: 68px;
 }
 
 .right-main h2 {

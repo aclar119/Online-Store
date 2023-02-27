@@ -137,7 +137,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic White T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic White T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -148,7 +148,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic White T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic White T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -159,7 +159,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic White T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic White T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -170,7 +170,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic Blue T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -181,7 +181,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic Blue T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -192,7 +192,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic Blue T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -203,7 +203,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic Blue T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -214,7 +214,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic White T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic White T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -225,7 +225,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic Blue T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -236,7 +236,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic Blue T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -247,7 +247,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic Blue T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
@@ -258,7 +258,7 @@
 
                         <div class="flex-product-item">
                             <div class="image-holder">
-                                <img src="../../resources/ProductImages/360x295/Generic Blue T.png">
+                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
                                 <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                             </div>
                             <div class="grid-container">
