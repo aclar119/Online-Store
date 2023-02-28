@@ -23,25 +23,43 @@
           <div class="login-container">
 
              <div class="login-header">
-                 <h1>Login to your account</h1>
+                 <h1>Login to your Account</h1>
              </div>
+                
+                <div class="login-subcontainer">
 
-             <div class="login-field">
-                <form action="login.php" method="post">
                 <div class="form-group">
-                 <label for="email">Email</label>
-                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                 <label for="password">Password</label>
-                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                 <button type="submit">Login</button>
-                  </div>
-                 </form>
+
+                <form action="login.php" method="post" id="login-field">
+
+                    <table id="login-table">
+                    
+                    <tr>
+                    <th><label for="email">Email</label></th>
+                    </tr>
+                    <tr>
+                    <td><input type="email" id="email" name="email" placeholder="Email" required></td>
+                    </tr>  
+                    <tr>
+                    <th><label for="password">Password</label></th>
+                    </tr>
+                    <tr>
+                    <td><input type="password" id="password" name="password" placeholder="Password" required></td>
+                    </tr>
+
+                    </table>
+                    
+                    
+                </form>
+
                </div>
 
-              <div class="create-link-container">
+                <div class="buttons">
+                 <button type="submit" class="button">Login</button>
                  <p><a href="loginCreate.php">Not yet a member ?</a></p>
-             </div>
-          </div>
+                </div>
+               </div>
+            </div>
 
        </div>
 
