@@ -1,0 +1,134 @@
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #F8F8F8;
+  }
+          
+    /* Page body styling */
+  
+  
+.main-container{
+display:flex; 
+flex-direction: column;
+width: 100%;
+align-items: center;
+justify-content: flex-start;
+min-height: 100vh;}
+
+.login-container{ 
+display:flex;
+justify-content: flex-start;
+flex-direction: column;
+align-items: center;
+width: 425px;
+margin-top: 10%;
+height: 450px;
+color: #F8F8F8;
+}
+
+.login-header{
+display:flex;
+color: #213536;
+justify-content: center;
+font-size: x-small;
+width: 100%;
+height: 15%;
+text-align: center;
+}
+
+.login-header, h1{
+width: 100%;
+font-weight:500;
+font-size: 25px;
+margin-bottom: 20px;
+
+} 
+
+
+.login-subcontainer{
+background-color: #213536;
+width: 100%;
+border-radius: 10px;
+display:flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+height: 85%;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group{
+display:flex;
+justify-content: center;
+text-align: left;
+width: 100%;
+font-size: 13px;
+font-weight: 400;
+margin-bottom: 10px;
+}
+
+form#login-field{
+width: 70%;
+}
+
+table#login-table{
+width: 100%;
+}
+
+#email{
+height: 35px;
+border-radius: 8px;
+margin-bottom: 20px;
+width: 85%;
+background-image: url("../../resources/Icons/Email.svg");
+background-size: 20px 20px;
+background-position: left 9px center;
+background-repeat: no-repeat;
+padding-left: 15%;
+text-indent: 10px;
+}
+
+#password{
+height: 35px;
+border-radius: 8px;
+width: 85%;
+background-image: url("../../resources/Icons/Password.svg");
+background-size: 20px 20px;
+background-position: left 9px center;
+background-repeat: no-repeat;
+padding-left: 15%;
+text-indent: 10px;
+}
+
+table, tr, th{
+margin-bottom: 10px;
+font-size: 15px;
+font-weight: 300;
+}
+
+.buttons{
+display: flex;
+flex-direction: column;
+justify-content: center;
+text-align: center;
+padding: 10px;
+width: 40%;
+}
+
+.button{
+border-radius: 30px;
+height: 30px;
+background-color: #F8F8F8;
+color:#213536;
+}
+
+
+.buttons, a{
+color:#F8F8F8;
+text-decoration: none;
+}
+
+

@@ -5,16 +5,16 @@
 
         $db_host = '127.0.0.1';
         $db_user = 'root';
-        $db_password = ''; // (if not working, try 'root')
-        // $db_db = 'information_schema'; // (database already exists)
-        // $db_port = 3306; // (3306 for WAMP; 8889 for MAMP)
+        $db_password = 'root'; // (if not working, try 'root')
+        $db_db = 'information_schema'; // (database already exists)
+        $db_port = 8889; // (3306 for WAMP; 8889 for MAMP)
 
         $mysqli = new mysqli(
             $db_host,
             $db_user,
             $db_password,
-            // $db_db,
-            // $db_port
+            $db_db,
+            $db_port
         );
                 
         if ($mysqli->connect_error) {
@@ -28,20 +28,19 @@
         $create_db = "CREATE DATABASE " . $DB_NAME;
 
         // If the database didn't already exist, we need to populate it
-        if($mysqli->query($create_db)) {
-            
-            // Need to refresh our connection with a proper link to the actual db
-            $mysqli = new mysqli(
-                $db_host,
-                $db_user,
-                $db_password,
-                $DB_NAME
-            );
-
-            createTables($mysqli);
-            
-        }
-        
+        if (!$mysqli->select_db($DB_NAME)) {
+            // The database does not exist, create it
+            if($mysqli->query($create_db)) {
+                // Need to refresh our connection with a proper link to the actual db
+                $mysqli = new mysqli(
+                    $db_host,
+                    $db_user,
+                    $db_password,
+                    $DB_NAME
+                );
+                createTables($mysqli);
+            }
+        } 
         $mysqli->close(); 
     }
 
