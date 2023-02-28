@@ -3,7 +3,7 @@
     <head>
         <title>Online Store</title>
         <link rel="icon" type="image/x-icon" href="../../resources/Icons/Logo Square.png">
-        <link rel="stylesheet" href="Login.css">
+        <link rel="stylesheet" href="Login-1.css">
         <script src="../Components/navbar.js" type="text/javascript" defer></script>
         <script src="../Components/footer.js" type="text/javascript" defer></script>
     </head>

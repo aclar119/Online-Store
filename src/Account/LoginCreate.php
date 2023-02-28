@@ -18,7 +18,7 @@
 
         <navbar-component> </navbar-component>
     
-        <div class="main-container">
+      <div class="main-container">
 
           <div class="login-container">
 
@@ -26,25 +26,35 @@
                  <h1>Create your account</h1>
              </div>
 
-             <div class="login-field">
-                <form action="login.php" method="post">
-                <div class="form-group">
-                 <label for="First Name">First Name</label>
-                 <input type="text" id="First Name" name="First Name" placeholder="First Name" required>
-                 <label for="Last Name">Last Name</label>
-                 <input type="text" id="Last Name" name="Last Name" placeholder="Last Name" required>
-                 <label for="Email">Email</label>
-                 <input type="Email" id="Password" name="Email" placeholder="Email" required>
-                 <label for="Password">Password</label>
-                 <input type="password" id="Password" name="Password" placeholder="Password" required>
-                 <button type="submit">Create</button>
-                  </div>
-                 </form>
-             </div>
+             <div class="login-subcontainer">
 
-             <div class="login-link-container">
+                <div class="form-group">
+
+                    <form action="login.php" method="post" id="Create-form">
+
+                    <label for="First Name">First Name</label>
+                    <input class ="Form-input" type="text" id="First-Name" name="First Name" placeholder="First Name" required>
+                    <label for="Last Name">Last Name</label>
+                    <input class ="Form-input" type="text" id="Last-Name" name="Last Name" placeholder="Last Name" required>
+                    <label for="Email">Email</label>
+                    <input class ="Form-input" type="Email" id="Email" name="Email" placeholder="Email" required>
+                    <label for="Password">Password</label>
+                    <input class="Form-input" type="password" id="Password" name="Password" placeholder="Password" required>
+                    
+
+                    </form>
+
+                </div>
+
+                 
+             <div class="buttons">
+                 <button class= "button" type="submit">Create Account</button>
                  <p><a href="login.php">Already a member ?</a></p>
              </div>
+
+             </div>
+
+            
             </div>
 
        </div>
