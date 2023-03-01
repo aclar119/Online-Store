@@ -20,7 +20,7 @@
 
         <?php
 
-            if(isset($_REQUEST['login-field'])){
+            if(isset($_POST['email'])){
                 $email = $_REQUEST['email'];
                 $password = password_hash($_REQUEST['password'], PASSWORD_DEFAULT);
 
@@ -62,16 +62,17 @@
 
                     </table>
             
-                    
+                    <div class="buttons">
+                        <button type="submit" class="button">Login</button>
+                        <p><a href="loginCreate.php">Not yet a member ?</a></p>
+                        </div>
+                    </div>
+
                 </form>
 
                </div>
 
-                <div class="buttons">
-                 <button type="submit" class="button">Login</button>
-                 <p><a href="loginCreate.php">Not yet a member ?</a></p>
-                </div>
-               </div>
+                
             </div>
 
        </div>
