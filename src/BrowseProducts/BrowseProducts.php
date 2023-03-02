@@ -19,6 +19,12 @@
             createDatabase();
         ?>
 
+        <script>
+            if (!window.location.href.includes('?')) {
+                localStorage.clear();
+            }
+        </script>
+
         <navbar-component id="navbar" style="position: sticky; top: 0; z-index: 1;"> </navbar-component>
         
         <div id="main-container">
@@ -95,10 +101,10 @@
 
                             // Re-expand any collapsibles that were previously expanded
                             if (localStorage.getItem(collapsibleElements[i].id) == null || localStorage.getItem(collapsibleElements[i].id) == 'false') {
+                                collapsibleElements[i].nextElementSibling.style.maxHeight = null;
+                            } else {
                                 collapsibleElements[i].nextElementSibling.style.maxHeight = collapsibleElements[i].nextElementSibling.scrollHeight + "px";
                                 collapsibleElements[i].lastElementChild.lastElementChild.classList.add("up");
-                            } else {
-                                collapsibleElements[i].nextElementSibling.style.maxHeight = null;
                             }
 
                             collapsibleElements[i].addEventListener("click", function() {
@@ -118,10 +124,10 @@
                                 // Toggle the max height of the content pane between null and scrollHeight
                                 if (contentElement.style.maxHeight) {
                                     contentElement.style.maxHeight = null;
-                                    localStorage.setItem(this.id, true)
+                                    localStorage.setItem(this.id, false)
                                 } else {
                                     contentElement.style.maxHeight = contentElement.scrollHeight + "px";
-                                    localStorage.setItem(this.id, false)
+                                    localStorage.setItem(this.id, true)
                                 } 
 
                           });
@@ -144,7 +150,7 @@
                                     chk.addEventListener('click', e => {
                                         localStorage.setItem(chk.name, chk.checked);
 
-                                        // Assemble the the parameter to pass to the GET query for categories
+                                        // Assemble the categories parameter to pass to the GET query
                                         let categories = document.getElementsByClassName("category");
                                         let categoriesString = "";
 
@@ -156,7 +162,7 @@
 
                                         if (categoriesString.length > 0) {categoriesString = categoriesString.substring(0,categoriesString.length-1);}
 
-                                        // Assemble the the parameter to pass to the GET query for colours
+                                        // Assemble the colours parameter to pass to the GET query
                                         let colours = document.getElementsByClassName("colour");
                                         let coloursString = "";
 
@@ -180,9 +186,16 @@
 
                                         window.location.replace(requestURL);
 
-                                });
+                                    });
                                 }
                         });
+
+                        // // Combining search with sort/filter isn't worth the effort so if there is a search
+                        // //  query, unselect all the 
+                        // const requestParameters = new URLSearchParams(window.location.search);
+                        // if(requestParameters.has("search")) {
+
+                        // }
                         
                     </script>
 
@@ -200,41 +213,66 @@
                         </div>
                     </div>
 
+                    <?php 
+                        if (isset($_GET["search"])) {
+                            $search = $_GET["search"];
+                            echo "Displaying search results for <b>$search</b>";
+                        }
+                    ?>
+
                     <div class="flex-products">
 
                         <?php 
                             require_once(__DIR__.'/../Backend/database_selector.php');
 
-                            if(isset($_GET["categories"])) {
-                                $categories = $_GET["categories"];
-                            } else {
+                            // We decided to make search incompatible with sort/filter for simplicity
+                            if (isset($_GET["search"])) {
                                 $categories = "";
-                            }
-
-                            if(isset($_GET["colours"])) {
-                                $colours = $_GET["colours"];
-                            } else {
                                 $colours = "";
+                            } else {
+                                $search = "";
+
+                                if(isset($_GET["categories"])) {
+                                    $categories = $_GET["categories"];
+                                } else {
+                                    $categories = "";
+                                }
+    
+                                if(isset($_GET["colours"])) {
+                                    $colours = $_GET["colours"];
+                                } else {
+                                    $colours = "";
+                                }
+
+                                $products = selectProducts($search, $categories, $colours);
+
+                                foreach ($products as $product) {
+                                    $name = $product["Name"];
+                                    $price = $product["Price"];
+                                    $image_file = $product["ImageFile"];
+
+                                    echo "<div class='flex-product-item'>";
+                                    echo "  <div class='image-holder'>";
+                                    echo "      <img src='../../resources/ProductImages/480x340/$image_file'>";
+                                    echo "      <button class='hide-till-hover' onclick=\"window.location.href='../SingleProduct/SingleProduct.php';\">View Details</button>";    
+                                    echo "  </div>";        
+                                    echo "  <div class='grid-container'>";  
+                                    echo "      <p class='product-name'>$name</p>";  
+                                    echo "      <p class='product-price'>$$price</p>"; 
+                                    echo "  </div>";
+                                    echo "</div>"; 
+
+                                }
+
+                                // If there are 2 products in the last row, add a blank one so that everything aligns properly
+                                if ($products->num_rows % 3 == 2) {
+                                    echo "<div class='flex-product-item'>";
+                                    echo "</div>"; 
+                                }
+
                             }
 
-                            $products = selectProducts($categories, $colours);
-
-                            foreach ($products as $product) {
-                                $name = $product["Name"];
-                                $price = $product["Price"];
-                                $image_file = $product["ImageFile"];
-
-                                echo "<div class='flex-product-item'>";
-                                echo "  <div class='image-holder'>";
-                                echo "      <img src='../../resources/ProductImages/480x340/$image_file'>";
-                                echo "      <button class='hide-till-hover' onclick=\"window.location.href='../SingleProduct/SingleProduct.php';\">View Details</button>";    
-                                echo "  </div>";        
-                                echo "  <div class='grid-container'>";  
-                                echo "      <p class='product-name'>$name</p>";  
-                                echo "      <p class='product-price'>$$price</p>"; 
-                                echo "  </div>";
-                                echo "</div>"; 
-                            }
+                            
                         ?>
 
                     </div>
