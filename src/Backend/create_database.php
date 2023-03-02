@@ -1,16 +1,14 @@
 <?php
 
     function createDatabase() {
-        $DB_NAME = "onlinestore";
+        require('config.php');
 
-        $db_host = '127.0.0.1';
-        $db_user = 'root';
-        $db_password = ''; // (if not working, try 'root')
+        // View config.php to change the port/password
 
         $mysqli = new mysqli(
-            $db_host,
-            $db_user,
-            $db_password
+            DatabaseConfig::get_host(),
+            DatabaseConfig::get_user(),
+            DatabaseConfig::get_password()
         );
                 
         if ($mysqli->connect_error) {
@@ -21,17 +19,17 @@
         }
 
         // Attempt to create the database
-        $create_db = "CREATE DATABASE " . $DB_NAME;
+        $create_db = "CREATE DATABASE " . DatabaseConfig::get_name();
 
         // If the database didn't already exist, we need to populate it
         if($mysqli->query($create_db)) {
             
             // Need to refresh our connection with a proper link to the actual db
             $mysqli = new mysqli(
-                $db_host,
-                $db_user,
-                $db_password,
-                $DB_NAME
+                DatabaseConfig::get_host(),
+                DatabaseConfig::get_user(),
+                DatabaseConfig::get_password(),
+                DatabaseConfig::get_name(),
             );
 
             createTables($mysqli);
@@ -49,12 +47,14 @@
         // Defining the structure of all our tables
         $create_table_colours = "CREATE TABLE Colours (
             ID INT UNSIGNED PRIMARY KEY,
-            Name VARCHAR(40) NOT NULL
+            DisplayName VARCHAR(40) NOT NULL,
+            InternalName VARCHAR(40) NOT NULL
         )";
 
         $create_table_categories = "CREATE TABLE Categories (
             ID INT UNSIGNED PRIMARY KEY,
-            Name VARCHAR(40) NOT NULL
+            DisplayName VARCHAR(40) NOT NULL,
+            InternalName VARCHAR(40) NOT NULL
         )";
         
         $create_table_products = "CREATE TABLE Products (
@@ -118,22 +118,24 @@
     // Add all colours to the database
     function populateColours($mysqli) {
         $colours = array(
-            array("id" => 1, "name" => "Black"),
-            array("id" => 2, "name" => "Blue"),
-            array("id" => 3, "name" => "Brown"),
-            array("id" => 4, "name" => "Green"),
-            array("id" => 5, "name" => "Grey"),
-            array("id" => 6, "name" => "White"),
-            array("id" => 7, "name" => "Yellow")
+            array("id" => 1, "displayName" => "Black", "internalName" => "black"),
+            array("id" => 2, "displayName" => "Blue", "internalName" => "blue"),
+            array("id" => 3, "displayName" => "Brown", "internalName" => "brown"),
+            array("id" => 4, "displayName" => "Green", "internalName" => "green"),
+            array("id" => 5, "displayName" => "Grey", "internalName" => "grey"),
+            array("id" => 6, "displayName" => "White", "internalName" => "white"),
+            array("id" => 7, "displayName" => "Yellow", "internalName" => "yellow")
         );
 
         for ($i = 0; $i < count($colours); $i++) {
             $id = $colours[$i]["id"];
-            $name = $colours[$i]["name"];
+            $display_name = $colours[$i]["displayName"];
+            $internal_name = $colours[$i]["internalName"];
+
 
             $insert_colour = "INSERT INTO 
-                Colours (ID, Name)
-                VALUES ($id, '$name')
+                Colours (ID, DisplayName, InternalName)
+                VALUES ($id, '$display_name', '$internal_name')
             ";
 
             $mysqli->query($insert_colour);
@@ -143,18 +145,19 @@
     // Add all categories to the database
     function populateCategories($mysqli) {
         $categories = array(
-            array("id" => 1, "name" => "T-Shirts"),
-            array("id" => 2, "name" => "Jackets"),
-            array("id" => 3, "name" => "Sweaters")
+            array("id" => 1, "displayName" => "T-Shirts", "internalName" => "tshirts"),
+            array("id" => 2, "displayName" => "Jackets", "internalName" => "jackets"),
+            array("id" => 3, "displayName" => "Sweaters", "internalName" => "sweaters")
         );
 
         for ($i = 0; $i < count($categories); $i++) {
             $id = $categories[$i]["id"];
-            $name = $categories[$i]["name"];
+            $display_name = $categories[$i]["displayName"];
+            $internal_name = $categories[$i]["internalName"];
 
             $insert_category = "INSERT INTO 
-                Categories (ID, Name)
-                VALUES ($id, '$name')
+                Categories (ID, DisplayName, InternalName)
+                VALUES ($id, '$display_name', '$internal_name')
             ";
             
             $mysqli->query($insert_category);
