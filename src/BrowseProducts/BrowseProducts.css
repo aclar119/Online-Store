@@ -3,7 +3,7 @@ html, body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: max-content;
   width: 100%;
   background-color: #F8F8F8;
 }
@@ -55,6 +55,10 @@ div.filters {
   max-height: calc(100vh - 140px);
   font-size: 20px;
   overflow-y: auto;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .collapsible {
@@ -116,7 +120,7 @@ div.filters {
   padding-right: 18px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
+  /* transition: max-height 0.2s ease-out; */
   background-color: #21353694;
 }
 

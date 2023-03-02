@@ -27,65 +27,61 @@
                 <div class="filters">
 
                     <!-- Collapsible functionality inspired by (but NOT directly copied from) https://www.w3schools.com/howto/howto_js_collapsible.asp -->
-                    
-                    <!-- Sort (Collapsible section) -->
-                    <!-- <button class="collapsible">
-                        <p style="grid-column: 1;">Sort</p>
-                        <div>
-                            <i style="grid-column: 2;" class="chevron"></i>
-                        </div>
-                    </button>
-                    <div class="content">
-                        <p class="sort-type">Price: Ascending</p>
-                        <p class="sort-type">Price: Descending</p>
-                    </div> -->
 
                     <!-- Type (Collapsible section) -->
-                    <button class="collapsible">
+                    <button class="collapsible" id="collapsible-type">
                         <p style="grid-column: 1;">Type</p>
                         <div>
                             <i style="grid-column: 2;" class="chevron"></i>
                         </div>
                     </button>
                     <div class="content">
-                        <label class="container-checkbox">
-                            <input type="checkbox">
-                            <p>Shirts</p>
-                        </label>
 
-                        <label class="container-checkbox">
-                            <input type="checkbox">
-                            <p>Pants</p>
-                        </label>
+                        <?php 
+                            require_once(__DIR__.'/../Backend/database_selector.php');
+                            $categories = selectCategories();
 
-                        <label class="container-checkbox">
-                            <input type="checkbox">
-                            <p>Shoes</p>
-                        </label>
+                            foreach ($categories as $category) {
+                                $display_name = $category["DisplayName"];
+                                $internal_name = $category["InternalName"];
+
+                                echo "<form method='POST'>";
+                                echo "  <label class='container-checkbox category'>";
+                                echo "      <input name='$internal_name' type='checkbox' id='$internal_name' />";
+                                echo "      <p>$display_name</p>";
+                                echo "  </label>";
+                                echo "</form>";
+                            }
+                        ?>
+
                     </div>
 
                     <!-- Colour (Collapsible section) -->
-                    <button class="collapsible">
+                    <button class="collapsible" id="collapsible-colour">
                         <p style="grid-column: 1;">Colour</p>
                         <div>
                             <i style="grid-column: 2;" class="chevron"></i>
                         </div>
                     </button>
                     <div class="content">
-                        <label class="container-checkbox">
-                            <input type="checkbox">
-                            <p>Blue</p>
-                        </label>
 
-                        <label class="container-checkbox">
-                            <input type="checkbox">
-                            <p>White</p>
-                        </label>
+                        <?php 
+                            require_once(__DIR__.'/../Backend/database_selector.php');
+                            $colours = selectColours();
 
-                        <label class="container-checkbox">
-                            <input type="checkbox">
-                            <p>Black</p>
-                        </label>
+                            foreach ($colours as $colour) {
+                                $display_name = $colour["DisplayName"];
+                                $internal_name = $colour["InternalName"];
+
+                                echo "<form method='POST'>";
+                                echo "  <label class='container-checkbox colour'>";
+                                echo "      <input name='$internal_name' type='checkbox' id='$internal_name' />";
+                                echo "      <p>$display_name</p>";
+                                echo "  </label>";
+                                echo "</form>";
+                            }
+                        ?>
+
                     </div>
 
                     <!-- JavaScript used for managing the collaspible aspect of the filters bar -->
@@ -96,6 +92,15 @@
                         
                         // Add an anonymous function to each collapsible element. This gets called everytime the element is clicked
                         for (i = 0; i < collapsibleElements.length; i++) {
+
+                            // Re-expand any collapsibles that were previously expanded
+                            if (localStorage.getItem(collapsibleElements[i].id) == null || localStorage.getItem(collapsibleElements[i].id) == 'false') {
+                                collapsibleElements[i].nextElementSibling.style.maxHeight = collapsibleElements[i].nextElementSibling.scrollHeight + "px";
+                                collapsibleElements[i].lastElementChild.lastElementChild.classList.add("up");
+                            } else {
+                                collapsibleElements[i].nextElementSibling.style.maxHeight = null;
+                            }
+
                             collapsibleElements[i].addEventListener("click", function() {
 
                                 let chevronElement = this.lastElementChild.lastElementChild;
@@ -113,18 +118,76 @@
                                 // Toggle the max height of the content pane between null and scrollHeight
                                 if (contentElement.style.maxHeight) {
                                     contentElement.style.maxHeight = null;
+                                    localStorage.setItem(this.id, true)
                                 } else {
                                     contentElement.style.maxHeight = contentElement.scrollHeight + "px";
+                                    localStorage.setItem(this.id, false)
                                 } 
 
                           });
                         }
+
+                        // For adding actual functionality to the checkboxes
+                        document.addEventListener('DOMContentLoaded',()=>{
+                            let chks=document.querySelectorAll('input[type="checkbox"]');
+                                for(const chk of chks) {
+
+                                    // Re-check any boxes that were previously checked
+                                    if (localStorage.getItem(chk.name) == null || localStorage.getItem(chk.name) == 'false') {
+                                        chk.checked =  false;
+                                    } else {
+                                        chk.checked =  true;
+                                    }
+                                    
+                                    // Replace this later with AJAX for project part 3
+
+                                    chk.addEventListener('click', e => {
+                                        localStorage.setItem(chk.name, chk.checked);
+
+                                        // Assemble the the parameter to pass to the GET query for categories
+                                        let categories = document.getElementsByClassName("category");
+                                        let categoriesString = "";
+
+                                        for (const category of categories) {
+                                            if (category.getElementsByTagName("input")[0].checked) {
+                                                categoriesString = categoriesString + category.getElementsByTagName("input")[0].id + "_";
+                                            }
+                                        }
+
+                                        if (categoriesString.length > 0) {categoriesString = categoriesString.substring(0,categoriesString.length-1);}
+
+                                        // Assemble the the parameter to pass to the GET query for colours
+                                        let colours = document.getElementsByClassName("colour");
+                                        let coloursString = "";
+
+                                        for (const colour of colours) {
+                                            if (colour.getElementsByTagName("input")[0].checked) {
+                                                coloursString = coloursString + colour.getElementsByTagName("input")[0].id + "_";
+                                            }
+                                        }
+
+                                        if (coloursString.length > 0) {coloursString = coloursString.substring(0,coloursString.length-1);}
+
+                                        let requestURL = "BrowseProducts.php?";
+                                        let requestInitialLength = requestURL.length
+                                        if (categoriesString.length > 0) {requestURL += "categories=" + categoriesString;}
+                                        if (coloursString.length > 0) {
+                                            if (requestURL.length > requestInitialLength) {requestURL += "&"}
+                                            requestURL += "colours=" + coloursString;
+                                        }
+
+                                        console.log(requestURL);
+
+                                        window.location.replace(requestURL);
+
+                                });
+                                }
+                        });
                         
                     </script>
 
                 </div>
                 
-
                 <div class="products">
                     <div class="products-header">
                         <h1>Products</h1>
@@ -139,137 +202,40 @@
 
                     <div class="flex-products">
 
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic White T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic White T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
+                        <?php 
+                            require_once(__DIR__.'/../Backend/database_selector.php');
 
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic White T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic White T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
+                            if(isset($_GET["categories"])) {
+                                $categories = $_GET["categories"];
+                            } else {
+                                $categories = "";
+                            }
 
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic White T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic White T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
+                            if(isset($_GET["colours"])) {
+                                $colours = $_GET["colours"];
+                            } else {
+                                $colours = "";
+                            }
 
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic Blue T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
+                            $products = selectProducts($categories, $colours);
 
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic Blue T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
+                            foreach ($products as $product) {
+                                $name = $product["Name"];
+                                $price = $product["Price"];
+                                $image_file = $product["ImageFile"];
 
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic Blue T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
-
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic Blue T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
-
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic White T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic White T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
-
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic Blue T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
-
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic Blue T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
-
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic Blue T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
-
-                        <div class="flex-product-item">
-                            <div class="image-holder">
-                                <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
-                                <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
-                            </div>
-                            <div class="grid-container">
-                                <p class="product-name">Generic Blue T</p>
-                                <p class="product-price">$15</p>
-                            </div>
-                        </div>
+                                echo "<div class='flex-product-item'>";
+                                echo "  <div class='image-holder'>";
+                                echo "      <img src='../../resources/ProductImages/480x340/$image_file'>";
+                                echo "      <button class='hide-till-hover' onclick=\"window.location.href='../SingleProduct/SingleProduct.php';\">View Details</button>";    
+                                echo "  </div>";        
+                                echo "  <div class='grid-container'>";  
+                                echo "      <p class='product-name'>$name</p>";  
+                                echo "      <p class='product-price'>$$price</p>"; 
+                                echo "  </div>";
+                                echo "</div>"; 
+                            }
+                        ?>
 
                     </div>
                 </div>
