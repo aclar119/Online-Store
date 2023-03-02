@@ -258,7 +258,7 @@
                 "name" => "White Sweater",
                 "price" => 25.00,
                 "description" => "This is a placeholder description",
-                "colourId" => 3, // White
+                "colourId" => 6, // White
                 "imageFile" => "White Sweater.png",
                 "categoryId" => 3, // Sweaters
             ),
