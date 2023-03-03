@@ -1,11 +1,11 @@
 <?php
 
     // Select all products from the database and return the results object
-    function selectProducts($categories, $colours) {
+    function selectProducts($search, $categories, $colours) {
         $mysqli = DatabaseConfig::get_db_connection();
 
         $select_query = "SELECT P.ID, P.Name, P.Price, P.Description, P.ImageFile 
-            FROM `Products` AS P 
+            FROM `Products` AS P  
             JOIN `Categories` AS CT ON P.CategoryID = CT.ID
             JOIN `Colours` AS CL ON P.ColourID = CL.ID";
 

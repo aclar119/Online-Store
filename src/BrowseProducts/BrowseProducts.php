@@ -20,7 +20,7 @@
         ?>
 
         <script>
-            if (!window.location.href.includes('?')) {
+            if ((!window.location.href.includes('?')) || window.location.href.includes('search')) {
                 localStorage.clear();
             }
         </script>
@@ -190,12 +190,12 @@
                                 }
                         });
 
-                        // // Combining search with sort/filter isn't worth the effort so if there is a search
-                        // //  query, unselect all the 
-                        // const requestParameters = new URLSearchParams(window.location.search);
-                        // if(requestParameters.has("search")) {
-
-                        // }
+                        // Combining search with sort/filter isn't worth the effort so if there is a search
+                        //  query, unselect all the 
+                        const requestParameters = new URLSearchParams(window.location.search);
+                        if(requestParameters.has("search")) {
+                            
+                        }
                         
                     </script>
 
@@ -225,54 +225,51 @@
                         <?php 
                             require_once(__DIR__.'/../Backend/database_selector.php');
 
+                            $search = "";
+                            $categories = "";
+                            $colours = "";
+                            
                             // We decided to make search incompatible with sort/filter for simplicity
                             if (isset($_GET["search"])) {
-                                $categories = "";
-                                $colours = "";
+                                $search = $_GET["search"];
                             } else {
-                                $search = "";
 
                                 if(isset($_GET["categories"])) {
                                     $categories = $_GET["categories"];
-                                } else {
-                                    $categories = "";
                                 }
     
                                 if(isset($_GET["colours"])) {
                                     $colours = $_GET["colours"];
-                                } else {
-                                    $colours = "";
                                 }
+                                
+                            }
 
-                                $products = selectProducts($categories, $colours);
+                            $products = selectProducts($search, $categories, $colours);
 
-                                foreach ($products as $product) {
-                                    $name = $product["Name"];
-                                    $price = $product["Price"];
-                                    $image_file = $product["ImageFile"];
+                            foreach ($products as $product) {
+                                $name = $product["Name"];
+                                $price = $product["Price"];
+                                $image_file = $product["ImageFile"];
 
-                                    echo "<div class='flex-product-item'>";
-                                    echo "  <div class='image-holder'>";
-                                    echo "      <img src='../../resources/ProductImages/480x340/$image_file'>";
-                                    echo "      <button class='hide-till-hover' onclick=\"window.location.href='../SingleProduct/SingleProduct.php';\">View Details</button>";    
-                                    echo "  </div>";        
-                                    echo "  <div class='grid-container'>";  
-                                    echo "      <p class='product-name'>$name</p>";  
-                                    echo "      <p class='product-price'>$$price</p>"; 
-                                    echo "  </div>";
-                                    echo "</div>"; 
-
-                                }
-
-                                // If there are 2 products in the last row, add a blank one so that everything aligns properly
-                                if ($products->num_rows % 3 == 2) {
-                                    echo "<div class='flex-product-item'>";
-                                    echo "</div>"; 
-                                }
+                                echo "<div class='flex-product-item'>";
+                                echo "  <div class='image-holder'>";
+                                echo "      <img src='../../resources/ProductImages/480x340/$image_file'>";
+                                echo "      <button class='hide-till-hover' onclick=\"window.location.href='../SingleProduct/SingleProduct.php';\">View Details</button>";    
+                                echo "  </div>";        
+                                echo "  <div class='grid-container'>";  
+                                echo "      <p class='product-name'>$name</p>";  
+                                echo "      <p class='product-price'>$$price</p>"; 
+                                echo "  </div>";
+                                echo "</div>"; 
 
                             }
 
-                            
+                            // If there are 2 products in the last row, add a blank one so that everything aligns properly
+                            if ($products->num_rows % 3 == 2) {
+                                echo "<div class='flex-product-item'>";
+                                echo "</div>"; 
+                            }
+
                         ?>
 
                     </div>

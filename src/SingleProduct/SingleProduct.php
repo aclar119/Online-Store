@@ -82,7 +82,7 @@
                         <p2>Such an excellent product! Highly recommended to anyone wanting to get this t-shirt!</p2>
                     </div>
 
-                </div>
+                </div> 
             </div>
         </div>
     </div>
