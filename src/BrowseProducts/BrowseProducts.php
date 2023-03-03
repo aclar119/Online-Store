@@ -244,7 +244,7 @@
                                     $colours = "";
                                 }
 
-                                $products = selectProducts($search, $categories, $colours);
+                                $products = selectProducts($categories, $colours);
 
                                 foreach ($products as $product) {
                                     $name = $product["Name"];
