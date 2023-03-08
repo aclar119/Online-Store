@@ -250,11 +250,12 @@
                                 $name = $product["Name"];
                                 $price = $product["Price"];
                                 $image_file = $product["ImageFile"];
+                                $product_id = $product["ID"];
 
                                 echo "<div class='flex-product-item'>";
                                 echo "  <div class='image-holder'>";
                                 echo "      <img src='../../resources/ProductImages/480x340/$image_file'>";
-                                echo "      <button class='hide-till-hover' onclick=\"window.location.href='../SingleProduct/SingleProduct.php';\">View Details</button>";    
+                                echo "      <button class='hide-till-hover' onclick=\"window.location.href='../SingleProduct/SingleProduct.php?id=$product_id';\">View Details</button>";    
                                 echo "  </div>";        
                                 echo "  <div class='grid-container'>";  
                                 echo "      <p class='product-name'>$name</p>";  

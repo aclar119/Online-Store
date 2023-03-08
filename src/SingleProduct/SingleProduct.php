@@ -24,17 +24,32 @@
         <div class="outer-main">
             <div class="inner-main">
 
+                <?php
+                    $product_id = $_GET["id"];
+                    require_once(__DIR__.'/../Backend/database_selector.php');
+                    $product = selectProduct($product_id);
+
+                    $product_name = $product["Name"];
+                    $product_image = $product["ImageFile"];
+                    $product_desc = $product["Description"];
+                ?>
+
                 <div class="left-main">
                     <h1>Product Details</h1>
                     <div class="image-holder">
-                        <img src="../../resources/ProductImages/Full Size/Generic White T Vertical.png">
+                        <?php
+                        echo "<img src='../../resources/ProductImages/Full Size/$product_image'>";
+                        ?> 
                     </div>
                 </div>
 
                 <div class="right-main">
                     <div class="user-selection" >
+                    
+                    <?php
+                        echo "<h2>$product_name</h2>";
+                    ?> 
 
-                    <h2>Generic White T-Shirt</h2>
                     <p>Available XS-XL</p>
                     <div class="price-and-stock" > 
                         <p class="price">$15</p> 
@@ -69,7 +84,11 @@
 
                     </div>  
                     <h4>Description</h4>
-                    <p2>Modern and comfortable. The best t-shirt you can buy for less than $20. This t-shirt is made from cotton and with the finest materials. Designed for the utmost comfort.</p2>    
+
+                    <?php
+                        echo "<p2>$product_desc</p2>";
+                    ?> 
+
                     <h4>Reviews</h4>
                     
                     <div class="review"> 
