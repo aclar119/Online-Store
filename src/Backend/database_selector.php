@@ -50,6 +50,19 @@
         return $results;
     }
 
+    function selectProduct($id) {
+        $mysqli = DatabaseConfig::get_db_connection();
+
+        $select_query = "SELECT * FROM `Products` WHERE ID = $id";
+        $results = $mysqli->query($select_query);
+        
+        $mysqli->close(); 
+
+        $result = $results->fetch_assoc();
+
+        return $result;
+    }
+
     // Select all categories from the database and return the results object
     function selectColours() {
         $mysqli = DatabaseConfig::get_db_connection();
