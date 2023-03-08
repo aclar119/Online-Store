@@ -216,7 +216,9 @@
                     <?php 
                         if (isset($_GET["search"])) {
                             $search = $_GET["search"];
-                            echo "Displaying search results for <b>$search</b>";
+                            echo "<div class='search-criteria'>";
+                            echo "  <p>Displaying search results for <b>$search</b></p>";
+                            echo "</div>";
                         }
                     ?>
 

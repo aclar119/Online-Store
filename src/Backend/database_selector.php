@@ -5,7 +5,7 @@
         $mysqli = DatabaseConfig::get_db_connection();
 
         $select_query = "SELECT P.ID, P.Name, P.Price, P.Description, P.ImageFile 
-            FROM `Products` AS P  
+            FROM `Products` AS P 
             JOIN `Categories` AS CT ON P.CategoryID = CT.ID
             JOIN `Colours` AS CL ON P.ColourID = CL.ID";
 
@@ -36,6 +36,8 @@
 
             $select_query = substr($select_query, 0, strlen($select_query) - strlen(" AND"));
 
+        } elseif (strlen($search) > 0) {
+            $select_query = $select_query . " WHERE P.Name LIKE '%$search%'";
         }
 
         // echo $select_query;
