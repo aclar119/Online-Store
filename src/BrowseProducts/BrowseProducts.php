@@ -22,10 +22,15 @@
         <script>
             if ((!window.location.href.includes('?')) || window.location.href.includes('search')) {
                 localStorage.clear();
+
+                // Redirect to no search if search term is blank
+                if (window.location.href.substr(-7) == "search=") {
+                    window.location.replace("BrowseProducts.php");
+                }
             }
         </script>
 
-        <navbar-component id="navbar" style="position: sticky; top: 0; z-index: 1;"> </navbar-component>
+        <navbar-component page="Store" id="navbar" style="position: sticky; top: 0; z-index: 1;"> </navbar-component>
         
         <div id="main-container">
             <div class="grid-main">
@@ -182,6 +187,17 @@
                                             requestURL += "colours=" + coloursString;
                                         }
 
+                                        if (window.location.href.includes('sort')) {
+                                            url = window.location.href;
+                                            if (url.includes('sort=featured')) {
+                                                requestURL += '&sort=featured';
+                                            } else if (url.includes('sort=priceascending')) {
+                                                requestURL += '&sort=priceascending';
+                                            } else if (url.includes('sort=pricedescending')) {
+                                                requestURL += '&sort=pricedescending';
+                                            }
+                                        }
+
                                         console.log(requestURL);
 
                                         window.location.replace(requestURL);
@@ -204,13 +220,66 @@
                 <div class="products">
                     <div class="products-header">
                         <h1>Products</h1>
+
                         <div class="select-wrapper">
                             <select name="sort" id="sort">
-                                <option value="featured">Featured</option>
-                                <option value="price-ascending">Price: Ascending</option>
-                                <option value="price-descending">Price: Descending</option>
+                                <?php 
+                                    if (isset($_GET["sort"])) {
+                                        if ($_GET["sort"] == "featured") {
+                                            echo "<option selected  value='featured'>Featured</option>";
+                                            echo "<option value='priceascending'>Price: Ascending</option>";
+                                            echo "<option value='pricedescending'>Price: Descending</option>";
+
+                                        } elseif ($_GET["sort"] == "priceascending") {
+                                            echo "<option value='featured'>Featured</option>";
+                                            echo "<option selected  value='priceascending'>Price: Ascending</option>";
+                                            echo "<option value='pricedescending'>Price: Descending</option>";
+
+                                        } else {
+                                            echo "<option value='featured'>Featured</option>";
+                                            echo "<option value='priceascending'>Price: Ascending</option>";
+                                            echo "<option selected value='pricedescending'>Price: Descending</option>";
+                                        }
+                                    } else {
+                                        echo "<option value='featured'>Featured</option>";
+                                        echo "<option value='priceascending'>Price: Ascending</option>";
+                                        echo "<option value='pricedescending'>Price: Descending</option>";
+                                    }
+                                ?>
                             </select>
                         </div>
+
+                        <script>
+                            let selectSort = document.getElementById("sort");
+                            selectSort.addEventListener("change", () => {
+                                let url = window.location.href;
+
+                                // Add special chars to URL iff needed
+                                if (url.at(-1) != "?") {
+                                    if (url.substr(-4) == ".php") {
+                                        url = url + "?";
+                                    } else if (url.includes('sort')) {
+                                        if (url.includes('sort=featured')) {
+                                            url = url.replace('sort=featured', "");
+                                        } else if (url.includes('sort=priceascending')) {
+                                            url = url.replace('sort=priceascending', "");
+                                        } else if (url.includes('sort=pricedescending')) {
+                                            url = url.replace('sort=pricedescending', "");
+                                        }
+                                        //console.log(url);
+                                    }   
+                                    else {
+                                        url = url + "&";
+                                    }
+                                } 
+
+                                // Add sort variable to end of the URL
+                                url = url + "sort=" + selectSort.value;
+
+                                window.location.replace(url);
+                            });
+                        </script>
+
                     </div>
 
                     <?php 
@@ -230,6 +299,7 @@
                             $search = "";
                             $categories = "";
                             $colours = "";
+                            $sort = "featured";
                             
                             // We decided to make search incompatible with sort/filter for simplicity
                             if (isset($_GET["search"])) {
@@ -246,7 +316,11 @@
                                 
                             }
 
-                            $products = selectProducts($search, $categories, $colours);
+                            if(isset($_GET["sort"])) {
+                                $sort = $_GET["sort"];
+                            }
+
+                            $products = selectProducts($search, $categories, $colours, $sort);
 
                             foreach ($products as $product) {
                                 $name = $product["Name"];
