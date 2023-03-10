@@ -86,23 +86,23 @@ border-radius: 5px;
 margin-bottom: 20px;
 }
 
-.buttons{
-display: flex;
-flex-direction: column;
+.buttons-div{
+display:flex;
 justify-content: center;
-text-align: center;
-padding: 10px;
-width: 40%;
-}
-
-.buttons, a{
-color:#F8F8F8;
-text-decoration: none;
 }
 
 .button{
+margin-top: 20px;
 border-radius: 30px;
 height: 40px;
 background-color: #F8F8F8;
 color:#213536;
+width: 50%;
+}
+
+p.already-member a{
+display: flex;
+justify-content: center;
+color: #F8f8f8;
+text-decoration: none;
 }
