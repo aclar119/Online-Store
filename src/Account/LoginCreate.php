@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -15,7 +16,6 @@
             require_once(__DIR__.'/../Backend/create_database.php');
             createDatabase();
         ?>
-
         <navbar-component> </navbar-component>
     
       <div class="main-container">
@@ -30,7 +30,7 @@
 
                 <div class="form-group">
 
-                    <form action="login.php" method="post" id="Create-form">
+                    <form action="Registration.php" method="get" id="Create-form">
 
                     <label for="First Name">First Name</label>
                     <input class ="Form-input" type="text" id="First-Name" name="First Name" placeholder="First Name" required>
@@ -42,15 +42,18 @@
                     <input class="Form-input" type="password" id="Password" name="Password" placeholder="Password" required>
                     
 
+                        <div class="buttons-div">
+                        <button class= "button" type="submit">Create Account</button>
+                        </div>
+                        <p class="already-member"><a href="login.php">Already a member ?</a></p>
+                    
+
                     </form>
 
                 </div>
 
                  
-             <div class="buttons">
-                 <button class= "button" type="submit">Create Account</button>
-                 <p><a href="login.php">Already a member ?</a></p>
-             </div>
+            
 
              </div>
 
