@@ -2,7 +2,7 @@
   $db_host = 'localhost';
   $db_user = 'root';
   $db_password = 'root';
-  $db_db = 'onlinestore';
+  $db_db = 'Test2';
  
   $conn = @new mysqli(
     $db_host,
@@ -21,5 +21,7 @@
       usersEmail VARCHAR(80) NOT NULL,
       UsersPassword VARCHAR(255) NOT NULL
     )";
+    $conn->query($sql);
   }
+
 ?>
