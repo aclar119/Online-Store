@@ -16,7 +16,7 @@
             createDatabase();
         ?>
 
-        <navbar-component> </navbar-component>
+        <navbar-component page="Account"> </navbar-component>
     
         <div class="main-container">
           <div class="login-container">

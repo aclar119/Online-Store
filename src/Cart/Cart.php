@@ -20,7 +20,7 @@
             createDatabase();
         ?>
 
-        <navbar-component> </navbar-component>
+        <navbar-component page="Cart"> </navbar-component>
     
         <div class="main-outer-section">
             <div class="sub-outer-section"> 

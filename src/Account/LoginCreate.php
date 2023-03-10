@@ -16,7 +16,8 @@
             require_once(__DIR__.'/../Backend/create_database.php');
             createDatabase();
         ?>
-        <navbar-component> </navbar-component>
+
+        <navbar-component> page="Account" </navbar-component>
     
       <div class="main-container">
 

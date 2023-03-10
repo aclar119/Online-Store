@@ -20,12 +20,17 @@
         ?>
 
         <script>
-            if (!window.location.href.includes('?')) {
+            if ((!window.location.href.includes('?')) || window.location.href.includes('search')) {
                 localStorage.clear();
+
+                // Redirect to no search if search term is blank
+                if (window.location.href.substr(-7) == "search=") {
+                    window.location.replace("BrowseProducts.php");
+                }
             }
         </script>
 
-        <navbar-component id="navbar" style="position: sticky; top: 0; z-index: 1;"> </navbar-component>
+        <navbar-component page="Store" id="navbar" style="position: sticky; top: 0; z-index: 1;"> </navbar-component>
         
         <div id="main-container">
             <div class="grid-main">
@@ -182,6 +187,17 @@
                                             requestURL += "colours=" + coloursString;
                                         }
 
+                                        if (window.location.href.includes('sort')) {
+                                            url = window.location.href;
+                                            if (url.includes('sort=featured')) {
+                                                requestURL += '&sort=featured';
+                                            } else if (url.includes('sort=priceascending')) {
+                                                requestURL += '&sort=priceascending';
+                                            } else if (url.includes('sort=pricedescending')) {
+                                                requestURL += '&sort=pricedescending';
+                                            }
+                                        }
+
                                         console.log(requestURL);
 
                                         window.location.replace(requestURL);
@@ -190,12 +206,12 @@
                                 }
                         });
 
-                        // // Combining search with sort/filter isn't worth the effort so if there is a search
-                        // //  query, unselect all the 
-                        // const requestParameters = new URLSearchParams(window.location.search);
-                        // if(requestParameters.has("search")) {
-
-                        // }
+                        // Combining search with sort/filter isn't worth the effort so if there is a search
+                        //  query, unselect all the 
+                        const requestParameters = new URLSearchParams(window.location.search);
+                        if(requestParameters.has("search")) {
+                            
+                        }
                         
                     </script>
 
@@ -204,19 +220,74 @@
                 <div class="products">
                     <div class="products-header">
                         <h1>Products</h1>
+
                         <div class="select-wrapper">
                             <select name="sort" id="sort">
-                                <option value="featured">Featured</option>
-                                <option value="price-ascending">Price: Ascending</option>
-                                <option value="price-descending">Price: Descending</option>
+                                <?php 
+                                    if (isset($_GET["sort"])) {
+                                        if ($_GET["sort"] == "featured") {
+                                            echo "<option selected  value='featured'>Featured</option>";
+                                            echo "<option value='priceascending'>Price: Ascending</option>";
+                                            echo "<option value='pricedescending'>Price: Descending</option>";
+
+                                        } elseif ($_GET["sort"] == "priceascending") {
+                                            echo "<option value='featured'>Featured</option>";
+                                            echo "<option selected  value='priceascending'>Price: Ascending</option>";
+                                            echo "<option value='pricedescending'>Price: Descending</option>";
+
+                                        } else {
+                                            echo "<option value='featured'>Featured</option>";
+                                            echo "<option value='priceascending'>Price: Ascending</option>";
+                                            echo "<option selected value='pricedescending'>Price: Descending</option>";
+                                        }
+                                    } else {
+                                        echo "<option value='featured'>Featured</option>";
+                                        echo "<option value='priceascending'>Price: Ascending</option>";
+                                        echo "<option value='pricedescending'>Price: Descending</option>";
+                                    }
+                                ?>
                             </select>
                         </div>
+
+                        <script>
+                            let selectSort = document.getElementById("sort");
+                            selectSort.addEventListener("change", () => {
+                                let url = window.location.href;
+
+                                // Add special chars to URL iff needed
+                                if (url.at(-1) != "?") {
+                                    if (url.substr(-4) == ".php") {
+                                        url = url + "?";
+                                    } else if (url.includes('sort')) {
+                                        if (url.includes('sort=featured')) {
+                                            url = url.replace('sort=featured', "");
+                                        } else if (url.includes('sort=priceascending')) {
+                                            url = url.replace('sort=priceascending', "");
+                                        } else if (url.includes('sort=pricedescending')) {
+                                            url = url.replace('sort=pricedescending', "");
+                                        }
+                                        //console.log(url);
+                                    }   
+                                    else {
+                                        url = url + "&";
+                                    }
+                                } 
+
+                                // Add sort variable to end of the URL
+                                url = url + "sort=" + selectSort.value;
+
+                                window.location.replace(url);
+                            });
+                        </script>
+
                     </div>
 
                     <?php 
                         if (isset($_GET["search"])) {
                             $search = $_GET["search"];
-                            echo "Displaying search results for <b>$search</b>";
+                            echo "<div class='search-criteria'>";
+                            echo "  <p>Displaying search results for <b>$search</b></p>";
+                            echo "</div>";
                         }
                     ?>
 
@@ -225,54 +296,57 @@
                         <?php 
                             require_once(__DIR__.'/../Backend/database_selector.php');
 
+                            $search = "";
+                            $categories = "";
+                            $colours = "";
+                            $sort = "featured";
+                            
                             // We decided to make search incompatible with sort/filter for simplicity
                             if (isset($_GET["search"])) {
-                                $categories = "";
-                                $colours = "";
+                                $search = $_GET["search"];
                             } else {
-                                $search = "";
 
                                 if(isset($_GET["categories"])) {
                                     $categories = $_GET["categories"];
-                                } else {
-                                    $categories = "";
                                 }
     
                                 if(isset($_GET["colours"])) {
                                     $colours = $_GET["colours"];
-                                } else {
-                                    $colours = "";
                                 }
+                                
+                            }
 
-                                $products = selectProducts($categories, $colours);
+                            if(isset($_GET["sort"])) {
+                                $sort = $_GET["sort"];
+                            }
 
-                                foreach ($products as $product) {
-                                    $name = $product["Name"];
-                                    $price = $product["Price"];
-                                    $image_file = $product["ImageFile"];
+                            $products = selectProducts($search, $categories, $colours, $sort);
 
-                                    echo "<div class='flex-product-item'>";
-                                    echo "  <div class='image-holder'>";
-                                    echo "      <img src='../../resources/ProductImages/480x340/$image_file'>";
-                                    echo "      <button class='hide-till-hover' onclick=\"window.location.href='../SingleProduct/SingleProduct.php';\">View Details</button>";    
-                                    echo "  </div>";        
-                                    echo "  <div class='grid-container'>";  
-                                    echo "      <p class='product-name'>$name</p>";  
-                                    echo "      <p class='product-price'>$$price</p>"; 
-                                    echo "  </div>";
-                                    echo "</div>"; 
+                            foreach ($products as $product) {
+                                $name = $product["Name"];
+                                $price = $product["Price"];
+                                $image_file = $product["ImageFile"];
+                                $product_id = $product["ID"];
 
-                                }
-
-                                // If there are 2 products in the last row, add a blank one so that everything aligns properly
-                                if ($products->num_rows % 3 == 2) {
-                                    echo "<div class='flex-product-item'>";
-                                    echo "</div>"; 
-                                }
+                                echo "<div class='flex-product-item'>";
+                                echo "  <div class='image-holder'>";
+                                echo "      <img src='../../resources/ProductImages/480x340/$image_file'>";
+                                echo "      <button class='hide-till-hover' onclick=\"window.location.href='../SingleProduct/SingleProduct.php?id=$product_id';\">View Details</button>";    
+                                echo "  </div>";        
+                                echo "  <div class='grid-container'>";  
+                                echo "      <p class='product-name'>$name</p>";  
+                                echo "      <p class='product-price'>$$price</p>"; 
+                                echo "  </div>";
+                                echo "</div>"; 
 
                             }
 
-                            
+                            // If there are 2 products in the last row, add a blank one so that everything aligns properly
+                            if ($products->num_rows % 3 == 2) {
+                                echo "<div class='flex-product-item'>";
+                                echo "</div>"; 
+                            }
+
                         ?>
 
                     </div>

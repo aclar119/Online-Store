@@ -7,7 +7,7 @@
 
 
         private static $DB_NAME = "onlinestore";
-        private static $DB_HOST = '127.0.0.1';
+        private static $DB_HOST = 'localhost';
         private static $DB_USER = 'root';
 
         private static $WINDOWS_PASSWORD = '';

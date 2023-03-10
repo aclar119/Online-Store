@@ -1,7 +1,7 @@
 <?php
 
     // Select all products from the database and return the results object
-    function selectProducts($categories, $colours) {
+    function selectProducts($search, $categories, $colours, $sort) {
         $mysqli = DatabaseConfig::get_db_connection();
 
         $select_query = "SELECT P.ID, P.Name, P.Price, P.Description, P.ImageFile 
@@ -36,16 +36,38 @@
 
             $select_query = substr($select_query, 0, strlen($select_query) - strlen(" AND"));
 
+        } elseif (strlen($search) > 0) {
+            $select_query = $select_query . " WHERE P.Name LIKE '%$search%'";
+        }
+
+        if ($sort != "featured") {
+            if ($sort == "priceascending") {
+                $select_query = $select_query . " ORDER BY P.Price ASC";
+            } elseif ($sort == "pricedescending") {
+                $select_query = $select_query . " ORDER BY P.Price DESC";
+            } 
         }
 
         // echo $select_query;
-        
 
         $results = $mysqli->query($select_query . ";");
         
         $mysqli->close(); 
 
         return $results;
+    }
+
+    function selectProduct($id) {
+        $mysqli = DatabaseConfig::get_db_connection();
+
+        $select_query = "SELECT * FROM `Products` WHERE ID = $id";
+        $results = $mysqli->query($select_query);
+        
+        $mysqli->close(); 
+
+        $result = $results->fetch_assoc();
+
+        return $result;
     }
 
     // Select all categories from the database and return the results object

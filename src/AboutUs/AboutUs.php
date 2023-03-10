@@ -19,7 +19,7 @@
             createDatabase();
         ?>
 
-        <navbar-component> </navbar-component>
+        <navbar-component page="About Us"> </navbar-component>
 
         <div class="about-us-container">
             <div class="about-us">

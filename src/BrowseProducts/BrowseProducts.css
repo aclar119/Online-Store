@@ -230,6 +230,11 @@ div.products {
   outline: none;
 }
 
+.search-criteria {
+  color: #213536;
+  padding: 0, 12px;
+}
+
 .flex-products {
   /* This div organizes the products on the page */
   display: flex;

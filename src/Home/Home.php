@@ -177,7 +177,7 @@
                             <div id="generic-colours-divider">
                                 <h2>Generic Colours Line</h2>
                                 <div></div>
-                                <button onclick="window.location.href='../BrowseProducts/BrowseProducts.php';">View More</button>
+                                <button onclick="window.location.href='../BrowseProducts/BrowseProducts.php?search=Generic';">View More</button>
                             </div>
                         </td>
                     </tr>
