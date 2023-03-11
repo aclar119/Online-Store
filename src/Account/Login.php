@@ -1,9 +1,13 @@
+<?php
+    require_once(__DIR__.'/../Backend/login_database.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Online Store</title>
         <link rel="icon" type="image/x-icon" href="../../resources/Icons/Logo Square.png">
-        <link rel="stylesheet" href="Login-1.css">
+        <link rel="stylesheet" href="Login.css">
         <script src="../Components/navbar.js" type="text/javascript" defer></script>
         <script src="../Components/footer.js" type="text/javascript" defer></script>
     </head>
@@ -30,35 +34,37 @@
 
                 <div class="form-group">
 
-                <form action="login.php" method="post" id="login-field">
+                <form action="../Backend/login_backend.php" method="post" id="login-field">
 
                     <table id="login-table">
                     
                     <tr>
-                    <th><label for="email">Email</label></th>
+                    <th><label for="uid">ID</label></th>
                     </tr>
                     <tr>
-                    <td><input type="email" id="email" name="email" placeholder="Email" required></td>
+                    <td><input type="text" id="uid" name="uid" placeholder="Email or Username"></td>
                     </tr>  
                     <tr>
                     <th><label for="password">Password</label></th>
                     </tr>
                     <tr>
-                    <td><input type="password" id="password" name="password" placeholder="Password" required></td>
+                    <td><input type="password" id="password" name="password" placeholder="Password"></td>
                     </tr>
 
                     </table>
                     
-                    
+                    <div class="button-submit">
+                    <button type="submit" class="button" name="submit">Login</button>
+                     </div>
+                    <p class="not-member"><a href="Signup.php">Not yet a member ?</a></p>
+                   
+
+               </div>
                 </form>
 
                </div>
 
-                <div class="buttons">
-                 <button type="submit" class="button">Login</button>
-                 <p><a href="loginCreate.php">Not yet a member ?</a></p>
-                </div>
-               </div>
+
             </div>
 
        </div>

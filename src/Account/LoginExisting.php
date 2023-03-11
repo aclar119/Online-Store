@@ -1,3 +1,7 @@
+<?php
+    require_once(__DIR__.'/../Backend/login_database.php');
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,12 +25,20 @@
         <div class="main-container">
           <div class="login-container">
              <div class="login-header">
-                 <h1>Logged in as <span class=[username]></span> </h1>
+                <?php
+                session_start();
+                if(isset($_SESSION["useruid"])) {
+                $username = $_SESSION["useruid"];
+                echo"<h1>Logged in as <span class='username'>$username</span> </h1>";
+                } 
+                else {
+                header("Location: Login.php");
+                exit;
+                }
+            ?>               
                 <div class="not-you"> 
                 <p> Not you? </p>
-                <form action="logout.php" method="post">
-                 <button type="submit">Log Out</button>
-                 </form>
+                 <button onclick="window.location.href='../Backend/logout_backend.php'" type="submit">Log Out</button>
                 </div>
 
             </div>
