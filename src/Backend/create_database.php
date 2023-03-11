@@ -22,7 +22,13 @@
         $create_db = "CREATE DATABASE " . DatabaseConfig::get_name();
 
         // If the database didn't already exist, we need to populate it
-        if($mysqli->query($create_db)) {
+        try {
+            $success = $mysqli->query($create_db);
+        } catch (Exception $e) {
+            $success = false;
+        }
+
+        if($success) {
             
             // Need to refresh our connection with a proper link to the actual db
             $mysqli = new mysqli(
@@ -62,10 +68,10 @@
             Name VARCHAR(255) NOT NULL,
             Price FLOAT NOT NULL,
             Description TEXT NOT NULL,
-            ColourID INT NOT NULL,
+            ColourID INT UNSIGNED NOT NULL,
             FOREIGN KEY (ColourID) REFERENCES Colours(ID),
             ImageFile VARCHAR(255) NOT NULL,
-            CategoryID INT NOT NULL,
+            CategoryID INT UNSIGNED NOT NULL,
             FOREIGN KEY (CategoryID) REFERENCES Categories(ID)
         )";
 
@@ -78,17 +84,17 @@
         )";
 
         $create_table_cart_items = "CREATE TABLE CartItems (
-            UserID INT NOT NULL,
+            UserID INT UNSIGNED NOT NULL,
             FOREIGN KEY (UserID) REFERENCES Users(ID),
-            ProductID INT NOT NULL,
+            ProductID INT UNSIGNED NOT NULL,
             FOREIGN KEY (ProductID) REFERENCES Products(ID),
             Quantity INT NOT NULL
         )";
 
         $create_table_reviews = "CREATE TABLE Reviews (
-            UserID INT NOT NULL,
+            UserID INT UNSIGNED NOT NULL,
             FOREIGN KEY (UserID) REFERENCES Users(ID),
-            ProductID INT NOT NULL,
+            ProductID INT UNSIGNED NOT NULL,
             FOREIGN KEY (ProductID) REFERENCES Products(ID),
             Rating INT NOT NULL,
             Review TEXT,
