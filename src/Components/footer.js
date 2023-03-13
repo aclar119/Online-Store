@@ -9,6 +9,8 @@ class Footer extends HTMLElement {
 
             #footer {
             display: grid;
+            font-size: 14px;
+            line-height: 14px;
             }
             
             #footer-line {

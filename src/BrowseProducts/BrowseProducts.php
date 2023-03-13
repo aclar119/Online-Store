@@ -1,4 +1,7 @@
+<!-- Ensure the database exists. Create it if it doesn't exist -->
 <?php 
+    require_once(__DIR__.'/../Backend/create_database.php');
+    createDatabase();
     session_start();
 ?>
 
@@ -12,12 +15,6 @@
         <script src="../Components/footer.js" type="text/javascript" defer></script>
     </head>
     <body>
-
-        <!-- Ensure the database exists. Create it if it doesn't exist -->
-        <?php
-            require_once(__DIR__.'/../Backend/create_database.php');
-            createDatabase();
-        ?>
 
         <script>
             if ((!window.location.href.includes('?')) || window.location.href.includes('search')) {

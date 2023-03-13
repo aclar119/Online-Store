@@ -77,10 +77,9 @@
 
         $create_table_users = "CREATE TABLE Users (
             ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            Email VARCHAR(80) NOT NULL,
-            HashedPassword VARCHAR(255) NOT NULL,
-            FirstName VARCHAR(40) NOT NULL,
-            LastName VARCHAR(40) NOT NULL
+            Email VARCHAR(80) UNIQUE NOT NULL,
+            Username VARCHAR(128) UNIQUE NOT NULL,
+            HashedPassword VARCHAR(255) NOT NULL
         )";
 
         $create_table_cart_items = "CREATE TABLE CartItems (
@@ -113,8 +112,8 @@
         $root_password = password_hash("root", PASSWORD_DEFAULT);
 
         $insert_user_root = "INSERT INTO 
-            Users (Email, HashedPassword, FirstName, LastName)
-            VALUES ('root', '$root_password', 'Rootfirst', 'Rootlast')
+            Users (Email, Username, HashedPassword)
+            VALUES ('root', 'root', '$root_password')
         ";
 
         $mysqli->query($insert_user_root);
