@@ -174,7 +174,7 @@
             array(
                 "name" => "Generic Blue T",
                 "price" => 20.00,
-                "description" => "Made from soft, breathable cotton, this tee is both comfortable and stylish, and comes in at an incredibly affordable price of just $20. The timeless blue shirt makes this tee a versatile choice for any occasion, whether it's a casual night out or a night in with friends. Great quality, timeless design and affordability make this shirt the right choice for those who want to be fashionable without spending a fortune.",
+                "description" => "Made from soft, breathable cotton, this tee is both comfortable and stylish, and comes in at an incredibly affordable price of just $20. The timeless blue shirt makes this tee a versatile choice for any occasion, whether it''s a casual night out or a night in with friends. Great quality, timeless design and affordability make this shirt the right choice for those who want to be fashionable without spending a fortune.",
                 "colourId" => 2, // Blue
                 "imageFile" => "Generic Blue T.png",
                 "categoryId" => 1, // T-Shirts
@@ -305,7 +305,7 @@
                 Products (Name, Price, Description, ColourID, ImageFile, CategoryID)
                 VALUES ('$name', $price, '$description', $colour_id, '$image_file', $category_id)
             ";
-            
+
             $mysqli->query($insert_product);
         }
     }
