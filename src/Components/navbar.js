@@ -47,6 +47,7 @@ class Navbar extends HTMLElement {
               padding-right: 16px;
               text-decoration: none;
               font-size: 18px;
+              line-height: 22px;
           }
           
           .navbar a:hover {
