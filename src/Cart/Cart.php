@@ -43,12 +43,12 @@
                                 <div class="quantity-text">Quantity</div>
                                 
                                 <!-- Quantity Adjustment Button -->
-                                <div class="quantity-number-container">
+                                <div class="quantity-number-container" id="cart-product-1">
                                     <button class="quantity-minus">-</button>
                                     <div class="quantity-number">1</div>
                                     <button class="quantity-plus">+</button>
                                 </div>
-                
+
                             </div>
                 
                             <div class="price-section">
@@ -73,7 +73,7 @@
                                 <div class="quantity-text">Quantity</div>
 
                                 <!-- Quantity Adjustment Button -->
-                                <div class="quantity-number-container">
+                                <div class="quantity-number-container" id="cart-product-2">
                                     <button class="quantity-minus">-</button>
                                     <div class="quantity-number">3</div>
                                     <button class="quantity-plus">+</button>
@@ -103,7 +103,7 @@
                                 <div class="quantity-text">Quantity</div>
 
                                 <!-- Quantity Adjustment Button -->
-                                <div class="quantity-number-container">
+                                <div class="quantity-number-container" id="cart-product-3">
                                     <button class="quantity-minus">-</button>
                                     <div class="quantity-number">3</div>
                                     <button class="quantity-plus">+</button>
@@ -133,7 +133,7 @@
                                 <div class="quantity-text">Quantity</div>
 
                                 <!-- Quantity Adjustment Button -->
-                                <div class="quantity-number-container">
+                                <div class="quantity-number-container" id="cart-product-4">
                                     <button class="quantity-minus">-</button>
                                     <div class="quantity-number">3</div>
                                     <button class="quantity-plus">+</button>
@@ -163,7 +163,7 @@
                                 <div class="quantity-text">Quantity</div>
 
                                 <!-- Quantity Adjustment Button -->
-                                <div class="quantity-number-container">
+                                <div class="quantity-number-container" id="cart-product-5">
                                     <button class="quantity-minus">-</button>
                                     <div class="quantity-number">3</div>
                                     <button class="quantity-plus">+</button>
@@ -179,6 +179,32 @@
                         </div>  
                     
                     </div>
+
+                    <script>
+
+                        // Make the increment and decrement buttons work for the item quantities
+
+                        let numberContainers = document.getElementsByClassName("quantity-number-container");
+                        for (var i = 0; i < numberContainers.length; i++) {
+                            let numberContainer = numberContainers.item(i);
+                            
+                            let minusButton = numberContainer.getElementsByClassName("quantity-minus").item(0);
+                            let plusButton = numberContainer.getElementsByClassName("quantity-plus").item(0);
+                            let numberElement = numberContainer.getElementsByClassName("quantity-number").item(0);
+
+                            minusButton.addEventListener("click", () => {
+                                if (Number(numberElement.innerText) > 0) {
+                                    numberElement.innerText = Number(numberElement.innerText) - 1;
+                                }
+                                
+                            });
+
+                            plusButton.addEventListener("click", () => {
+                                numberElement.innerText = Number(numberElement.innerText) + 1;
+                            });
+                        }
+
+                    </script>
                     
                 </div>
             
