@@ -182,7 +182,7 @@
             array(
                 "name" => "Generic Black T",
                 "price" => 20.00,
-                "description" => "This black t-shirt from our collection is essential for those looking for a simple yet stylish basic. With a classic fit and a color that works for any occasion, this shirt is a versatile and stylish choice that can be worn any time of the year, alone or under a jacket. The exceptional quality of this shirt is reflected in every detail, it's simple yet carefully crafted at the seams. And thanks to its affordable price, you can add this shirt to your wardrobe without breaking the bank. What are you waiting for?",
+                "description" => "This black t-shirt from our collection is essential for those looking for a simple yet stylish basic. With a classic fit and a color that works for any occasion, this shirt is a versatile and stylish choice that can be worn any time of the year, alone or under a jacket. The exceptional quality of this shirt is reflected in every detail, it''s simple yet carefully crafted at the seams. And thanks to its affordable price, you can add this shirt to your wardrobe without breaking the bank. What are you waiting for?",
                 "colourId" => 1, // Black
                 "imageFile" => "Generic Black T.png",
                 "categoryId" => 1, // T-Shirts
@@ -198,7 +198,7 @@
             array(
                 "name" => "Generic Yellow T",
                 "price" => 20.00,
-                "description" => "The yellow t-shirt from our collection is a bold choice for those who want to add a bright color to their wardrobe. The bright yellow shade of this t-shirt is a great choice for adding a vibrant and cheerful touch to any outfit, whether it's on a sunny day or to brighten up a rainy one. With great quality and bright colors, this yellow t-shirt is an essential for those looking for a cheap t-shirt to add some sparkle to their wardrobe.",
+                "description" => "The yellow t-shirt from our collection is a bold choice for those who want to add a bright color to their wardrobe. The bright yellow shade of this t-shirt is a great choice for adding a vibrant and cheerful touch to any outfit, whether it''s on a sunny day or to brighten up a rainy one. With great quality and bright colors, this yellow t-shirt is an essential for those looking for a cheap t-shirt to add some sparkle to their wardrobe.",
                 "colourId" => 7, // Yellow
                 "imageFile" => "Generic Yellow T.png",
                 "categoryId" => 1, // T-Shirts
@@ -206,7 +206,7 @@
             array(
                 "name" => "Generic White T",
                 "price" => 20.00,
-                "description" => "The white T-shirt is a timeless classic that never goes out of style. Made from premium cotton, the T-shirt offers exceptional comfort and long-lasting wear, making it an essential piece for any wardrobe. The bright hues give a fresh, clean look to any outfit, whether it's a casual day or a formal occasion. In addition to being economical, the neat seams and perfect finish are a testament to its superior quality.",
+                "description" => "The white T-shirt is a timeless classic that never goes out of style. Made from premium cotton, the T-shirt offers exceptional comfort and long-lasting wear, making it an essential piece for any wardrobe. The bright hues give a fresh, clean look to any outfit, whether it''s a casual day or a formal occasion. In addition to being economical, the neat seams and perfect finish are a testament to its superior quality.",
                 "colourId" => 6, // White
                 "imageFile" => "Generic White T.png",
                 "categoryId" => 1, // T-Shirts
@@ -214,7 +214,7 @@
             array(
                 "name" => "Green Jacket",
                 "price" => 40.00,
-                "description" => "From high-quality materials, this jacket has a modern and stylish look. The green color is perfect for adding a vibrant touch to any outfit, while the slim fit offers a flattering silhouette for any body type. Convenient pockets and a solid zipper and button closure make this versatile jacket a practical piece that can be worn for any occasion. It can be worn at any time of the year, whether it's in the spring for protection from the wind or in the cold of winter.",
+                "description" => "From high-quality materials, this jacket has a modern and stylish look. The green color is perfect for adding a vibrant touch to any outfit, while the slim fit offers a flattering silhouette for any body type. Convenient pockets and a solid zipper and button closure make this versatile jacket a practical piece that can be worn for any occasion. It can be worn at any time of the year, whether it''s in the spring for protection from the wind or in the cold of winter.",
                 "colourId" => 4, // Green
                 "imageFile" => "Green Jacket.png",
                 "categoryId" => 2, // Jackets
@@ -222,7 +222,7 @@
             array(
                 "name" => "Blue Denim Jacket",
                 "price" => 40.00,
-                "description" => "Our denim blue jacket is crafted from sturdy and high-quality denim material, which not only provides a fashionable appearance but also adds practicality to the design. Denim is a durable and long-lasting fabric, making this jacket a wise investment for anyone looking for an outerwear piece that can withstand regular use.The classic blue color of this jacket is a versatile shade that pairs well with a variety of outfits, while the timeless design ensures that it will never go out of style. Whether you're dressing up for a semi-formal event or running errands on the weekend, our denim blue jacket is the perfect choice.",
+                "description" => "Our denim blue jacket is crafted from sturdy and high-quality denim material, which not only provides a fashionable appearance but also adds practicality to the design. Denim is a durable and long-lasting fabric, making this jacket a wise investment for anyone looking for an outerwear piece that can withstand regular use. The classic blue color of this jacket is a versatile shade that pairs well with a variety of outfits, while the timeless design ensures that it will never go out of style. Whether you''re dressing up for a semi-formal event or running errands on the weekend, our denim blue jacket is the perfect choice.",
                 "colourId" => 2, // Blue
                 "imageFile" => "Blue Denim Jacket.png",
                 "categoryId" => 2, // Jackets
@@ -230,7 +230,7 @@
             array(
                 "name" => "White Jacket",
                 "price" => 40.00,
-                "description" => "Add a touch of sophistication to your outfit with our elegant white jacket. Made from high-quality materials, it's designed to last and has a flattering cut that accentuates your figure. Perfect for both formal events and everyday wear, this versatile jacket is available in various sizes and styles. Shop now for fast and easy online ordering and elevate your wardrobe today.",
+                "description" => "Add a touch of sophistication to your outfit with our elegant white jacket. Made from high-quality materials, it''s designed to last and has a flattering cut that accentuates your figure. Perfect for both formal events and everyday wear, this versatile jacket is available in various sizes and styles. Shop now for fast and easy online ordering and elevate your wardrobe today.",
                 "colourId" => 6, // White
                 "imageFile" => "White Jacket.png",
                 "categoryId" => 2, // Jackets
@@ -238,7 +238,7 @@
             array(
                 "name" => "Grey Jacket",
                 "price" => 40.00,
-                "description" => "Introducing our stylish grey jacket, a wardrobe staple that effortlessly combines fashion and functionality. Made from high-quality materials, this jacket is both durable and comfortable, making it a versatile piece that's perfect for any occasion. The neutral grey color of the jacket adds a touch of sophistication to any outfit, while the sleek and modern design ensures that you always look your best. Whether you're dressing up for a night out or keeping it casual on the weekend, this grey jacket is a must-have addition to your wardrobe.",
+                "description" => "Introducing our stylish grey jacket, a wardrobe staple that effortlessly combines fashion and functionality. Made from high-quality materials, this jacket is both durable and comfortable, making it a versatile piece that''s perfect for any occasion. The neutral grey color of the jacket adds a touch of sophistication to any outfit, while the sleek and modern design ensures that you always look your best. Whether you''re dressing up for a night out or keeping it casual on the weekend, this grey jacket is a must-have addition to your wardrobe.",
                 "colourId" => 5, // Grey
                 "imageFile" => "Grey Jacket.png",
                 "categoryId" => 2, // Jackets
@@ -246,7 +246,7 @@
             array(
                 "name" => "Black Jacket",
                 "price" => 40.00,
-                "description" => "Introducing our sleek black jacket, a versatile and stylish piece that's perfect for any occasion. Made from high-quality materials, this jacket is designed to last and provide comfort and functionality for everyday wear. The classic black color of the jacket adds a touch of sophistication to any outfit, while the modern and flattering design ensures that you look your best. Whether you're dressing up for a formal event or keeping it casual on the weekend, this black jacket is a must-have addition to your wardrobe.",
+                "description" => "Introducing our sleek black jacket, a versatile and stylish piece that''s perfect for any occasion. Made from high-quality materials, this jacket is designed to last and provide comfort and functionality for everyday wear. The classic black color of the jacket adds a touch of sophistication to any outfit, while the modern and flattering design ensures that you look your best. Whether you''re dressing up for a formal event or keeping it casual on the weekend, this black jacket is a must-have addition to your wardrobe.",
                 "colourId" => 1, // Black
                 "imageFile" => "Black Jacket.png",
                 "categoryId" => 2, // Jackets
@@ -254,7 +254,7 @@
             array(
                 "name" => "Black Sweater",
                 "price" => 25.00,
-                "description" => "Introducing our cozy and stylish black sweater, a must-have addition to your winter wardrobe. Made from high-quality materials, this sweater is both comfortable and durable, ensuring that you stay warm and fashionable throughout the season.The classic black color of the sweater is versatile and can be easily paired with a variety of outfits, while the cozy and comfortable design makes it perfect for layering. Whether you're snuggled up at home or out running errands, this black sweater is a great choice for both comfort and style.",
+                "description" => "Introducing our cozy and stylish black sweater, a must-have addition to your winter wardrobe. Made from high-quality materials, this sweater is both comfortable and durable, ensuring that you stay warm and fashionable throughout the season. The classic black color of the sweater is versatile and can be easily paired with a variety of outfits, while the cozy and comfortable design makes it perfect for layering. Whether you''re snuggled up at home or out running errands, this black sweater is a great choice for both comfort and style.",
                 "colourId" => 1, // Black
                 "imageFile" => "Black Sweater.png",
                 "categoryId" => 3, // Sweaters
@@ -262,7 +262,7 @@
             array(
                 "name" => "White Sweater",
                 "price" => 25.00,
-                "description" => "From its versatility, as white is a neutral color that can be easily combined with other colors; from its freshness, as this color is often associated with cleanliness and freshness, which can make an outfit look cleaner and neater; from its comfort and style: our white cotton sweaters, available in both men's and women's sizes, are soft and comfortable, which makes them nice to wear on cooler days and adds an elegant and sophisticated touch to an outfit.",
+                "description" => "From its versatility, as white is a neutral color that can be easily combined with other colors; from its freshness, as this color is often associated with cleanliness and freshness, which can make an outfit look cleaner and neater; from its comfort and style: our white cotton sweaters, are soft and comfortable, which makes them nice to wear on cooler days and adds an elegant and sophisticated touch to an outfit.",
                 "colourId" => 6, // White
                 "imageFile" => "White Sweater.png",
                 "categoryId" => 3, // Sweaters
@@ -278,7 +278,7 @@
             array(
                 "name" => "Grey Sweater",
                 "price" => 25.00,
-                "description" => "Introducing our cozy and stylish grey sweater, a must-have addition to your winter wardrobe. Made from high-quality materials, this sweater is both comfortable and durable, ensuring that you stay warm and fashionable throughout the season. The neutral grey color of the sweater is versatile and can be easily paired with a variety of outfits, while the cozy and comfortable design makes it perfect for layering. Whether you're snuggled up at home or out running.",
+                "description" => "Introducing our cozy and stylish grey sweater, a must-have addition to your winter wardrobe. Made from high-quality materials, this sweater is both comfortable and durable, ensuring that you stay warm and fashionable throughout the season. The neutral grey color of the sweater is versatile and can be easily paired with a variety of outfits, while the cozy and comfortable design makes it perfect for layering. Whether you''re snuggled up at home or out running.",
                 "colourId" => 5, // Grey
                 "imageFile" => "Grey Sweater.png",
                 "categoryId" => 3, // Sweaters
