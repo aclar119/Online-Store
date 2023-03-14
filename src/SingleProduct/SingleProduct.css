@@ -68,7 +68,7 @@ html, body {
 }
 
 .right-main h2 {
-    color: white;
+    color: #F8F8F8;
     margin:0;
     
 }
@@ -140,7 +140,7 @@ html, body {
 /* Quantity Section */
 
 .quantity-container {
-    background-color: white;
+    background-color: #F8F8F8 ;
     height: 80px;
     width: calc(100% - 20px);
     display: flex;
@@ -192,7 +192,7 @@ h3.h3-quantity{
     left: 0;
     border-top-left-radius: 40px;
     border-bottom-left-radius: 40px;
-    color: whitesmoke;
+    color: #F8F8F8;
     border: none;
     border-right: 1px solid #F8F8F8;
   }
@@ -217,7 +217,7 @@ h3.h3-quantity{
     right: 0;
     border-top-right-radius: 40px;
     border-bottom-right-radius: 40px;
-    color: whitesmoke;
+    color: #F8F8F8;
     border: none;
     border-left: 1px solid #F8F8F8;
   }

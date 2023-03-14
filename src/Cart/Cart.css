@@ -40,6 +40,10 @@ html, body {
   width:70%;
 }
 
+.shopping-cart-section h1 {
+    color: #213536;
+  }
+
 .items-section {
     overflow-y: auto;
 }
@@ -144,6 +148,14 @@ html, body {
     color: #213536;
     border: none;
     border-left: 1px solid #213536;
+  }
+
+  .quantity-number-container button:active {
+    background-color: gray;
+  }
+
+  .quantity-number-container button:hover {
+    cursor: pointer;
   }
 
 .price-section{

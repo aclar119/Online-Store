@@ -1,4 +1,7 @@
+<!-- Ensure the database exists. Create it if it doesn't exist -->
 <?php 
+    require_once(__DIR__.'/../Backend/create_database.php');
+    createDatabase();
     session_start();
 ?>
 
@@ -12,12 +15,6 @@
         <script src="../Components/footer.js" type="text/javascript" defer></script>
     </head>
     <body>
-
-        <!-- Ensure the database exists. Create it if it doesn't exist -->
-        <?php
-            require_once(__DIR__.'/../Backend/create_database.php');
-            createDatabase();
-        ?>
 
         <navbar-component> </navbar-component>
         
@@ -75,10 +72,43 @@
                                 <div class="quantity-number">1</div>
                                 <button class="quantity-plus">+</button>
                             </div>
-                        
+
+                            <script>
+
+                                // Make the increment and decrement buttons work for the item quantity
+
+                                let numberContainers = document.getElementsByClassName("quantity-number-container");
+                                let numberContainer = numberContainers.item(0);
+                                
+                                let minusButton = numberContainer.getElementsByClassName("quantity-minus").item(0);
+                                let plusButton = numberContainer.getElementsByClassName("quantity-plus").item(0);
+                                let numberElement = numberContainer.getElementsByClassName("quantity-number").item(0);
+
+                                minusButton.addEventListener("click", () => {
+                                    if (Number(numberElement.innerText) > 0) {
+                                        numberElement.innerText = Number(numberElement.innerText) - 1;
+                                    }
+                                });
+
+                                plusButton.addEventListener("click", () => {
+                                    numberElement.innerText = Number(numberElement.innerText) + 1;
+                                });
+
+                            </script>
+
                             <button class="add-to-cart">Add to Cart</button>
                         </div>
-                        <div class="added-to-cart"> 1 item added to cart </div>
+                        <div class="added-to-cart">
+                        <?php
+                            if (isset($_GET["added"])) {
+                                if ($_GET["added"] > 1) {
+                                    echo $_GET["added"] . " items added to cart";
+                                } else {
+                                    echo $_GET["added"] . " item added to cart";
+                                }
+                            }
+                        ?>
+                        </div>
                     </div>
                 </div>
 
