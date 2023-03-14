@@ -196,7 +196,6 @@
                                 if (Number(numberElement.innerText) > 0) {
                                     numberElement.innerText = Number(numberElement.innerText) - 1;
                                 }
-                                
                             });
 
                             plusButton.addEventListener("click", () => {
