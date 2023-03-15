@@ -288,7 +288,12 @@ html, body {
   margin-bottom: 5%;
 }
 
-.buy-button{
+.checkout-button {
   width: 100%;
   height: 40px;
+}
+
+.checkout-message {
+    margin-bottom: 12px;
+    text-align: center;
 }

@@ -36,92 +36,64 @@
                             if(!isset($_SESSION["userid"])) {
                                 echo "You must be logged in to view your cart";
                             } else {
-                                require_once(__DIR__.'/../Backend/Cart/cart_functions.php');
-                                $cart_items = selectCartItems($_SESSION["userid"]);
+                                if (!isset($_GET["message"])) {
+                                    require_once(__DIR__.'/../Backend/Cart/cart_functions.php');
+                                    $cart_items = selectCartItems($_SESSION["userid"]);
 
-                                if ($cart_items->num_rows > 0) {
-                                    foreach ($cart_items as $cart_item) {
+                                    if ($cart_items->num_rows > 0) {
+                                        foreach ($cart_items as $cart_item) {
 
-                                        $item_quantity = $cart_item["Quantity"];
-                                        $item_size = $cart_item["Size"];
-                                        $item_price = $cart_item["Price"] * $item_quantity;
+                                            $item_quantity = $cart_item["Quantity"];
+                                            $item_size = $cart_item["Size"];
+                                            $item_price = $cart_item["Price"] * $item_quantity;
 
-                                        $product_id = $cart_item["ID"];
-                                        $product_name = $cart_item["Name"];
-                                        $product_image = $cart_item["ImageFile"];
+                                            $product_id = $cart_item["ID"];
+                                            $product_name = $cart_item["Name"];
+                                            $product_image = $cart_item["ImageFile"];
 
-                                        // Cart Item
-                                        echo "<!-- Cart Item -->";
-                                        echo "<div class='cart-item' id='cart-product-$product_id-$item_size'>";
-                                        echo "";
-                                        echo "    <div class='items-picture'>";
-                                        echo "        <img src='../../resources/ProductImages/360x360/$product_image'>";
-                                        echo "    </div>";
-                                        echo "";
-                                        echo "    <div class='left-items-text'>";
-                                        echo "        <div class='left-text1' onclick=\"window.location.href='../SingleProduct/SingleProduct.php?id=$product_id';\">$product_name ($item_size)</div>";
-                                        echo "        <div class='left-text2'>In Stock</div>";
-                                        echo "    </div>";
-                                        echo "";
-                                        echo "    <div class='quantity-section'>";
-                                        echo "";
-                                        echo "        <div class='quantity-text'>Quantity</div>";
-                                        echo "";        
-                                        echo "        <!-- Quantity Adjustment Button -->";
-                                        echo "        <div class='quantity-number-container' id='cart-product-1'>";
-                                        echo "            <button class='quantity-minus'>-</button>";
-                                        echo "            <div class='quantity-number'>$item_quantity</div>";
-                                        echo "            <button class='quantity-plus'>+</button>";
-                                        echo "        </div>";
-                                        echo "";
-                                        echo "    </div>";
-                                        echo "";
-                                        echo "    <div class='price-section'>";
-                                        echo "        <div class='item-price'>$$item_price</div>";
-                                        echo "        <div class='x-remove'>x Remove</div>";
-                                        echo "    </div>";
-                                        echo "";
-                                        echo "</div>";
+                                            // Cart Item
+                                            echo "<!-- Cart Item -->";
+                                            echo "<div class='cart-item' id='cart-product-$product_id-$item_size'>";
+                                            echo "";
+                                            echo "    <div class='items-picture'>";
+                                            echo "        <img src='../../resources/ProductImages/360x360/$product_image'>";
+                                            echo "    </div>";
+                                            echo "";
+                                            echo "    <div class='left-items-text'>";
+                                            echo "        <div class='left-text1' onclick=\"window.location.href='../SingleProduct/SingleProduct.php?id=$product_id';\">$product_name ($item_size)</div>";
+                                            echo "        <div class='left-text2'>In Stock</div>";
+                                            echo "    </div>";
+                                            echo "";
+                                            echo "    <div class='quantity-section'>";
+                                            echo "";
+                                            echo "        <div class='quantity-text'>Quantity</div>";
+                                            echo "";        
+                                            echo "        <!-- Quantity Adjustment Button -->";
+                                            echo "        <div class='quantity-number-container' id='cart-product-1'>";
+                                            echo "            <button class='quantity-minus'>-</button>";
+                                            echo "            <div class='quantity-number'>$item_quantity</div>";
+                                            echo "            <button class='quantity-plus'>+</button>";
+                                            echo "        </div>";
+                                            echo "";
+                                            echo "    </div>";
+                                            echo "";
+                                            echo "    <div class='price-section'>";
+                                            echo "        <div class='item-price'>$$item_price</div>";
+                                            echo "        <div class='x-remove'>x Remove</div>";
+                                            echo "    </div>";
+                                            echo "";
+                                            echo "</div>";
+                                        }
+
+                                    } else {
+                                        echo "Your cart is empty!";
                                     }
-
                                 } else {
-                                    echo "Your cart is empty!";
-                                }
+                                    echo "Thank you for your purchase!";
+                                }   
                             }
                         ?>
-
-                        <!-- Cart Item -->
-                        <!-- <div class="cart-item">
-                
-                            <div class="items-picture">
-                                <img src='../../resources/ProductImages/360x360/Generic White T.png'>
-                            </div>
-                
-                            <div class="left-items-text">
-                                <div class="left-text1">Generic White Shirt</div>
-                                <div class="left-text2">In Stock</div>
-                            </div>
-                
-                            <div class="quantity-section">
-                
-                                <div class="quantity-text">Quantity</div> -->
-                                
-                                <!-- Quantity Adjustment Button -->
-                                <!-- <div class="quantity-number-container" id="cart-product-1">
-                                    <button class="quantity-minus">-</button>
-                                    <div class="quantity-number">1</div>
-                                    <button class="quantity-plus">+</button>
-                                </div>
-
-                            </div>
-                
-                            <div class="price-section">
-                                <div class="single-price">15$</div>
-                                <div class="x-remove">X Remove</div>
-                            </div>
-                    
-                        </div> -->
-                        
+                      
                     
                     </div>
 
@@ -252,17 +224,20 @@
                         <script>
                             const SHIPPING_PER_ITEM = 10;
                             const TAX_RATE = 0.13;
+                            let subtotal;
+                            let shipping;
+                            let taxes;
 
                             function updateTotals() {
-                                let subtotal = 0;
-                                let shipping = 0;
+                                subtotal = 0;
+                                shipping = 0;
                                 
                                 for (let i = 0; i < priceElements.length; i++) {
                                     let priceElement = priceElements[i];
                                     subtotal += Number(priceElement.innerText.substr(1));
                                     shipping += SHIPPING_PER_ITEM;
                                 }
-                                let taxes = Number(subtotal * TAX_RATE);
+                                taxes = Number(subtotal * TAX_RATE);
 
                                 document.getElementsByClassName("subtotal-price").item(0).innerText = "$" + subtotal.toFixed(2);
                                 document.getElementsByClassName("HST-price").item(0).innerText = "$" + taxes.toFixed(2);
@@ -275,7 +250,36 @@
                         </script>
 
                         <div class="lower-price-section">
-                            <button class="buy-button">Checkout</button>
+                            <div class="checkout-message"></div>
+                            <button class="checkout-button">Checkout</button>
+
+                            <script>
+                                let checkoutButton = document.getElementsByClassName("checkout-button").item(0);
+                                let checkoutMessage = document.getElementsByClassName("checkout-message").item(0);
+
+                                checkoutButton.addEventListener("click", () => {
+
+                                    // Send an asynchronous post call to checkout
+                                    $.ajax({
+                                        type : "POST",
+                                        url  : "checkout.php",
+                                        data : { 
+                                            subtotal : subtotal,
+                                            shipping : shipping,
+                                            taxes : taxes,
+                                        },
+                                        success: function (response) {
+                                            console.log(response);
+                                            if (response == "Success!") {
+                                                window.location.replace("Cart.php?message=thankyou");
+                                            } else {
+                                                checkoutMessage.innerText = response;
+                                            }
+                                        }
+                                    });
+
+                                });
+                            </script>
                         </div>
                     </div>
                 </div>
