@@ -26,7 +26,7 @@ function addToCart($user_id, $product_id, $quantity, $size) {
     // Create a new cart entry
     } else {
         $insert_query = "INSERT INTO CartItems (UserID, ProductID, Quantity, Size, Ordered)
-        VALUES ($user_id, $product_id, $quantity, '$size', FALSE);";
+        VALUES ($user_id, $product_id, $quantity, '$size', 0);";
 
         $result = $mysqli->query($insert_query);
     }
