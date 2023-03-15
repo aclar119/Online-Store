@@ -5,6 +5,9 @@
     session_start();
 ?>
 
+<!-- Including the AJAX libraries so that we can make POST requests from JavaScript -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 <!DOCTYPE html> 
 <html>
     <head>
@@ -16,7 +19,7 @@
     </head>
     <body>
 
-        <navbar-component> </navbar-component>
+        <navbar-component style="position: sticky; top: 0; z-index: 1;"> </navbar-component>
         
         <div class="outer-main">
             <div class="inner-main">
@@ -89,7 +92,7 @@
                                         numberElement.innerText = Number(numberElement.innerText) - 1;
                                     }
                                 });
-
+                                
                                 plusButton.addEventListener("click", () => {
                                     numberElement.innerText = Number(numberElement.innerText) + 1;
                                 });
@@ -97,17 +100,55 @@
                             </script>
 
                             <button class="add-to-cart">Add to Cart</button>
+
+                            <script>
+                                let btnAddToCart = document.getElementsByClassName("add-to-cart").item(0);
+                                let selectSize = document.getElementsByClassName("select-size").item(0);
+                                
+
+                                btnAddToCart.addEventListener("click", () => {
+                                    const pageParams = new URLSearchParams(window.location.href.split('?')[1]);
+                                    let productID = pageParams.get("id");
+                                    let quantity = Number(numberElement.innerText);
+
+                                    if (selectSize.value == "Select size") {
+                                        // Show prompt to select size
+                                        let userMessage = document.getElementsByClassName("added-to-cart").item(0);
+                                        userMessage.innerText = "You must select a size!";
+                                    } else {
+                                        let size = selectSize.value;
+                                        
+                                        // clear select size prompt if it's there
+                                        let userMessage = document.getElementsByClassName("added-to-cart").item(0);
+                                        userMessage.innerText = ""; 
+
+                                        // Send an asynchronous post call to the server
+                                        $.ajax({
+                                            type : "POST",
+                                            url  : "add_to_cart_handler.php",
+                                            data : { 
+                                                product : productID, 
+                                                quantity : quantity,
+                                                size : size,
+                                            },
+                                            success: function (response) {
+                                                console.log(response);
+                                                if (response == "Success!") {
+                                                    userMessage.innerText = quantity + " items added to cart"; 
+                                                } else {
+                                                    userMessage.innerText = response; 
+                                                }
+                                            }
+                                        });
+                                    }
+                                    
+                                    
+                                });
+                            </script>
+
                         </div>
                         <div class="added-to-cart">
-                        <?php
-                            if (isset($_GET["added"])) {
-                                if ($_GET["added"] > 1) {
-                                    echo $_GET["added"] . " items added to cart";
-                                } else {
-                                    echo $_GET["added"] . " item added to cart";
-                                }
-                            }
-                        ?>
+                            <!-- The content of this div is managed by JS -->
                         </div>
                     </div>
                 </div>

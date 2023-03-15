@@ -76,6 +76,7 @@ class Navbar extends HTMLElement {
               align-items: center;
               justify-content: end;
               padding-right: 16px;
+              margin-block-end: 0;
           }
           
           #search-bar div {

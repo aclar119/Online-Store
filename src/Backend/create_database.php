@@ -124,13 +124,16 @@
     // Add all colours to the database
     function populateColours($mysqli) {
         $colours = array(
-            array("id" => 1, "displayName" => "Black", "internalName" => "black"),
-            array("id" => 2, "displayName" => "Blue", "internalName" => "blue"),
-            array("id" => 3, "displayName" => "Brown", "internalName" => "brown"),
-            array("id" => 4, "displayName" => "Green", "internalName" => "green"),
-            array("id" => 5, "displayName" => "Grey", "internalName" => "grey"),
-            array("id" => 6, "displayName" => "White", "internalName" => "white"),
-            array("id" => 7, "displayName" => "Yellow", "internalName" => "yellow")
+            array("id" => 1, "displayName" => "Beige", "internalName" => "beige"),
+            array("id" => 2, "displayName" => "Black", "internalName" => "black"),
+            array("id" => 3, "displayName" => "Blue", "internalName" => "blue"),
+            array("id" => 4, "displayName" => "Brown", "internalName" => "brown"),
+            array("id" => 5, "displayName" => "Green", "internalName" => "green"),
+            array("id" => 6, "displayName" => "Grey", "internalName" => "grey"),
+            array("id" => 7, "displayName" => "Pink", "internalName" => "pink"),
+            array("id" => 8, "displayName" => "White", "internalName" => "white"),
+            array("id" => 9, "displayName" => "Yellow", "internalName" => "yellow")
+            
         );
 
         for ($i = 0; $i < count($colours); $i++) {

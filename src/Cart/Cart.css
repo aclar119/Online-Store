@@ -46,6 +46,7 @@ html, body {
 
 .items-section {
     overflow-y: auto;
+    height: 100%;
 }
 
 .cart-item {
@@ -64,13 +65,14 @@ html, body {
 .items-picture{
   display: flex;
   flex:0 0 95px;
-  margin-left: 1%;
-  background-image: url(../../resources/ProductImages/120x120/Generic\ White\ T.png);
-  padding:10px;
   display:inline-block;
-  border-radius: 10px;
-  
 }
+
+.items-picture img {
+    border-radius: 12px;
+    max-width: 120px;
+    max-height: 120px;
+  }
 
 .left-items-text{
   display: flex;
@@ -84,8 +86,13 @@ html, body {
 
 }
 .left-text1{
-  margin-bottom: 15%;
+  margin-bottom: 20%;
 }
+
+.left-text1:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
 
 .quantity-section{
   display: flex;
@@ -167,10 +174,15 @@ html, body {
   margin-top: 6px;
 }
 
-.X-Remove{
-  margin-top: 65%;
+.x-remove{
+  margin-top: 80%;
   font-size: 15px;
 }
+
+.x-remove:hover {
+    color: lightcoral;
+    cursor: pointer;
+  }
 
 .items-picture2{
   display: flex;
@@ -210,11 +222,12 @@ html, body {
 
 .upper-price-section {
     height: fit-content;
+    color: lightgrey;
 }
 
 .subtotal-section{
   width: 100%;
-  font-size: 36px;
+  font-size: 30px;
   justify-content: space-between;
   margin-bottom: 10%;
   line-height: 0px;
@@ -258,7 +271,9 @@ html, body {
 .total-section{
   display:flex;
   justify-content: space-between;
-  font-size:36px;
+  font-size:30px;
+  font-weight: bolder;
+  color: white;
 }
 
 .total-label{
