@@ -67,8 +67,21 @@
                         
                         </form>
                     </div>
-
                 </div>
+
+                <?php 
+                
+                // This is where the user feedback is provided
+                if(isset($_GET["error"])) {
+                    if($_GET["error"] == "wronguid"){
+                        echo "<div class='user-feedback'> <p style='text-align: center; color: red;'>Username or Email is invalid</p></div>"; 
+                    } else if($_GET["error"] == "wrongpassword"){
+                        echo "<p <div class='user-feedback'> style='text-align: center; color: red;'>Password is invalid!</p></div>"; 
+                    } else if($_GET["error"] == "none"){
+                        echo "<p <div class='user-feedback'> style='text-align: center; color: green;'>You have succesfully logged in !</p></div>"; 
+                    }    
+                }
+                ?> 
             </div>
        </div>
         <footer-component></footer-component>
