@@ -82,16 +82,31 @@
             HashedPassword VARCHAR(255) NOT NULL
         )";
 
+        $create_table_orders = "CREATE TABLE Orders (
+            ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            UserID INT UNSIGNED NOT NULL,
+            FOREIGN KEY (UserID) REFERENCES Users(ID),
+            OrderedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+            SubtotalPrice FLOAT NOT NULL,
+            TaxesPrice FLOAT NOT NULL,
+            ShippingPrice FLOAT NOT NULL,
+            TotalPrice FLOAT NOT NULL
+        )";
+
         $create_table_cart_items = "CREATE TABLE CartItems (
             UserID INT UNSIGNED NOT NULL,
             FOREIGN KEY (UserID) REFERENCES Users(ID),
             ProductID INT UNSIGNED NOT NULL,
             FOREIGN KEY (ProductID) REFERENCES Products(ID),
             Quantity INT NOT NULL,
-            Size VARCHAR(5) NOT NULL
+            Size VARCHAR(5) NOT NULL,
+            Ordered BINARY,
+            OrderID INT UNSIGNED,
+            FOREIGN KEY (OrderID) REFERENCES Orders(ID)
         )";
 
         $create_table_reviews = "CREATE TABLE Reviews (
+            ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             UserID INT UNSIGNED NOT NULL,
             FOREIGN KEY (UserID) REFERENCES Users(ID),
             ProductID INT UNSIGNED NOT NULL,
@@ -106,6 +121,7 @@
         $mysqli->query($create_table_categories);
         $mysqli->query($create_table_products);
         $mysqli->query($create_table_users);
+        $mysqli->query($create_table_orders);
         $mysqli->query($create_table_cart_items);
         $mysqli->query($create_table_reviews);
 
