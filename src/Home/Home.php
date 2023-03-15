@@ -84,7 +84,7 @@
                 <div id="featured-top">
                     <div class="product">
                         <div class="image-holder">
-                            <img src="../../resources/ProductImages/Full Size/Your Logo T.png">
+                            <img src="../../resources/ProductImages/Full Size/Your Logo T (Homepage).png">
                             <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                         </div>
                         <div class="grid-container">
@@ -95,18 +95,18 @@
     
                     <div class="product">
                         <div class="image-holder">
-                            <img src="../../resources/ProductImages/Full Size/White Pants.png">
+                            <img src="../../resources/ProductImages/Full Size/Brown Jacket (Homepage).png">
                             <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                         </div>
                         <div class="grid-container">
-                            <p class="product-name">White Pants</p>
+                            <p class="product-name">Brown Jacket</p>
                             <p class="product-price">$50</p>
                         </div>
                     </div>
     
                     <div class="product">
                         <div class="image-holder">
-                            <img src="../../resources/ProductImages/Full Size/Beige Jacket.png">
+                            <img src="../../resources/ProductImages/Full Size/Beige Jacket (Homepage).png">
                             <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                         </div>
                         <div class="grid-container">
@@ -117,7 +117,7 @@
     
                     <div class="product">
                         <div class="image-holder">
-                            <img src="../../resources/ProductImages/Full Size/Leather Jacket.png">
+                            <img src="../../resources/ProductImages/Full Size/Leather Jacket (Homepage).png">
                             <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                         </div>
                         <div class="grid-container">
@@ -159,7 +159,7 @@
                         <td id="free-mockup-t">
                             <div class="product">
                                 <div class="image-holder">
-                                    <img src="../../resources/ProductImages/Full Size/Free Mockup T.png">
+                                    <img src="../../resources/ProductImages/Full Size/Free Mockup T (Homepage).png">
                                     <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
                                 </div>
                                 <div class="grid-container">

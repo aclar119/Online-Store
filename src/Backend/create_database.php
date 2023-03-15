@@ -87,7 +87,8 @@
             FOREIGN KEY (UserID) REFERENCES Users(ID),
             ProductID INT UNSIGNED NOT NULL,
             FOREIGN KEY (ProductID) REFERENCES Products(ID),
-            Quantity INT NOT NULL
+            Quantity INT NOT NULL,
+            Size VARCHAR(5) NOT NULL
         )";
 
         $create_table_reviews = "CREATE TABLE Reviews (
