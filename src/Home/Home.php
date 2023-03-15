@@ -85,7 +85,7 @@
                     <div class="product">
                         <div class="image-holder">
                             <img src="../../resources/ProductImages/Full Size/Your Logo T (Homepage).png">
-                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php?id=18';">View Details</button>
                         </div>
                         <div class="grid-container">
                             <p class="product-name">Your Logo T</p>
@@ -96,7 +96,7 @@
                     <div class="product">
                         <div class="image-holder">
                             <img src="../../resources/ProductImages/Full Size/Brown Jacket (Homepage).png">
-                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php?id=20';">View Details</button>
                         </div>
                         <div class="grid-container">
                             <p class="product-name">Brown Jacket</p>
@@ -107,7 +107,7 @@
                     <div class="product">
                         <div class="image-holder">
                             <img src="../../resources/ProductImages/Full Size/Beige Jacket (Homepage).png">
-                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php?id=17';">View Details</button>
                         </div>
                         <div class="grid-container">
                             <p class="product-name">Beige Jacket</p>
@@ -118,7 +118,7 @@
                     <div class="product">
                         <div class="image-holder">
                             <img src="../../resources/ProductImages/Full Size/Leather Jacket (Homepage).png">
-                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
+                            <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php?id=16';">View Details</button>
                         </div>
                         <div class="grid-container">
                             <p class="product-name">Leather Jacket</p>
@@ -144,7 +144,7 @@
                             <div class="product" id="generic-black-t">
                                 <div class="image-holder">
                                     <img src="../../resources/ProductImages/Full Size/Generic Black T.png">
-                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
+                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php?id=2';">View Details</button>
                                 </div>
                                 <div class="grid-container">
                                     <p class="product-name">Generic Black T</p>
@@ -160,7 +160,7 @@
                             <div class="product">
                                 <div class="image-holder">
                                     <img src="../../resources/ProductImages/Full Size/Free Mockup T (Homepage).png">
-                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
+                                    <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php?id=19';">View Details</button>
                                 </div>
                                 <div class="grid-container">
                                     <p class="product-name">Free Mockup T</p>
@@ -190,7 +190,7 @@
                                 <div class="product">
                                     <div class="image-holder">
                                         <img src="../../resources/ProductImages/480x340/Generic White T.png">
-                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
+                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php?id=5';">View Details</button>
                                     </div>
                                     <div class="grid-container">
                                         <p class="product-name">Generic White T</p>
@@ -202,7 +202,7 @@
                                 <div class="product">
                                     <div class="image-holder">
                                         <img src="../../resources/ProductImages/480x340/Generic Blue T.png">
-                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php';">View Details</button>
+                                        <button class="hide-till-hover" onclick="window.location.href='../SingleProduct/SingleProduct.php?id=1';">View Details</button>
                                     </div>
                                     <div class="grid-container">
                                         <p class="product-name">Generic Blue T</p>

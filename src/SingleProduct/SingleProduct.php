@@ -32,6 +32,7 @@
                     $product_name = $product["Name"];
                     $product_image = $product["ImageFile"];
                     $product_desc = $product["Description"];
+                    $product_price = $product["Price"];
                 ?>
 
                 <div class="left-main">
@@ -50,9 +51,11 @@
                         echo "<h2>$product_name</h2>";
                     ?> 
 
-                    <p>Available XS-XL</p>
+                    <p>Available S-XL</p>
                     <div class="price-and-stock" > 
-                        <p class="price">$15</p> 
+                        <?php
+                        echo "<p class='price'>$$product_price</p>";
+                        ?>  
                         <p class="stock">In Stock</p> 
                     </div>           
                     
@@ -92,7 +95,7 @@
                                         numberElement.innerText = Number(numberElement.innerText) - 1;
                                     }
                                 });
-                                
+
                                 plusButton.addEventListener("click", () => {
                                     numberElement.innerText = Number(numberElement.innerText) + 1;
                                 });
