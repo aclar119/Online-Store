@@ -3,7 +3,8 @@
     class DatabaseConfig {
         
         // Set to true if using WAMP (Windows), false if using MAMP (Mac)
-        private static $OS;
+        private static $USING_WINDOWS = true;
+
 
         private static $DB_NAME = "onlinestore";
         private static $DB_HOST = 'localhost';
@@ -14,22 +15,6 @@
 
         private static $MAC_PASSWORD = 'root';
         private static $MAC_PORT = 8889; 
-
-        // Constructor determines if the user is on Windows or Mac
-        function __construct() {
-            $user_agent = getenv("HTTP_USER_AGENT");
-
-            if(strpos($user_agent, "Win") !== FALSE) {
-                $OS = "Windows";
-
-            } elseif(strpos($user_agent, "Mac") !== FALSE) {
-                $OS = "Mac";
-
-            } else {
-                $OS = "Unknown";
-            }
-        }
-
 
         // Do not change anything below this line
         public static function get_name() {
@@ -45,18 +30,18 @@
         }
 
         public static function get_password() {
-            if (self::$OS === "Mac") {
-                return self::$MAC_PASSWORD;
-            } else {
+            if (self::$USING_WINDOWS) {
                 return self::$WINDOWS_PASSWORD;
+            } else {
+                return self::$MAC_PASSWORD;
             }
         }
 
         public static function get_port() {
-            if (self::$OS === "Mac") {
-                return self::$MAC_PORT;
-            } else {
+            if (self::$USING_WINDOWS) {
                 return self::$WINDOWS_PORT;
+            } else {
+                return self::$MAC_PORT;
             }
         }
 
