@@ -35,13 +35,13 @@
                 }
 
                 console.log(passwordValue);
-                var passwordCheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)/;
+                var passwordCheck = /^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9!@#$%^&()_+{}:;'"\|<,>.?/`~=-])(?!.\s)/;
                 if (!passwordCheck.test(passwordValue)){
                     alert("Error: The password needs to contain at least one number, one uppercase and one special character");
                     console.log("Error: The password needs to contain at least one number, one uppercase and one special character")
                     return false;
                 }
-                
+ 
                 return true;
                 
             }
