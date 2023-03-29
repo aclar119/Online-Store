@@ -3,7 +3,7 @@
     class DatabaseConfig {
         
         // Set to true if using WAMP (Windows), false if using MAMP (Mac)
-        private static $USING_WINDOWS = true;
+        private static $USING_WINDOWS = false;
 
 
         private static $DB_NAME = "onlinestore";
