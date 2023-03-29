@@ -12,46 +12,15 @@
         <link rel="stylesheet" href="./Signup.css">
         <script src="../Components/navbar.js" type="text/javascript" defer></script>
         <script src="../Components/footer.js" type="text/javascript" defer></script>
-        <script type ="text/javascript">
-            function validateForm() {
-                var usernameInput = document.getElementById("username");
-                var emailInput = document.getElementById("email");
-                var passwordInput = document.getElementById("password");
-
-                var usernameValue = usernameInput.value;
-                var emailValue = emailInput.value;
-                var passwordValue = passwordInput.value;
-
-                if (usernameValue.length > 80) {
-                    alert("Error: the provided username exceed 80 characters");
-                    console.log("Error: the provided username exceed 80 characters")
-                    return false;
-                }
-
-                if (emailValue.length > 80) {
-                    alert("Error: the provided email exceed 80 characters");
-                    console.log("Error: the provided email exceed 80 characters")
-                    return false;
-                }
-
-                console.log(passwordValue);
-                var passwordCheck = /^(?=.*\d)(?=.*[!@#$%^&*()])(?=.*[A-Z]).{8,}$/;
-                if (!passwordCheck.test(passwordValue)){
-                    alert("Error: The password needs to contain at least 8 characters, have one number, one uppercase and one special character");
-                    console.log("Error: The password needs to contain at least 8 characters,, one uppercase and one special character")
-                    return false;
-                }
- 
-                return true;
-                
-            }
-
-        </script>
     </head>
 
     <body>
         <navbar-component page="Account" style="position: sticky; top: 0; z-index: 1;"> </navbar-component>
-    
+
+        <script>
+            
+        </script>
+
         <div class="main-container">
 
             <div class="login-container">
@@ -85,27 +54,30 @@
 
                 </div>
 
-                <?php 
+                <div id="user-feedback">
+                    <?php 
 
-                // This is where the user feedback is provided
-                if(isset($_GET["error"])) {
-                    if($_GET["error"] == "already_taken"){
-                        echo "<p style='text-align: center; color: red;'>Username or Email already taken<p>"; 
-                    } else if($_GET["error"] == "empty_input"){
-                        echo "<p style='text-align: center; color: red;'>All fields must be filled!<p>"; 
-                    } else if($_GET["error"] == "invalid_username"){
-                        echo "<p style='text-align: center; color: red;'>The provided username is invalid!<p>"; 
-                    } else if($_GET["error"] == "invalid_email"){
-                        echo "<p style='text-align: center; color: red;'>The provided email is invalid!<p>"; 
-                    } else if($_GET["error"] == "none"){
-                        echo "<p style='text-align: center; color: green;'>You have successfully signed up!<p>"; 
-                    }    
-                }
+                    // This is where the user feedback is provided
+                    if(isset($_GET["error"])) {
+                        if($_GET["error"] == "already_taken"){
+                            echo "<p style='text-align: center; color: red;'>Username or Email already taken<p>"; 
+                        } else if($_GET["error"] == "empty_input"){
+                            echo "<p style='text-align: center; color: red;'>All fields must be filled!<p>"; 
+                        } else if($_GET["error"] == "invalid_username"){
+                            echo "<p style='text-align: center; color: red;'>The provided username is invalid!<p>"; 
+                        } else if($_GET["error"] == "invalid_email"){
+                            echo "<p style='text-align: center; color: red;'>The provided email is invalid!<p>"; 
+                        } else if($_GET["error"] == "none"){
+                            echo "<p style='text-align: center; color: green;'>You have successfully signed up!<p>"; 
+                        }    
+                    }
 
-                ?> 
+                    ?> 
+                </div>
 
             </div>
        </div>
         <footer-component></footer-component>
+        <script src="Signup.js" type="text/javascript"></script>
    </body>
 </html>

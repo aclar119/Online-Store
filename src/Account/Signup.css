@@ -26,7 +26,7 @@ align-items: center;
 width: 425px;
 margin-top: 10vh;
 margin-bottom: 10vh;
-height: 600px;
+height: fit-content;
 color: #F8F8F8;
 }
 
@@ -56,7 +56,8 @@ display:flex;
 justify-content: center;
 flex-direction: column;
 align-items: center;
-height: 75%;
+height: fit-content;
+padding: 40px 0;
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -106,4 +107,9 @@ display: flex;
 justify-content: center;
 color: #F8f8f8;
 text-decoration: none;
+}
+
+li>p {
+    margin-top: 4px;
+    margin-bottom: 0;
 }
