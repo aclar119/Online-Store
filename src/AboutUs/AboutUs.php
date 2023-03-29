@@ -66,9 +66,9 @@
         </div>
 
         
-        <div class= values-title>Our Values</h3>
+        <div class= values-title>Our Values</div>
             <hr class="separator"/>
-            </div>
+
             <div class="values-section">
            
 
