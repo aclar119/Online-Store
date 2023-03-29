@@ -78,7 +78,7 @@
         $create_table_users = "CREATE TABLE Users (
             ID INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
             Email VARCHAR(80) UNIQUE NOT NULL,
-            Username VARCHAR(128) UNIQUE NOT NULL,
+            Username VARCHAR(80) UNIQUE NOT NULL,
             HashedPassword VARCHAR(255) NOT NULL
         )";
 
@@ -112,7 +112,7 @@
             ProductID INT UNSIGNED NOT NULL,
             FOREIGN KEY (ProductID) REFERENCES Products(ID),
             Rating INT NOT NULL,
-            Review TEXT,
+            ReviewMessage TEXT,
             CreatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )";
 

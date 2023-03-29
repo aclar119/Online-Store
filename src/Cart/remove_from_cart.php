@@ -1,8 +1,5 @@
 <?php
 
-// product : productID,
-// size : size,
-
 session_start();
 
 if(isset($_SESSION["userid"])) {

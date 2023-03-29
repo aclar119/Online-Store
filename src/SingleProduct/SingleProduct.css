@@ -67,18 +67,22 @@ html, body {
     margin-top: 68px;
 }
 
+.right-main p {
+    color: black;
+    font-size: 15px;
+}
+
 .right-main h2 {
     color: #F8F8F8;
     margin:0;
-    
 }
 
 .right-main h4 {
     font-size: 20px;
 }
 
-.right-main p {
-    color:gainsboro
+.user-selection p {
+    color:#dcdcdc
 }
 
 .user-selection {
@@ -111,13 +115,6 @@ html, body {
     color: black
 }
 
-
-
-
-.right-main p2 {
-    color: black;
-    font-size: 15px;
-}
 
 
 /* Select size box */
@@ -264,15 +261,161 @@ h3.h3-quantity{
     text-align: end;
 }
 
+.reviews-headerline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.reviews-headerline>div {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 12px;
+}
+
+.add-review {
+    border-radius: 16px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    padding: 4px 16px;
+    border: none;
+    background-color: #213536;
+    color: #F8F8F8;
+}
+
+.add-review:hover {
+    cursor: pointer;
+}
+
+.no-review-message {
+    text-align: center;
+    align-items: center;
+}
+
+.my-review-expanded {
+    /* background-color: #d7d7d7; */
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.my-review h5 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.review-topline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    color: #213536;
+}
+
+.star {
+    color: #213536;
+}
+
+.star:hover {
+    cursor: pointer;
+}
+
+#my-review-text {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    height: 80px;
+    min-height: 80px;
+    max-height: 160px;
+    border-radius: 6px;
+    padding: 2px 6px;
+}
+
+.review-bottomline {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.review-message {
+    width: 60%;
+    text-align: center;
+    align-self: center;
+    font-size: 14px;
+}
+
+.review-buttons {
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: end;
+    margin-top: 8px;
+    gap: 8px;
+}
+
+.review-buttons button {
+    border-radius: 16px;
+    width: fit-content;
+    height: fit-content;
+    font-size: 14px;
+    padding: 4px 16px;
+    border: none;
+}
+
+.review-buttons button:hover {
+    cursor: pointer;
+}
+
+.cancel-review {
+    background-color: #868686;
+    color: #F8F8F8;
+}
+
+.submit-review {
+    background-color: #213536;
+    color: #F8F8F8;
+}
+
+
 .review {
     background-color: #d7d7d7;
-    padding: 20px;
+    padding: 16px;
+    padding-top: 12px;
     border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.review-title-line {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .review h5 {
+    font-size: 16px;
+    color: #213536;
+    margin: 0;
+    margin-bottom: 6px;
+}
+
+.review h6 {
+    font-size: 14px;
+    color:#868686;
     margin: 0;
     margin-bottom: 10px;
+}
+
+.review p {
+    margin: 0;
 }
 
 .review>div {
@@ -281,18 +424,28 @@ h3.h3-quantity{
     flex-wrap: nowrap;
 }
 
-  .rating {
-    font-size: 20px;
+.display-rating {
+    font-size: 16px;
     display: inline-block;
+    color: #213536;
     margin-left: 20px;
     margin-top: -5px;
+}
 
-  }
+.select-rating {
+    font-size: 16px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    margin-left: 20px;
+    margin-top: -5px;
+    gap: 4px;
+}
 
-  .available {
+.available {
     grid-column: 2;
     text-align: end;
     margin-top: -17px;
     margin-right: 10px;
-  }
+}
   
