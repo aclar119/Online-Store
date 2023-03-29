@@ -16,9 +16,11 @@
             function validateForm() {
                 var usernameInput = document.getElementById("username");
                 var emailInput = document.getElementById("email");
+                var passwordInput = document.getElementById("password");
 
                 var usernameValue = usernameInput.value;
                 var emailValue = emailInput.value;
+                var passwordValue = passwordInput.value;
 
                 if (usernameValue.length > 80) {
                     alert("Error: the provided username exceed 80 characters");
@@ -32,8 +34,17 @@
                     return false;
                 }
 
-                return true;
+                console.log(passwordValue);
+                var passwordCheck = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s)/;
+                if (!passwordCheck.test(passwordValue)){
+                    alert("Error: The password needs to contain at least one number, one uppercase and one special character");
+                    console.log("Error: The password needs to contain at least one number, one uppercase and one special character")
+                    return false;
                 }
+                
+                return true;
+                
+            }
 
         </script>
     </head>
