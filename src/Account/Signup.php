@@ -12,6 +12,30 @@
         <link rel="stylesheet" href="./Signup.css">
         <script src="../Components/navbar.js" type="text/javascript" defer></script>
         <script src="../Components/footer.js" type="text/javascript" defer></script>
+        <script type ="text/javascript">
+            function validateForm() {
+                var usernameInput = document.getElementById("username");
+                var emailInput = document.getElementById("email");
+
+                var usernameValue = usernameInput.value;
+                var emailValue = emailInput.value;
+
+                if (usernameValue.length > 80) {
+                    alert("Error: the provided username exceed 80 characters");
+                    console.log("Error: the provided username exceed 80 characters")
+                    return false;
+                }
+
+                if (emailValue.length > 80) {
+                    alert("Error: the provided email exceed 80 characters");
+                    console.log("Error: the provided email exceed 80 characters")
+                    return false;
+                }
+
+                return true;
+                }
+
+        </script>
     </head>
 
     <body>
@@ -30,10 +54,10 @@
 
                     <!-- The main form content is all in this div -->
                     <div class="form-group">
-                        <form action="../Backend/account/signup_backend.php" method="post" id="create-form">
+                        <form action="../Backend/account/signup_backend.php" method="post" id="create-form" onsubmit="return validateForm()">
 
                         <label for="username">Username</label>
-                        <input class ="form-input" type="text" id="username" name="username" placeholder="Username" required>
+                        <input class ="form-input" type="text" id="username" name="username" placeholder="Username" >
                         <label for="email">Email</label>
                         <input class ="form-input" type="email" id="email" name="email" placeholder="Email" required>
                         <label for="password">Password</label>
