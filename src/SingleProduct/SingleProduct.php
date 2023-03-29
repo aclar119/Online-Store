@@ -153,9 +153,12 @@
                             $review_message = $review["ReviewMessage"];
                             $your_review = false;
 
-                            if ($review["UserID"] == $_SESSION["userid"]) {
-                                $your_review = true;
+                            if (isset($_SESSION["userid"])) {
+                                if ($review["UserID"] == $_SESSION["userid"]) {
+                                    $your_review = true;
+                                }
                             }
+                            
 
                             // Review
                             echo "<div class='review'>";
@@ -194,7 +197,7 @@
                     } 
                                         
                     ?>
-                    
+
                 </div> 
             </div>
         </div>
