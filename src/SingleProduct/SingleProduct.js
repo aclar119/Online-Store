@@ -89,14 +89,12 @@ console.log(`Product ID: ${productID}`);
 // Get whether the current user has ever ordered the current product
 let xhttpGetHasOrdered = new XMLHttpRequest();
 xhttpGetHasOrdered.onload = function () {
-    console.log("Ordered response: " + xhttpGetHasOrdered.response);
     if (xhttpGetHasOrdered.response == "true") {
         orderedProduct = true;
 
         // Get whether the current user has already reviewed the current product
         let xhttpGetHasReviewed = new XMLHttpRequest();
         xhttpGetHasReviewed.onload = function () {
-            console.log("Reviewed response: " + xhttpGetHasReviewed.response);
             if (xhttpGetHasReviewed.response == "true") {
                 alreadyReviewed = true;
             } else if (xhttpGetHasReviewed.response == "false") {
@@ -190,7 +188,6 @@ btnAddReview.addEventListener("click", () => {
                 for (let j = selectedRating; j < ratingStars.length; j++) {
                     ratingStars.item(j).innerHTML = "<span class='fa fa-star-o'></span>";
                 }
-                console.log("Rating updated to: " + selectedRating);
             });
         }
 
@@ -206,12 +203,10 @@ btnAddReview.addEventListener("click", () => {
             } else if (txtMyReview.value.length == 0) {
                 divReviewMessage.innerText = "Please write a review!";
             } else {
-                console.log("Review submit reached");
 
                 // Post request to actually create/add the review
                 let xhttpAddReview = new XMLHttpRequest();
                 xhttpAddReview.onload = function () {
-                    console.log("Add Review response: " + xhttpAddReview.response);
                     if (xhttpAddReview.response == "Success!") {
                         // Review successfully added. Reload page
                         location.reload();
