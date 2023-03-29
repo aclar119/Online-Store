@@ -35,10 +35,10 @@
                 }
 
                 console.log(passwordValue);
-                var passwordCheck = /^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9!@#$%^&()_+{}:;'"\|<,>.?/`~=-])(?!.\s)/;
+                var passwordCheck = /^(?=.*\d)(?=.*[!@#$%^&*()])(?=.*[A-Z]).{8,}$/;
                 if (!passwordCheck.test(passwordValue)){
-                    alert("Error: The password needs to contain at least one number, one uppercase and one special character");
-                    console.log("Error: The password needs to contain at least one number, one uppercase and one special character")
+                    alert("Error: The password needs to contain at least 8 characters, have one number, one uppercase and one special character");
+                    console.log("Error: The password needs to contain at least 8 characters,, one uppercase and one special character")
                     return false;
                 }
  
