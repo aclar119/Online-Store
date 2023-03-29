@@ -139,10 +139,7 @@
                         <button class="add-review">Add Review</button>
                     </div>
                     
-                    
                     <div class="my-review"> <!-- The content of this div is managed by JS --></div>
-
-                    
 
                     <?php 
 
@@ -197,21 +194,7 @@
                     } 
                                         
                     ?>
-
-                    <!-- <div class='review'> 
-                        <div class='review-title-line'>
-                            <h5>John Cena</h5> 
-                            <div class='display-rating'>
-                                &#9733;&#9733;&#9733;&#9733;&#9734;
-                            </div>
-                        </div>
-                        <div class='review-title-line'>
-                            <h6>Verified Purchase</h6> 
-                            <h6 class='review-date'>March 3, 2023</h6>
-                        </div>
-                        <p>Such an excellent product! Highly recommended to anyone wanting to get this t-shirt!</p>
-                    </div> -->
-
+                    
                 </div> 
             </div>
         </div>
