@@ -98,7 +98,7 @@
                     } else if($_GET["error"] == "invalid_email"){
                         echo "<p style='text-align: center; color: red;'>The provided email is invalid!<p>"; 
                     } else if($_GET["error"] == "none"){
-                        echo "<p style='text-align: center; color: green;'>You have succesfully signed up!<p>"; 
+                        echo "<p style='text-align: center; color: green;'>You have successfully signed up!<p>"; 
                     }    
                 }
 
